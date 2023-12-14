@@ -1,16 +1,16 @@
 package Model;
 
-import java.util.Arrays;
-
 public class Model {
 
-    private final String EMPTY = "⌗";
+    private final char EMPTY = '⌗';
 
-    private final String PLAYER_1 = "■";
-    private final String PLAYER_2 = "□";
+    private final char PLAYER_1 = '■';
+    private final char PLAYER_2 = '□';
 
+    private Graph graph;
 
-    private String[] board = new String[50];
+    private char[] board;
+
 
     private int indexCounter = 0;
 
@@ -18,7 +18,8 @@ public class Model {
 
     private GameState gameState;
 
-    private int moves;
+    private int moveCount;
+
 
 
     public static void main(String[] args) {
@@ -26,31 +27,44 @@ public class Model {
     }
 
     Model() {
-        newGame();
+        board = new char[24];
+        for (int i = 0; i < board.length; i++) {
+            board[i] = ' ';
+        }
+        turn = PlayerTurn.WHITE;
     }
 
     public void newGame() {
-        board = new String[]{
-                EMPTY,"------------------",EMPTY,"-------------------",EMPTY + "\n",
-                 "|",                       "|",                        "|"  + "\n",
-                 "|",         EMPTY,       EMPTY,       EMPTY,          "|"  + "\n",
-                 "|",          "|",         "|",         "|",           "|"  + "\n",
-                 "|",          "|", EMPTY, EMPTY, EMPTY, "|",           "|"  + "\n",
-                 "|",          "|",  "|",          "|",  "|",           "|"  + "\n",
-                EMPTY      ,  EMPTY,EMPTY,        EMPTY,EMPTY,         EMPTY + "\n",
-                 "|",          "|",  "|",          "|",  "|",           "|"  + "\n",
-                 "|",          "|", EMPTY, EMPTY, EMPTY, "|",           "|"  + "\n",
-                 "|",          "|",         "|",         "|",           "|"  + "\n",
-                 "|",         EMPTY,       EMPTY,       EMPTY,          "|"  + "\n",
-                 "|",                       "|",                        "|"  + "\n",
-                EMPTY,"------------------",EMPTY,"------------------", EMPTY + "\n"
+        board = new char[]{
+                board[0],                   board[1],                       board[2],                                        //first row
+                            board[8],       board[9],      board[10],                                                //second row
+                                   board[16],board[17],board[18],                                                          //third row
+                board[7],board[15],board[23],          board[19],board[11], board[3],                                        //middle row
+                                   board[22],board[21],board[20],                                                          //third row
+                            board[14],       board[13],        board[12],                                                //second row
+                board[6],                    board[5],                      board[4]                                         //first row
         };
 
 
-        moves = 0;
-        System.out.println(Arrays.toString(board));
+        moveCount = 0;
     }
 
+    public char getPlayer(){
+        return (moveCount % 2 == 0) ? PLAYER_1 : PLAYER_2;
+    }
+
+    private boolean checkPlayer1Won(){
+        return winCondition(PLAYER_1);
+    }
+
+    private boolean checkPlayer2Won(){
+        return winCondition(PLAYER_2);
+    }
+
+
+    private boolean winCondition(char player){
+
+    }
 
 
 
