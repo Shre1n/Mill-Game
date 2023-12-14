@@ -63,7 +63,15 @@ public class Model {
 
 
     private boolean winCondition(char player){
+        //See Skizze for better understanding
+        if (board[pos] % 2 == 0) {
+            isEdge(pos)
+        }
 
+    }
+
+    private boolean isEdge(int posAlready, int posAdded){
+        if ()
     }
 
 
