@@ -6,6 +6,10 @@ public enum GameState {
 
     PLAYING,
 
+    STELL,
+
+    MOVE,
+
     GAMEO_OVER
 
 
