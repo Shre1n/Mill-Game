@@ -9,7 +9,6 @@ public class Model {
     @Test
     void CheckForActivePlayer(){
         var game = new Model();
-        assertEquals('W', game.movePlayer);
     }
 
 

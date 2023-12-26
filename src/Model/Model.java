@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Arrays;
+
 public class Model {
 
     private final char EMPTY = '⌗';
@@ -7,12 +9,13 @@ public class Model {
     private final char PLAYER_1 = '■';
     private final char PLAYER_2 = '□';
 
+    private final int WhiteStones = 9;
+    private final int BlackStones = 9;
+
     private char[] board;
+    private final int indexCounter = 0;
 
-
-    private int indexCounter = 0;
-
-    private PlayerTurn turn;
+    private final PlayerTurn turn;
 
     private GameState gameState;
 
@@ -25,9 +28,7 @@ public class Model {
 
     Model() {
         board = new char[24];
-        for (int i = 0; i < board.length; i++) {
-            board[i] = ' ';
-        }
+        Arrays.fill(board, EMPTY);
         turn = PlayerTurn.WHITE;
     }
 
@@ -41,8 +42,6 @@ public class Model {
                 board[14], board[13], board[12],                                                //second row
                 board[6], board[5], board[4]                                         //first row
         };
-
-
         moveCount = 0;
     }
 
@@ -50,53 +49,72 @@ public class Model {
         return board[pos];
     }
 
-    private boolean isMuehleColor(int pos, PlayerTurn color) {
-        char playerColor = (color == PlayerTurn.WHITE) ? 'W' : 'B';
-        return board[pos] == playerColor;
+    public char[] getBoard(){
+        return board;
     }
 
-    public void checkMuehleColor(int pos) {
-        char color = getPlayerColor(pos);
-        PlayerTurn playerTurn = (color == 'W') ? PlayerTurn.WHITE : PlayerTurn.BLACK;
-
-        if (pos % 2 == 0) ;
+    private GameState playerState(int pos, PlayerTurn playerTurn) {
+        char player = (playerTurn == PlayerTurn.WHITE) ? 'W' : 'B';
+        if (player == 'W' && hasMuehle(pos, player) || player == 'B' && hasMuehle(pos, player)) return GameState.STEAL;
+        if (BlackStones == 3 || WhiteStones == 3 || (BlackStones == 3 && WhiteStones == 3)){
+            moveCount++;
+            return GameState.JUMP;
+        }
+        moveCount++;
+        return GameState.MOVE;
     }
 
-    private GameState checkPlayersState(int pos, PlayerTurn color) {
-        //Initialize the Player States (W/B) for next move.
-        //Is Player White (W) in "Steel" State then Block Player Black (B).
-        //Use Gamestate STEEL & MOVE
-
-        GameState gameStatePlayer = (color == PlayerTurn.WHITE && pos % 2 == 0 || color == PlayerTurn.WHITE && !isMuehleEven(pos)) ? GameState.STELL : GameState.MOVE;
-
-
-        return gameStatePlayer;
+    public boolean isEmptyField(int pos){
+        if (isValidFieldIndex(pos)) return board[pos] == EMPTY;
+        else throw new IndexOutOfBoundsException("Valid Positions are [0 , 23]");
     }
 
+    private void steal(int pos){
+        if (gameState == GameState.STEAL && isValidFieldIndex(pos)){
+            char player = (turn == PlayerTurn.WHITE) ? 'W' : 'B';
+            if (board[pos] != player && board[pos] != EMPTY) {
 
-    private GameState movePlayer(int pos) {
-        if (!isValidFieldIndex(pos)) {
-            throw new IndexOutOfBoundsException("This is not a valid Index!");
-        } else {
-            PlayerTurn playerTurn = (moveCount % 2 == 0) ? PlayerTurn.WHITE : PlayerTurn.BLACK
-            return checkPlayersState(pos, playerTurn);
+            }
         }
     }
 
 
-    private boolean isMuehleEven(int pos) {
-        //Check for horizontal Lines
-        return pos % 2 == 0;
+    public void movePlayer(int pos) {
+        if (!isGameOver() && gameState == GameState.MOVE) {
+            if (!isValidFieldIndex(pos)) {
+                throw new IndexOutOfBoundsException("This is not a valid Index!");
+            } else {
+                PlayerTurn playerTurn = (moveCount % 2 == 0) ? PlayerTurn.WHITE : PlayerTurn.BLACK;
+                playerState(pos, playerTurn);
+            }
+        }
     }
 
-    private boolean isMuehleOdd(int pos) {
-        //Check for horizontal Lines
-        return;
+    private boolean hasPlayer1Won(){
+        return BlackStones == 0;
     }
 
-    private boolean muehleCalculation(int pos) {
+    private boolean hasPlayer2Won(){
+        return WhiteStones == 0;
+    }
+
+
+    public boolean isGameOver(){
+        return hasPlayer1Won() || hasPlayer2Won() || moveCount >= board.length;
+    }
+
+    private boolean hasMuehle(int pos, char player) {
         // Check for mühle in row, column
-        return pos % 2 == 0 || isMuehleColumn(position);
+        int temp = whichSquare(pos);
+        if (pos % 2 == 0) {
+            return board[((pos + 1) % 8) + temp] == player && board[((pos + 2) % 8) + temp] == player || board[((pos - 1) % 8) + temp] == player && board[((pos - 2) % 8) + temp] == player;
+        } else {
+            return board[(pos + 8) % 24] == player && board[(pos + 16) % 24] == player || board[((pos + 1) % 8) + temp] == player && board[((pos - 1) % 8) + temp] == player;
+        }
+    }
+
+    private int whichSquare(int pos) {
+        return (pos < 8) ? 0 : (pos < 16 ? 8 : 16);
     }
 
 
