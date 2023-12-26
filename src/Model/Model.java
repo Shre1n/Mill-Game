@@ -22,9 +22,6 @@ public class Model {
     private GameState player1;
     private GameState player2;
 
-    private int moveCount;
-
-
     public static void main(String[] args) {
         var game = new Model();
         game.newGame();
@@ -36,10 +33,15 @@ public class Model {
         game.setPlayer(5);
         game.setPlayer(6);
         game.setPlayer(19);
-        game.move(9,1);
+        game.move(9, 1);
         game.steal(16);
-        game.move(5,11);
+        game.move(5, 11);
         game.steal(6);
+        game.move(0, 7);
+        game.move(3, 4);
+        game.move(7, 0);
+        game.steal(4);
+
         System.out.println(game);
     }
 
@@ -61,7 +63,6 @@ public class Model {
         };
         player1 = GameState.SET;
         player2 = GameState.SET;
-        moveCount = 0;
 
         System.out.println("Game Start");
     }
@@ -78,7 +79,7 @@ public class Model {
     }
 
     private void steal(int pos) {
-        if (board[pos] == EMPTY){
+        if (board[pos] == EMPTY) {
             throw new RuntimeException("This field is Empty. This is not a Valid stone to steal. Try another one!");
         }
         if (player1 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.WHITE) {
@@ -152,27 +153,29 @@ public class Model {
         }
     }
 
-    private boolean isValidMove(int pos1, int pos2){
+    private boolean isValidMove(int pos1, int pos2) {
         int temp = whichSquare(pos1);
-        if (pos1 % 2 == 0){
-            return ((pos1+1)%8) +temp == pos2 || ((pos1+7)%8) + temp == pos2;
-        }else {
+        if (pos1 % 2 == 0) {
+            return ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 7) % 8) + temp == pos2;
+        } else {
             if (temp == 8)
-                return ((pos1-1)%8) + temp == pos2 || ((pos1+1)%8) +temp == pos2 || ((pos1+8)%24) == pos2 || ((pos1+16))%24 == pos2;
+                return ((pos1 - 1) % 8) + temp == pos2 || ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 8) % 24) == pos2 || ((pos1 + 16)) % 24 == pos2;
             else if (temp == 0)
-                return ((pos1-1)%8) + temp == pos2 || ((pos1+1)%8) +temp == pos2 || ((pos1+8)%24) == pos2;
+                return ((pos1 - 1) % 8) + temp == pos2 || ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 8) % 24) == pos2;
             else
-                return ((pos1-1)%8) + temp == pos2 || ((pos1+1)%8) +temp == pos2 || ((pos1+16))%24 == pos2;
+                return ((pos1 - 1) % 8) + temp == pos2 || ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 16)) % 24 == pos2;
         }
     }
 
     public void move(int pos1, int pos2) { // 16, 23
         if (!isGameOver()) {
             if (isEmptyField(pos2) && player1 != GameState.SET && turn == PlayerTurn.WHITE) {
-                if (player1 == GameState.MOVE){
-                    if (!isValidMove(pos1,pos2)) throw new RuntimeException("Move is not possible! Positions must be adjacent.");
+                if (player1 == GameState.MOVE) {
+                    if (!isValidMove(pos1, pos2))
+                        throw new RuntimeException("Move is not possible! Positions must be adjacent.");
                 }
-                if (board[pos1] != PLAYER_1) throw new RuntimeException("The choosen stone to move does not equal the current Player.");
+                if (board[pos1] != PLAYER_1)
+                    throw new RuntimeException("The choosen stone to move does not equal the current Player.");
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.BLACK;
@@ -181,10 +184,12 @@ public class Model {
                     turn = PlayerTurn.WHITE;
                 }
             } else if (isEmptyField(pos2) && player2 != GameState.SET && turn == PlayerTurn.BLACK) {
-                if (player2 == GameState.MOVE){
-                    if (!isValidMove(pos1,pos2)) throw new RuntimeException("Move is not possible! Positions must be adjacent.");
+                if (player2 == GameState.MOVE) {
+                    if (!isValidMove(pos1, pos2))
+                        throw new RuntimeException("Move is not possible! Positions must be adjacent.");
                 }
-                if (board[pos1] != PLAYER_2) throw new RuntimeException("The choosen stone to move does not equal the current Player.");
+                if (board[pos1] != PLAYER_2)
+                    throw new RuntimeException("The choosen stone to move does not equal the current Player.");
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.WHITE;
@@ -193,7 +198,7 @@ public class Model {
                     turn = PlayerTurn.BLACK;
                 }
             }
-        }
+        } else throw new RuntimeException("Game is already over! :( ");
     }
 
     private boolean hasPlayer1Won() {
@@ -206,7 +211,7 @@ public class Model {
 
 
     public boolean isGameOver() {
-        return hasPlayer1Won() || hasPlayer2Won() || moveCount >= board.length;
+        return hasPlayer1Won() || hasPlayer2Won();
     }
 
     private boolean hasMuehle(int pos, char player) {
@@ -231,19 +236,21 @@ public class Model {
 
     @Override
     public String toString() {
-        String s = board[0] + "                  " + board[1] + "                   " + board[2] + "\n";
-        s += "      " + board[8] + "            " + board[9] + "            " + board[10] + "\n";
-        s += "             " + board[16] + "     " + board[17] + "     " + board[18] + "\n";
-        s += board[7] + "     " + board[15] + "      " + board[23] + "           " + board[19] + "     " + board[11] + "      " + board[3] + "\n";
-        s += "             " + board[22] + "     " + board[21] + "     " + board[20] + "\n";
-        s += "      " + board[14] + "            " + board[13] + "            " + board[12] + "\n";
-        s += board[6] + "                  " + board[5] + "                   " + board[4];
-        s += "\n Next Players Turn: " + turn;
-        GameState statePlayer = (turn == PlayerTurn.WHITE ? player1 : player2);
-        s += "\n State of Player: " + statePlayer;
-        s += "\n Available Stones Player 1: " + SETWhiteStones;
-        s += "\n Available Stones Player 2: " + SETBlackStones;
-        return s;
+        if (!isGameOver()) {
+            String s = board[0] + "                  " + board[1] + "                   " + board[2] + "\n";
+            s += "      " + board[8] + "            " + board[9] + "            " + board[10] + "\n";
+            s += "             " + board[16] + "     " + board[17] + "     " + board[18] + "\n";
+            s += board[7] + "     " + board[15] + "      " + board[23] + "           " + board[19] + "     " + board[11] + "      " + board[3] + "\n";
+            s += "             " + board[22] + "     " + board[21] + "     " + board[20] + "\n";
+            s += "      " + board[14] + "            " + board[13] + "            " + board[12] + "\n";
+            s += board[6] + "                  " + board[5] + "                   " + board[4];
+            s += "\n Next Players Turn: " + turn;
+            GameState statePlayer = (turn == PlayerTurn.WHITE ? player1 : player2);
+            s += "\n State of Player: " + statePlayer;
+            s += "\n Available Stones Player 1: " + SETWhiteStones;
+            s += "\n Available Stones Player 2: " + SETBlackStones;
+            return s;
+        } else return (turn == PlayerTurn.WHITE) ? "Black has won!" : "White has won";
     }
 
 }
