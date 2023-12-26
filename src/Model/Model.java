@@ -34,6 +34,7 @@ public class Model {
             System.out.println(game);
         }
         game.steal(2);
+        System.out.println(game);
         game.move(16,23);
 
         System.out.println(game);
@@ -150,9 +151,9 @@ public class Model {
     }
 
 
-    public void move(int pos1, int pos2) {
+    public void move(int pos1, int pos2) { // 16, 23
         if (!isGameOver()) {
-            if (isEmptyField(pos2) && player1 == GameState.MOVE) {
+            if (isEmptyField(pos2) && player1 == GameState.MOVE && turn == PlayerTurn.WHITE) { // true
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.BLACK;
@@ -161,7 +162,7 @@ public class Model {
                     turn = PlayerTurn.WHITE;
                 }
             }
-            if (isEmptyField(pos2) && player2 == GameState.MOVE) {
+            else if (isEmptyField(pos2) && player2 == GameState.MOVE && turn == PlayerTurn.BLACK) {
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.WHITE;
@@ -211,11 +212,11 @@ public class Model {
         String s =  board[0]+"                  "+board[1]+"                   "+board[2]+"\n";
                s += "      "+board[8]+"            "+board[9]+"            "+board[10]+"\n";
                s += "             "+board[16]+"     "+board[17]+"     "+board[18]+"\n";
-               s += board[7]+"     "+board[15]+"     "+board[23]+"            "+board[19]+"     "+board[11]+"      "+board[3]+"\n";
+               s += board[7]+"     "+board[15]+"      "+board[23]+"           "+board[19]+"     "+board[11]+"      "+board[3]+"\n";
                s += "             "+board[22]+"     "+board[21]+"     "+board[20]+"\n";
                s += "      "+board[14]+"            "+board[13]+"            "+board[12]+"\n";
                s += board[6]+"                  "+board[5]+"                   "+board[4];
-               s += "\n Players Turn: " + turn;
+               s += "\n Next Players Turn: " + turn;
                GameState statePlayer = (turn == PlayerTurn.WHITE ? player1 : player2);
                s += "\n State of Player: " +  statePlayer;
                s += "\n Available Stones Player 1: " + SETWhiteStones;
