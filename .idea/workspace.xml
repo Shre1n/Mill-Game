@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="StealMode works">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="fixed Move">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
     </list>
@@ -77,7 +77,7 @@
       <workItem from="1702895135661" duration="1000" />
       <workItem from="1703007149180" duration="198000" />
       <workItem from="1703242301260" duration="19452000" />
-      <workItem from="1703601119577" duration="1772000" />
+      <workItem from="1703601119577" duration="7474000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -135,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703601173758</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed Move">
+      <option name="closed" value="true" />
+      <created>1703610252270</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703610252270</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,18 +172,8 @@
     <MESSAGE value="Player State Move and Steel and Jump" />
     <MESSAGE value="Output of Board" />
     <MESSAGE value="StealMode works" />
-    <option name="LAST_COMMIT_MESSAGE" value="StealMode works" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Model/Model.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="fixed Move" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed Move" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

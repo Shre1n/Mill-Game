@@ -9,14 +9,13 @@ public class Model {
     private final char PLAYER_1 = '■';
     private final char PLAYER_2 = '□';
 
-    private int SETWhiteStones = 9;
-    private int SETBlackStones = 9;
+    private int SETWhiteStones = 4;
+    private int SETBlackStones = 4;
 
     private int boardWhite = 0;
     private int boardBlack = 0;
 
     private char[] board;
-    private final int indexCounter = 0;
 
     private PlayerTurn turn;
 
@@ -29,14 +28,18 @@ public class Model {
     public static void main(String[] args) {
         var game = new Model();
         game.newGame();
-        for (int i = 0; i < 18; i++) {
-            game.setPlayer(i);
-            System.out.println(game);
-        }
-        game.steal(2);
-        System.out.println(game);
-        game.move(16,23);
-
+        game.setPlayer(0);
+        game.setPlayer(16);
+        game.setPlayer(2);
+        game.setPlayer(3);
+        game.setPlayer(9);
+        game.setPlayer(5);
+        game.setPlayer(6);
+        game.setPlayer(19);
+        game.move(9,1);
+        game.steal(16);
+        game.move(5,11);
+        game.steal(6);
         System.out.println(game);
     }
 
@@ -63,86 +66,85 @@ public class Model {
         System.out.println("Game Start");
     }
 
-    public char getPlayerColor(int pos) {
-        return board[pos];
-    }
-
-    public char[] getBoard(){
-        return board;
-    }
-
-    private GameState playerState(int pos, PlayerTurn playerTurn) {
-        char player = (playerTurn == PlayerTurn.WHITE) ? PLAYER_1 : PLAYER_2;
-        if (player == PLAYER_1 && hasMuehle(pos, player) || player == PLAYER_2 && hasMuehle(pos, player)) return GameState.STEAL;
-        moveCount++;
-        return GameState.MOVE;
-    }
-
-    public boolean isEmptyField(int pos){
-        if (isValidFieldIndex(pos)){
-            if(board[pos] == EMPTY) return true;
+    public boolean isEmptyField(int pos) {
+        if (isValidFieldIndex(pos)) {
+            if (board[pos] == EMPTY) return true;
             throw new RuntimeException("Field is already taken. Please try again!");
-        }
-        else throw new IndexOutOfBoundsException("Valid Positions are [0 , 23]");
+        } else throw new IndexOutOfBoundsException("Valid Positions are [0 , 23]");
     }
 
     private char identifyPlayer() {
         return (turn == PlayerTurn.WHITE) ? PLAYER_1 : PLAYER_2;
     }
 
-    private void steal(int pos){
-        if (player1 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.WHITE){
-            if (board[pos] == PLAYER_2 && !hasMuehle(pos,PLAYER_2)) {
+    private void steal(int pos) {
+        if (board[pos] == EMPTY){
+            throw new RuntimeException("This field is Empty. This is not a Valid stone to steal. Try another one!");
+        }
+        if (player1 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.WHITE) {
+            if (board[pos] == PLAYER_2 && !hasMuehle(pos, PLAYER_2)) {
                 board[pos] = EMPTY;
                 boardBlack--;
                 turn = PlayerTurn.BLACK;
-                if (SETWhiteStones > 0){
+                if (SETWhiteStones > 0) {
                     player1 = GameState.SET;
-                } else if (boardWhite > 3){
+                } else if (boardWhite > 3) {
                     player1 = GameState.MOVE;
                 } else {
                     player1 = GameState.JUMP;
                 }
-            }
-        } else if (player2 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.BLACK){
-            if (board[pos] == PLAYER_1 && !hasMuehle(pos, PLAYER_1)) {
-                board[pos] = EMPTY;
-                boardWhite--;
-                turn = PlayerTurn.WHITE;
-                if (SETBlackStones > 0){
+                if (SETBlackStones > 0) {
                     player2 = GameState.SET;
-                } else if (boardWhite > 3){
+                } else if (boardBlack > 3) {
                     player2 = GameState.MOVE;
                 } else {
                     player2 = GameState.JUMP;
                 }
             }
+        } else if (player2 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.BLACK) {
+            if (board[pos] == PLAYER_1 && !hasMuehle(pos, PLAYER_1)) {
+                board[pos] = EMPTY;
+                boardWhite--;
+                turn = PlayerTurn.WHITE;
+                if (SETBlackStones > 0) {
+                    player2 = GameState.SET;
+                } else if (boardBlack > 3) {
+                    player2 = GameState.MOVE;
+                } else {
+                    player2 = GameState.JUMP;
+                }
+                if (SETWhiteStones > 0) {
+                    player1 = GameState.SET;
+                } else if (boardWhite > 3) {
+                    player1 = GameState.MOVE;
+                } else {
+                    player1 = GameState.JUMP;
+                }
+            }
         }
     }
 
-    public void setPlayer(int pos){
-        if (player1 == GameState.SET && isEmptyField(pos) && turn == PlayerTurn.WHITE){
+    public void setPlayer(int pos) {
+        if (player1 == GameState.SET && isEmptyField(pos) && turn == PlayerTurn.WHITE) {
             board[pos] = PLAYER_1;
             --SETWhiteStones;
             ++boardWhite;
             turn = PlayerTurn.BLACK;
-            if (hasMuehle(pos,PLAYER_1)){
+            if (hasMuehle(pos, PLAYER_1)) {
                 player1 = GameState.STEAL;
                 turn = PlayerTurn.WHITE;
-            }
-            else if (SETWhiteStones == 0){
+            } else if (SETWhiteStones == 0) {
                 player1 = GameState.MOVE;
             }
-        } else if (player2 == GameState.SET && isEmptyField(pos) && turn == PlayerTurn.BLACK){
+        } else if (player2 == GameState.SET && isEmptyField(pos) && turn == PlayerTurn.BLACK) {
             board[pos] = PLAYER_2;
             --SETBlackStones;
             ++boardBlack;
             turn = PlayerTurn.WHITE;
-            if (hasMuehle(pos,PLAYER_2)){
+            if (hasMuehle(pos, PLAYER_2)) {
                 player2 = GameState.STEAL;
                 turn = PlayerTurn.BLACK;
-            }
-            else if (SETBlackStones == 0) {
+            } else if (SETBlackStones == 0) {
                 player2 = GameState.MOVE;
             }
         } else {
@@ -150,23 +152,43 @@ public class Model {
         }
     }
 
+    private boolean isValidMove(int pos1, int pos2){
+        int temp = whichSquare(pos1);
+        if (pos1 % 2 == 0){
+            return ((pos1+1)%8) +temp == pos2 || ((pos1+7)%8) + temp == pos2;
+        }else {
+            if (temp == 8)
+                return ((pos1-1)%8) + temp == pos2 || ((pos1+1)%8) +temp == pos2 || ((pos1+8)%24) == pos2 || ((pos1+16))%24 == pos2;
+            else if (temp == 0)
+                return ((pos1-1)%8) + temp == pos2 || ((pos1+1)%8) +temp == pos2 || ((pos1+8)%24) == pos2;
+            else
+                return ((pos1-1)%8) + temp == pos2 || ((pos1+1)%8) +temp == pos2 || ((pos1+16))%24 == pos2;
+        }
+    }
 
     public void move(int pos1, int pos2) { // 16, 23
         if (!isGameOver()) {
-            if (isEmptyField(pos2) && player1 == GameState.MOVE && turn == PlayerTurn.WHITE) { // true
+            if (isEmptyField(pos2) && player1 != GameState.SET && turn == PlayerTurn.WHITE) {
+                if (player1 == GameState.MOVE){
+                    if (!isValidMove(pos1,pos2)) throw new RuntimeException("Move is not possible! Positions must be adjacent.");
+                }
+                if (board[pos1] != PLAYER_1) throw new RuntimeException("The choosen stone to move does not equal the current Player.");
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.BLACK;
-                if (hasMuehle(pos2,PLAYER_1)) {
+                if (hasMuehle(pos2, PLAYER_1)) {
                     player1 = GameState.STEAL;
                     turn = PlayerTurn.WHITE;
                 }
-            }
-            else if (isEmptyField(pos2) && player2 == GameState.MOVE && turn == PlayerTurn.BLACK) {
+            } else if (isEmptyField(pos2) && player2 != GameState.SET && turn == PlayerTurn.BLACK) {
+                if (player2 == GameState.MOVE){
+                    if (!isValidMove(pos1,pos2)) throw new RuntimeException("Move is not possible! Positions must be adjacent.");
+                }
+                if (board[pos1] != PLAYER_2) throw new RuntimeException("The choosen stone to move does not equal the current Player.");
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.WHITE;
-                if (hasMuehle(pos2,PLAYER_2)) {
+                if (hasMuehle(pos2, PLAYER_2)) {
                     player2 = GameState.STEAL;
                     turn = PlayerTurn.BLACK;
                 }
@@ -174,16 +196,16 @@ public class Model {
         }
     }
 
-    private boolean hasPlayer1Won(){
+    private boolean hasPlayer1Won() {
         return boardBlack == 2;
     }
 
-    private boolean hasPlayer2Won(){
+    private boolean hasPlayer2Won() {
         return boardWhite == 2;
     }
 
 
-    public boolean isGameOver(){
+    public boolean isGameOver() {
         return hasPlayer1Won() || hasPlayer2Won() || moveCount >= board.length;
     }
 
@@ -208,19 +230,19 @@ public class Model {
     }
 
     @Override
-    public String toString(){
-        String s =  board[0]+"                  "+board[1]+"                   "+board[2]+"\n";
-               s += "      "+board[8]+"            "+board[9]+"            "+board[10]+"\n";
-               s += "             "+board[16]+"     "+board[17]+"     "+board[18]+"\n";
-               s += board[7]+"     "+board[15]+"      "+board[23]+"           "+board[19]+"     "+board[11]+"      "+board[3]+"\n";
-               s += "             "+board[22]+"     "+board[21]+"     "+board[20]+"\n";
-               s += "      "+board[14]+"            "+board[13]+"            "+board[12]+"\n";
-               s += board[6]+"                  "+board[5]+"                   "+board[4];
-               s += "\n Next Players Turn: " + turn;
-               GameState statePlayer = (turn == PlayerTurn.WHITE ? player1 : player2);
-               s += "\n State of Player: " +  statePlayer;
-               s += "\n Available Stones Player 1: " + SETWhiteStones;
-               s += "\n Available Stones Player 2: " + SETBlackStones;
+    public String toString() {
+        String s = board[0] + "                  " + board[1] + "                   " + board[2] + "\n";
+        s += "      " + board[8] + "            " + board[9] + "            " + board[10] + "\n";
+        s += "             " + board[16] + "     " + board[17] + "     " + board[18] + "\n";
+        s += board[7] + "     " + board[15] + "      " + board[23] + "           " + board[19] + "     " + board[11] + "      " + board[3] + "\n";
+        s += "             " + board[22] + "     " + board[21] + "     " + board[20] + "\n";
+        s += "      " + board[14] + "            " + board[13] + "            " + board[12] + "\n";
+        s += board[6] + "                  " + board[5] + "                   " + board[4];
+        s += "\n Next Players Turn: " + turn;
+        GameState statePlayer = (turn == PlayerTurn.WHITE ? player1 : player2);
+        s += "\n State of Player: " + statePlayer;
+        s += "\n Available Stones Player 1: " + SETWhiteStones;
+        s += "\n Available Stones Player 2: " + SETBlackStones;
         return s;
     }
 
