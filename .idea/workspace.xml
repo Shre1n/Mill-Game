@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="graph implemented with remove and add Edge">
-      <change beforePath="$PROJECT_DIR$/.idea/pis_muehle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pis_muehle.iml" afterDir="false" />
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Output of Board">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Graph.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Model/Model.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +56,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -80,7 +76,7 @@
       <workItem from="1702373904805" duration="5713000" />
       <workItem from="1702895135661" duration="1000" />
       <workItem from="1703007149180" duration="198000" />
-      <workItem from="1703242301260" duration="3371000" />
+      <workItem from="1703242301260" duration="19452000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -106,7 +102,31 @@
       <option name="project" value="LOCAL" />
       <updated>1703007251673</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="PlayerTurn implemented. Test not finished">
+      <option name="closed" value="true" />
+      <created>1703245967381</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703245967381</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Player State Move and Steel and Jump">
+      <option name="closed" value="true" />
+      <created>1703593283873</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703593283873</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Output of Board">
+      <option name="closed" value="true" />
+      <created>1703596728225</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703596728225</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +147,13 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init" />
     <MESSAGE value="graph implemented with remove and add Edge" />
-    <option name="LAST_COMMIT_MESSAGE" value="graph implemented with remove and add Edge" />
+    <MESSAGE value="PlayerTurn implemented. Test not finished" />
+    <MESSAGE value="Player State Move and Steel and Jump" />
+    <MESSAGE value="Output of Board" />
+    <option name="LAST_COMMIT_MESSAGE" value="Output of Board" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

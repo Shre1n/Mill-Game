@@ -18,7 +18,7 @@ public class Model {
     private char[] board;
     private final int indexCounter = 0;
 
-    private final PlayerTurn turn;
+    private PlayerTurn turn;
 
     private GameState player1;
     private GameState player2;
@@ -29,8 +29,14 @@ public class Model {
     public static void main(String[] args) {
         var game = new Model();
         game.newGame();
-        System.out.println(game);
+        for (int i = 0; i < 18; i++) {
+            game.setPlayer(i);
+            System.out.println(game);
+        }
+        game.steal(2);
+        game.move(16,23);
 
+        System.out.println(game);
     }
 
     Model() {
@@ -52,6 +58,7 @@ public class Model {
         player1 = GameState.SET;
         player2 = GameState.SET;
         moveCount = 0;
+
         System.out.println("Game Start");
     }
 
@@ -71,52 +78,107 @@ public class Model {
     }
 
     public boolean isEmptyField(int pos){
-        if (isValidFieldIndex(pos)) return board[pos] == EMPTY;
+        if (isValidFieldIndex(pos)){
+            if(board[pos] == EMPTY) return true;
+            throw new RuntimeException("Field is already taken. Please try again!");
+        }
         else throw new IndexOutOfBoundsException("Valid Positions are [0 , 23]");
     }
 
-    private void steal(int pos){
-        if (player1 == GameState.STEAL && isValidFieldIndex(pos) || player2 == GameState.STEAL && isValidFieldIndex(pos)){
-            char player = (turn == PlayerTurn.WHITE) ? 'W' : 'B';
-            if (board[pos] != player && board[pos] != EMPTY && !hasMuehle(pos,player)) {
-                board[pos] = EMPTY;
+    private char identifyPlayer() {
+        return (turn == PlayerTurn.WHITE) ? PLAYER_1 : PLAYER_2;
+    }
 
+    private void steal(int pos){
+        if (player1 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.WHITE){
+            if (board[pos] == PLAYER_2 && !hasMuehle(pos,PLAYER_2)) {
+                board[pos] = EMPTY;
+                boardBlack--;
+                turn = PlayerTurn.BLACK;
+                if (SETWhiteStones > 0){
+                    player1 = GameState.SET;
+                } else if (boardWhite > 3){
+                    player1 = GameState.MOVE;
+                } else {
+                    player1 = GameState.JUMP;
+                }
+            }
+        } else if (player2 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.BLACK){
+            if (board[pos] == PLAYER_1 && !hasMuehle(pos, PLAYER_1)) {
+                board[pos] = EMPTY;
+                boardWhite--;
+                turn = PlayerTurn.WHITE;
+                if (SETBlackStones > 0){
+                    player2 = GameState.SET;
+                } else if (boardWhite > 3){
+                    player2 = GameState.MOVE;
+                } else {
+                    player2 = GameState.JUMP;
+                }
             }
         }
     }
 
-    public void setPLAYER(int pos){
-        if (player1 == GameState.SET && isEmptyField(pos)){
+    public void setPlayer(int pos){
+        if (player1 == GameState.SET && isEmptyField(pos) && turn == PlayerTurn.WHITE){
             board[pos] = PLAYER_1;
             --SETWhiteStones;
             ++boardWhite;
-            if (SETWhiteStones == 0) player1 = GameState.MOVE;
-        } else if (player2 == GameState.SET && isEmptyField(pos)){
+            turn = PlayerTurn.BLACK;
+            if (hasMuehle(pos,PLAYER_1)){
+                player1 = GameState.STEAL;
+                turn = PlayerTurn.WHITE;
+            }
+            else if (SETWhiteStones == 0){
+                player1 = GameState.MOVE;
+            }
+        } else if (player2 == GameState.SET && isEmptyField(pos) && turn == PlayerTurn.BLACK){
             board[pos] = PLAYER_2;
             --SETBlackStones;
             ++boardBlack;
-            if (SETBlackStones == 0) player2 = GameState.MOVE;
+            turn = PlayerTurn.WHITE;
+            if (hasMuehle(pos,PLAYER_2)){
+                player2 = GameState.STEAL;
+                turn = PlayerTurn.BLACK;
+            }
+            else if (SETBlackStones == 0) {
+                player2 = GameState.MOVE;
+            }
+        } else {
+            throw new RuntimeException("Gamestate of current Player is not SET. Please use the intended method!");
         }
     }
 
 
-    public void movePlayer(int pos) {
-        if (!isGameOver() && player1 == GameState.MOVE || !isGameOver() && player2 == GameState.MOVE) {
-            if (!isValidFieldIndex(pos)) {
-                throw new IndexOutOfBoundsException("This is not a valid Index!");
-            } else {
-                PlayerTurn playerTurn = (moveCount % 2 == 0) ? PlayerTurn.WHITE : PlayerTurn.BLACK;
-                playerState(pos, playerTurn);
+    public void move(int pos1, int pos2) {
+        if (!isGameOver()) {
+            if (isEmptyField(pos2) && player1 == GameState.MOVE) {
+                board[pos2] = board[pos1];
+                board[pos1] = EMPTY;
+                turn = PlayerTurn.BLACK;
+                if (hasMuehle(pos2,PLAYER_1)) {
+                    player1 = GameState.STEAL;
+                    turn = PlayerTurn.WHITE;
+                }
+            }
+            if (isEmptyField(pos2) && player2 == GameState.MOVE) {
+                board[pos2] = board[pos1];
+                board[pos1] = EMPTY;
+                turn = PlayerTurn.WHITE;
+                if (hasMuehle(pos2,PLAYER_2)) {
+                    player2 = GameState.STEAL;
+                    turn = PlayerTurn.BLACK;
+                }
             }
         }
     }
 
     private boolean hasPlayer1Won(){
-        return BlackStones == 2;
+        return boardBlack == 2;
     }
 
     private boolean hasPlayer2Won(){
-        return WhiteStones == 2;
+        return boardWhite == 2;
     }
 
 
@@ -128,7 +190,7 @@ public class Model {
         // Check for mühle in row, column
         int temp = whichSquare(pos);
         if (pos % 2 == 0) {
-            return board[((pos + 1) % 8) + temp] == player && board[((pos + 2) % 8) + temp] == player || board[((pos - 1) % 8) + temp] == player && board[((pos - 2) % 8) + temp] == player;
+            return board[((pos + 1) % 8) + temp] == player && board[((pos + 2) % 8) + temp] == player || board[((pos + 7) % 8) + temp] == player && board[((pos + 6) % 8) + temp] == player;
         } else {
             return board[(pos + 8) % 24] == player && board[(pos + 16) % 24] == player || board[((pos + 1) % 8) + temp] == player && board[((pos - 1) % 8) + temp] == player;
         }
