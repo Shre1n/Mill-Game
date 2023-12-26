@@ -9,21 +9,28 @@ public class Model {
     private final char PLAYER_1 = '■';
     private final char PLAYER_2 = '□';
 
-    private final int WhiteStones = 9;
-    private final int BlackStones = 9;
+    private int SETWhiteStones = 9;
+    private int SETBlackStones = 9;
+
+    private int boardWhite = 0;
+    private int boardBlack = 0;
 
     private char[] board;
     private final int indexCounter = 0;
 
     private final PlayerTurn turn;
 
-    private GameState gameState;
+    private GameState player1;
+    private GameState player2;
 
     private int moveCount;
 
 
     public static void main(String[] args) {
         var game = new Model();
+        game.newGame();
+        System.out.println(game);
+
     }
 
     Model() {
@@ -42,7 +49,10 @@ public class Model {
                 board[14], board[13], board[12],                                                //second row
                 board[6], board[5], board[4]                                         //first row
         };
+        player1 = GameState.SET;
+        player2 = GameState.SET;
         moveCount = 0;
+        System.out.println("Game Start");
     }
 
     public char getPlayerColor(int pos) {
@@ -54,12 +64,8 @@ public class Model {
     }
 
     private GameState playerState(int pos, PlayerTurn playerTurn) {
-        char player = (playerTurn == PlayerTurn.WHITE) ? 'W' : 'B';
-        if (player == 'W' && hasMuehle(pos, player) || player == 'B' && hasMuehle(pos, player)) return GameState.STEAL;
-        if (BlackStones == 3 || WhiteStones == 3 || (BlackStones == 3 && WhiteStones == 3)){
-            moveCount++;
-            return GameState.JUMP;
-        }
+        char player = (playerTurn == PlayerTurn.WHITE) ? PLAYER_1 : PLAYER_2;
+        if (player == PLAYER_1 && hasMuehle(pos, player) || player == PLAYER_2 && hasMuehle(pos, player)) return GameState.STEAL;
         moveCount++;
         return GameState.MOVE;
     }
@@ -70,17 +76,32 @@ public class Model {
     }
 
     private void steal(int pos){
-        if (gameState == GameState.STEAL && isValidFieldIndex(pos)){
+        if (player1 == GameState.STEAL && isValidFieldIndex(pos) || player2 == GameState.STEAL && isValidFieldIndex(pos)){
             char player = (turn == PlayerTurn.WHITE) ? 'W' : 'B';
-            if (board[pos] != player && board[pos] != EMPTY) {
+            if (board[pos] != player && board[pos] != EMPTY && !hasMuehle(pos,player)) {
+                board[pos] = EMPTY;
 
             }
         }
     }
 
+    public void setPLAYER(int pos){
+        if (player1 == GameState.SET && isEmptyField(pos)){
+            board[pos] = PLAYER_1;
+            --SETWhiteStones;
+            ++boardWhite;
+            if (SETWhiteStones == 0) player1 = GameState.MOVE;
+        } else if (player2 == GameState.SET && isEmptyField(pos)){
+            board[pos] = PLAYER_2;
+            --SETBlackStones;
+            ++boardBlack;
+            if (SETBlackStones == 0) player2 = GameState.MOVE;
+        }
+    }
+
 
     public void movePlayer(int pos) {
-        if (!isGameOver() && gameState == GameState.MOVE) {
+        if (!isGameOver() && player1 == GameState.MOVE || !isGameOver() && player2 == GameState.MOVE) {
             if (!isValidFieldIndex(pos)) {
                 throw new IndexOutOfBoundsException("This is not a valid Index!");
             } else {
@@ -91,11 +112,11 @@ public class Model {
     }
 
     private boolean hasPlayer1Won(){
-        return BlackStones == 0;
+        return BlackStones == 2;
     }
 
     private boolean hasPlayer2Won(){
-        return WhiteStones == 0;
+        return WhiteStones == 2;
     }
 
 
@@ -123,5 +144,21 @@ public class Model {
         return field >= 0 && field < board.length;
     }
 
+    @Override
+    public String toString(){
+        String s =  board[0]+"                  "+board[1]+"                   "+board[2]+"\n";
+               s += "      "+board[8]+"            "+board[9]+"            "+board[10]+"\n";
+               s += "             "+board[16]+"     "+board[17]+"     "+board[18]+"\n";
+               s += board[7]+"     "+board[15]+"     "+board[23]+"            "+board[19]+"     "+board[11]+"      "+board[3]+"\n";
+               s += "             "+board[22]+"     "+board[21]+"     "+board[20]+"\n";
+               s += "      "+board[14]+"            "+board[13]+"            "+board[12]+"\n";
+               s += board[6]+"                  "+board[5]+"                   "+board[4];
+               s += "\n Players Turn: " + turn;
+               GameState statePlayer = (turn == PlayerTurn.WHITE ? player1 : player2);
+               s += "\n State of Player: " +  statePlayer;
+               s += "\n Available Stones Player 1: " + SETWhiteStones;
+               s += "\n Available Stones Player 2: " + SETBlackStones;
+        return s;
+    }
 
 }
