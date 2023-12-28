@@ -82,7 +82,7 @@ public class Model {
             throw new RuntimeException("This field is Empty. This is not a Valid stone to steal. Try another one!");
         }
         if (player1 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.WHITE) {
-            if (board[pos] == PLAYER_2 && !hasMuehle(pos, PLAYER_2)) {
+            if (board[pos] == PLAYER_2 && !isMill(pos, PLAYER_2)) {
                 board[pos] = EMPTY;
                 boardBlack--;
                 turn = PlayerTurn.BLACK;
@@ -102,7 +102,7 @@ public class Model {
                 }
             }
         } else if (player2 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.BLACK) {
-            if (board[pos] == PLAYER_1 && !hasMuehle(pos, PLAYER_1)) {
+            if (board[pos] == PLAYER_1 && !isMill(pos, PLAYER_1)) {
                 board[pos] = EMPTY;
                 boardWhite--;
                 turn = PlayerTurn.WHITE;
@@ -130,7 +130,7 @@ public class Model {
             --SETWhiteStones;
             ++boardWhite;
             turn = PlayerTurn.BLACK;
-            if (hasMuehle(pos, PLAYER_1)) {
+            if (isMill(pos, PLAYER_1)) {
                 player1 = GameState.STEAL;
                 turn = PlayerTurn.WHITE;
             } else if (SETWhiteStones == 0) {
@@ -141,7 +141,7 @@ public class Model {
             --SETBlackStones;
             ++boardBlack;
             turn = PlayerTurn.WHITE;
-            if (hasMuehle(pos, PLAYER_2)) {
+            if (isMill(pos, PLAYER_2)) {
                 player2 = GameState.STEAL;
                 turn = PlayerTurn.BLACK;
             } else if (SETBlackStones == 0) {
@@ -178,7 +178,7 @@ public class Model {
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.BLACK;
-                if (hasMuehle(pos2, PLAYER_1)) {
+                if (isMill(pos2, PLAYER_1)) {
                     player1 = GameState.STEAL;
                     turn = PlayerTurn.WHITE;
                 }
@@ -192,7 +192,7 @@ public class Model {
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.WHITE;
-                if (hasMuehle(pos2, PLAYER_2)) {
+                if (isMill(pos2, PLAYER_2)) {
                     player2 = GameState.STEAL;
                     turn = PlayerTurn.BLACK;
                 }
@@ -212,7 +212,7 @@ public class Model {
         return hasPlayer1Won() || hasPlayer2Won();
     }
 
-    private boolean hasMuehle(int pos, char player) {
+    private boolean isMill(int pos, char player) {
         // Check for mühle in row, column
         int temp = whichSquare(pos);
         if (pos % 2 == 0) {
