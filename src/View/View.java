@@ -62,11 +62,11 @@ public class View extends PApplet implements IView {
     }
 
     private void loadImgPlayer1() {
-        loadImage("SETWhiteStone.png");
+        loadImage("WhiteStoneTransparent.png");
     }
 
     private void loadImgPlayer2() {
-        loadImage("SETBlackStone.png");
+        loadImage("BlackStoneTransparent.png");
     }
 
     /**
@@ -112,4 +112,15 @@ public class View extends PApplet implements IView {
 
     }
 
+
+    /**
+     * Send input from user in Controller to calculate Field and index of board
+     */
+    @Override
+    public void mousePressed() {
+        int x = mouseX;
+        int y = mouseY;
+        System.out.println("X: " + x + " Y: " + y);
+        controller.userInput(x,y);
+    }
 }

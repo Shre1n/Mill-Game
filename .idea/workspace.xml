@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="added Black &amp; White Stone images">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Turn displays in App Center">
+      <change afterPath="$PROJECT_DIR$/img/BlackStoneTransparent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/WhiteStoneTransparent.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/IView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -252,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703764675232</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Turn displays in App Center">
+      <option name="closed" value="true" />
+      <created>1703769941341</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1703769941341</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,16 +297,12 @@
     <MESSAGE value="changed visibility from SIZE in controller. Now available with getter" />
     <MESSAGE value="Draw win screen and size is now setter" />
     <MESSAGE value="added Black &amp; White Stone images" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Black &amp; White Stone images" />
+    <MESSAGE value="Turn displays in App Center" />
+    <option name="LAST_COMMIT_MESSAGE" value="Turn displays in App Center" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controller/Controller.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Model/Model.java</url>
           <line>229</line>

@@ -74,8 +74,26 @@ public class Controller implements IController{
      */
     @Override
     public void userInput(int x, int y) {
+        //int pos = calculatePosClicked(x,y);
 
     }
+
+    private void calculateClickablePositions(){
+
+    }
+
+
+    private int calculatePosClicked(){
+        int i = 0;
+        return i;
+    }
+
+
+
+    /**
+     *
+     * @return color of player
+     */
 
     public String playerTurn(){
         return millModel.getTurn();
