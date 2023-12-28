@@ -18,7 +18,7 @@ public class Controller implements IController{
     /**
      * Sets the size of the Application
      */
-    private final int SIZE = 1000;
+    private int size;
 
     private boolean gameBoardDrawn = false;
 
@@ -54,7 +54,7 @@ public class Controller implements IController{
         }
 
         if (!gameBoardDrawn){
-            view.drawGame();
+            view.drawField();
             gameBoardDrawn = true;
         }
 
@@ -72,8 +72,20 @@ public class Controller implements IController{
 
     }
 
+    /**
+     * Sets the Size for Application
+     * @param SIZE to change
+     */
+
+    public void setSize(int SIZE) {
+        this.size = SIZE;
+    }
+
+    /**
+     * @return the Size of Application
+     */
 
     public int getSIZE() {
-        return SIZE;
+        return size;
     }
 }

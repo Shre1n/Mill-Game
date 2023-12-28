@@ -22,6 +22,8 @@ public class Main {
         var controller = new Controller();
         var view = new View();
 
+        controller.setSize(1000);
+
         view.setController(controller);
         controller.setModel(model);
         controller.setView(view);

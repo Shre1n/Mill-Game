@@ -61,7 +61,9 @@ public class View extends PApplet implements IView {
      */
     @Override
     public void drawGG(String color) {
-
+        background(0);
+        textSize((float) controller.getSIZE() / 15);
+        text("Game Over! " + color + " has won!", (float) controller.getSIZE() / 10, (float) controller.getSIZE() / 2);
     }
 
     /**
@@ -90,7 +92,7 @@ public class View extends PApplet implements IView {
         line(one_hundred, (float) controller.getSIZE() / 2, one_hundred + shrinkSqaure, (float) controller.getSIZE() / 2); // left line
         line((float) controller.getSIZE() - one_hundred, (float) controller.getSIZE() / 2, one_hundred + (shrinkSqaure * 3), (float) controller.getSIZE() / 2); //right line
         line((float) controller.getSIZE() / 2, one_hundred, (float) controller.getSIZE() / 2, one_hundred + shrinkSqaure); //upper line
-        line((float) controller.getSIZE() / 2, controller.getSIZE() - one_hundred, (float) controller.getSIZE() / 2, one_hundred+(shrinkSqaure*3));
+        line((float) controller.getSIZE() / 2, controller.getSIZE() - one_hundred, (float) controller.getSIZE() / 2, one_hundred + (shrinkSqaure * 3));
 
 
     }
