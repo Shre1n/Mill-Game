@@ -9,8 +9,8 @@ public class Model {
     private final char PLAYER_1 = '■';
     private final char PLAYER_2 = '□';
 
-    private int SETWhiteStones = 4;
-    private int SETBlackStones = 4;
+    private int SETWhiteStones = 9;
+    private int SETBlackStones = 9;
 
     private int boardWhite = 0;
     private int boardBlack = 0;
@@ -19,6 +19,7 @@ public class Model {
 
     private PlayerTurn turn;
 
+    private GameState statePlayer;
     private GameState player1;
     private GameState player2;
 
@@ -230,6 +231,10 @@ public class Model {
         return turn.toString();
     }
 
+    public GameState getStatePlayer() {
+        return statePlayer;
+    }
+
     public GameState getPlayer1() {
         return player1;
     }
@@ -237,6 +242,8 @@ public class Model {
     public GameState getPlayer2() {
         return player2;
     }
+
+
 
     @Override
     public String toString() {
@@ -249,7 +256,7 @@ public class Model {
             s += "      " + board[14] + "            " + board[13] + "            " + board[12] + "\n";
             s += board[6] + "                  " + board[5] + "                   " + board[4];
             s += "\n Next Players Turn: " + turn;
-            GameState statePlayer = (turn == PlayerTurn.WHITE ? player1 : player2);
+            statePlayer = (turn == PlayerTurn.WHITE ? player1 : player2);
             s += "\n State of Player: " + statePlayer;
             s += "\n Available Stones Player 1: " + SETWhiteStones;
             s += "\n Available Stones Player 2: " + SETBlackStones;

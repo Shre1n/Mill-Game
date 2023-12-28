@@ -57,7 +57,7 @@ public class View extends PApplet implements IView {
     public void writeTurn() {
         fill(0);
         textSize((float) controller.getSIZE() / 20);
-        textAlign(CENTER,BOTTOM);
+        textAlign(CENTER,CENTER);
         text("Turn: " + controller.playerTurn(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
     }
 
@@ -91,23 +91,22 @@ public class View extends PApplet implements IView {
         strokeWeight((float) controller.getSIZE() / 100);
 
         // Calculate square parameters
-        float one_hundred = (float) controller.getSIZE() / 10;
+        float start = (float) controller.getSIZE() / 10;
         // shrink squares for squares in square
         float shrinkSqaure = 200;
 
         // Define Squares with params
         // for better understanding -- foreach square as inner square multiply shrink value by the number of this inner square
         // e.g. square 1 is outta square, next is square inner outta square then multiply by 2. That shifts the x and y-Axis of this square.
-        square(one_hundred, one_hundred, controller.getSIZE() - shrinkSqaure);
-        square(one_hundred + one_hundred, one_hundred + one_hundred, controller.getSIZE() - (shrinkSqaure * 2));
-        square(one_hundred + shrinkSqaure, one_hundred + shrinkSqaure, controller.getSIZE() - (shrinkSqaure * 3));
+        square(start, start, controller.getSIZE() - shrinkSqaure);
+        square(start + start, start + start, controller.getSIZE() - (shrinkSqaure * 2));
+        square(start + shrinkSqaure, start + shrinkSqaure, controller.getSIZE() - (shrinkSqaure * 3));
 
         //Define Lines with params
-
-        line(one_hundred, (float) controller.getSIZE() / 2, one_hundred + shrinkSqaure, (float) controller.getSIZE() / 2); // left line
-        line((float) controller.getSIZE() - one_hundred, (float) controller.getSIZE() / 2, one_hundred + (shrinkSqaure * 3), (float) controller.getSIZE() / 2); //right line
-        line((float) controller.getSIZE() / 2, one_hundred, (float) controller.getSIZE() / 2, one_hundred + shrinkSqaure); //upper line
-        line((float) controller.getSIZE() / 2, controller.getSIZE() - one_hundred, (float) controller.getSIZE() / 2, one_hundred + (shrinkSqaure * 3));
+        line(start, (float) controller.getSIZE() / 2, start + shrinkSqaure, (float) controller.getSIZE() / 2); // left line
+        line((float) controller.getSIZE() - start, (float) controller.getSIZE() / 2, start + (shrinkSqaure * 3), (float) controller.getSIZE() / 2); //right line
+        line((float) controller.getSIZE() / 2, start, (float) controller.getSIZE() / 2, start + shrinkSqaure); //upper line
+        line((float) controller.getSIZE() / 2, controller.getSIZE() - start, (float) controller.getSIZE() / 2, start + (shrinkSqaure * 3));
 
 
     }
@@ -120,7 +119,6 @@ public class View extends PApplet implements IView {
     public void mousePressed() {
         int x = mouseX;
         int y = mouseY;
-        System.out.println("X: " + x + " Y: " + y);
         controller.userInput(x,y);
     }
 }
