@@ -18,7 +18,9 @@ public class Controller implements IController{
     /**
      * Sets the size of the Application
      */
-    public final int SIZE = 1000;
+    private final int SIZE = 1000;
+
+    private boolean gameBoardDrawn = false;
 
 
     /**
@@ -46,6 +48,15 @@ public class Controller implements IController{
      */
     @Override
     public void nextFrame() {
+        if (millModel.isGameOver()){
+            if (millModel.hasPlayer1Won()) view.drawGG("White");
+            else view.drawGG("Black");
+        }
+
+        if (!gameBoardDrawn){
+            view.drawGame();
+            gameBoardDrawn = true;
+        }
 
     }
 
@@ -59,5 +70,10 @@ public class Controller implements IController{
     @Override
     public void userInput(int x, int y) {
 
+    }
+
+
+    public int getSIZE() {
+        return SIZE;
     }
 }

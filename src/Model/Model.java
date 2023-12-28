@@ -200,11 +200,11 @@ public class Model {
         } else throw new RuntimeException("Game is already over! :( ");
     }
 
-    private boolean hasPlayer1Won() {
+    public boolean hasPlayer1Won() {
         return boardBlack == 2;
     }
 
-    private boolean hasPlayer2Won() {
+    public boolean hasPlayer2Won() {
         return boardWhite == 2;
     }
 

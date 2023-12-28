@@ -31,7 +31,7 @@ public class View extends PApplet implements IView {
      */
     @Override
     public void settings() {
-        size(controller.SIZE, controller.SIZE);
+        size(controller.getSIZE(), controller.getSIZE());
     }
 
     /**
@@ -57,10 +57,10 @@ public class View extends PApplet implements IView {
     /**
      * {@inheritDoc}
      *
-     * @param number
+     * @param color
      */
     @Override
-    public void drawGG(int number) {
+    public void drawGG(String color) {
 
     }
 
@@ -71,26 +71,26 @@ public class View extends PApplet implements IView {
     @Override
     public void drawField() {
         // Thickness of Squares
-        strokeWeight((float) controller.SIZE / 100);
+        strokeWeight((float) controller.getSIZE() / 100);
 
         // Calculate square parameters
-        float one_hundred = (float) controller.SIZE / 10;
+        float one_hundred = (float) controller.getSIZE() / 10;
         // shrink squares for squares in square
         float shrinkSqaure = 200;
 
         // Define Squares with params
         // for better understanding -- foreach square as inner square multiply shrink value by the number of this inner square
         // e.g. square 1 is outta square, next is square inner outta square then multiply by 2. That shifts the x and y-Axis of this square.
-        square(one_hundred, one_hundred, controller.SIZE - shrinkSqaure);
-        square(one_hundred + one_hundred, one_hundred + one_hundred, controller.SIZE - (shrinkSqaure * 2));
-        square(one_hundred + shrinkSqaure, one_hundred + shrinkSqaure, controller.SIZE - (shrinkSqaure * 3));
+        square(one_hundred, one_hundred, controller.getSIZE() - shrinkSqaure);
+        square(one_hundred + one_hundred, one_hundred + one_hundred, controller.getSIZE() - (shrinkSqaure * 2));
+        square(one_hundred + shrinkSqaure, one_hundred + shrinkSqaure, controller.getSIZE() - (shrinkSqaure * 3));
 
         //Define Lines with params
 
-        line(one_hundred, (float) controller.SIZE / 2, one_hundred + shrinkSqaure, (float) controller.SIZE / 2); // left line
-        line((float) controller.SIZE - one_hundred, (float) controller.SIZE / 2, one_hundred + (shrinkSqaure * 3), (float) controller.SIZE / 2); //right line
-        line((float) controller.SIZE / 2, one_hundred, (float) controller.SIZE / 2, one_hundred + shrinkSqaure); //upper line
-        line((float) controller.SIZE / 2, controller.SIZE - one_hundred, (float) controller.SIZE / 2, one_hundred+(shrinkSqaure*3));
+        line(one_hundred, (float) controller.getSIZE() / 2, one_hundred + shrinkSqaure, (float) controller.getSIZE() / 2); // left line
+        line((float) controller.getSIZE() - one_hundred, (float) controller.getSIZE() / 2, one_hundred + (shrinkSqaure * 3), (float) controller.getSIZE() / 2); //right line
+        line((float) controller.getSIZE() / 2, one_hundred, (float) controller.getSIZE() / 2, one_hundred + shrinkSqaure); //upper line
+        line((float) controller.getSIZE() / 2, controller.getSIZE() - one_hundred, (float) controller.getSIZE() / 2, one_hundred+(shrinkSqaure*3));
 
 
     }
