@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.Model;
+import Model.*;
 import View.IView;
 
 public class Controller implements IController{
@@ -9,6 +9,8 @@ public class Controller implements IController{
      * Declare Model for knowledge of Controller
      */
     private Model millModel;
+
+    private Player player;
 
     /**
      * Blueprint of view
@@ -58,6 +60,9 @@ public class Controller implements IController{
             gameBoardDrawn = true;
         }
 
+        if (millModel.getTurn().equals("White")) view.writeTurn();
+        else view.writeTurn();
+
     }
 
 
@@ -70,6 +75,10 @@ public class Controller implements IController{
     @Override
     public void userInput(int x, int y) {
 
+    }
+
+    public String playerTurn(){
+        return millModel.getTurn();
     }
 
     /**
@@ -87,5 +96,14 @@ public class Controller implements IController{
 
     public int getSIZE() {
         return size;
+    }
+
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 }

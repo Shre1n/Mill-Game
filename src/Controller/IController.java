@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.PlayerTurn;
+
 /**
  * Blueprint for Controller with given methods
  */
@@ -21,4 +23,6 @@ public interface IController{
      */
 
     void userInput(int x, int y);
+
+    String playerTurn();
 }

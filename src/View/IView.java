@@ -9,9 +9,13 @@ public interface IView {
 
     /**
      * Draws the GameOver screen with the winning player
-     * @param number
+     * @param color
      */
     void drawGG(String color);
+
+
+    void writeTurn();
+
 
 
     /**

@@ -24,23 +24,6 @@ public class Model {
 
     public static void main(String[] args) {
         var game = new Model();
-        game.newGame();
-        game.setPlayer(0);
-        game.setPlayer(16);
-        game.setPlayer(2);
-        game.setPlayer(3);
-        game.setPlayer(9);
-        game.setPlayer(5);
-        game.setPlayer(6);
-        game.setPlayer(19);
-        game.move(9, 1);
-        game.steal(16);
-        game.move(5, 11);
-        game.steal(6);
-        game.move(0, 7);
-        game.move(3, 4);
-        game.move(7, 0);
-        game.steal(4);
         System.out.println(game);
     }
 
@@ -71,10 +54,6 @@ public class Model {
             if (board[pos] == EMPTY) return true;
             throw new RuntimeException("Field is already taken. Please try again!");
         } else throw new IndexOutOfBoundsException("Valid Positions are [0 , 23]");
-    }
-
-    private char identifyPlayer() {
-        return (turn == PlayerTurn.WHITE) ? PLAYER_1 : PLAYER_2;
     }
 
     private void steal(int pos) {
@@ -229,6 +208,34 @@ public class Model {
     private boolean isValidFieldIndex(int field) {
         //Check for valid Filed index
         return field >= 0 && field < board.length;
+    }
+
+    public int getSETWhiteStones() {
+        return SETWhiteStones;
+    }
+
+    public int getSETBlackStones() {
+        return SETBlackStones;
+    }
+
+    public int getBoardWhite() {
+        return boardWhite;
+    }
+
+    public int getBoardBlack() {
+        return boardBlack;
+    }
+
+    public String getTurn() {
+        return turn.toString();
+    }
+
+    public GameState getPlayer1() {
+        return player1;
+    }
+
+    public GameState getPlayer2() {
+        return player2;
     }
 
     @Override

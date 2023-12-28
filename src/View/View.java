@@ -1,5 +1,6 @@
 package View;
 
+import Model.PlayerTurn;
 import processing.core.PApplet;
 import Controller.Controller;
 
@@ -40,7 +41,8 @@ public class View extends PApplet implements IView {
      */
     @Override
     public void setup() {
-
+        if (controller.playerTurn().equals("White")) loadImgPlayer1();
+        else loadImgPlayer2();
     }
 
     /**
@@ -49,10 +51,23 @@ public class View extends PApplet implements IView {
      */
     @Override
     public void draw() {
-        background(255);
-        drawField();
+        controller.nextFrame();
     }
 
+    public void writeTurn() {
+        fill(0);
+        textSize((float) controller.getSIZE() / 20);
+        textAlign(CENTER,BOTTOM);
+        text("Turn: " + controller.playerTurn(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+    }
+
+    private void loadImgPlayer1() {
+        loadImage("SETWhiteStone.png");
+    }
+
+    private void loadImgPlayer2() {
+        loadImage("SETBlackStone.png");
+    }
 
     /**
      * {@inheritDoc}
