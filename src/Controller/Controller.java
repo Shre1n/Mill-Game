@@ -1,7 +1,22 @@
+/**
+ * @author Robin Hahn
+ * @version 1.0
+ * @since 2023-12-12
+ * All necessary Classes and Interfaces of Controller usage.
+ * This package is likely known as 'Middleware' between Model and View.
+ *
+ */
+
 package Controller;
 
 import Model.*;
 import View.IView;
+
+/**
+ * Controller has knowledge of Model and View.
+ * Methods and Variables should only be referenced by the Model.
+ * Accessibility is given by Mill Model. Variables and Methods should only be referenced or called by Value.
+ */
 
 public class Controller implements IController {
 
@@ -70,6 +85,8 @@ public class Controller implements IController {
         }
 
 
+
+
     }
 
     public GameState getPlayer1() {
@@ -80,24 +97,7 @@ public class Controller implements IController {
         return millModel.getPlayer2();
     }
 
-    public void getBoardEntry(){
-        char[] a = millModel.getBoard();
-
-        for (int i = 0; i < a.length; i++) {
-            if (millModel.getBoard()[i] == millModel.getPLAYER_1()){
-                view.writeTurn();
-                view.loadImgPlayer1();
-            }
-            else if (millModel.getBoard()[i] == millModel.getPLAYER_2()) {
-                view.loadImgPlayer2();
-            }
-            else if (millModel.getBoard()[i] == millModel.getEMPTY()){
-                view.drawField();
-                view.writeTurn();
-            }
-        }
-
-    }
+    public void getBoardEntry(){}
 
 
     /**
@@ -110,7 +110,21 @@ public class Controller implements IController {
     @Override
     public void userInput(int x, int y) {
         int posClicked = calculatePosClicked(x, y);
-        millModel.setPlayer(posClicked);
+        System.out.println(millModel.toString());
+        if(millModel.getTurn().equals("WHITE")){
+            if(millModel.getPlayer1() == GameState.SET) millModel.setPlayer(posClicked);
+            if(millModel.getPlayer1() == GameState.STEAL && millModel.getBoard()[posClicked]  == millModel.getPLAYER_2()){
+                millModel.steal(posClicked);
+                System.out.println(millModel.toString());
+                view.removeStone();
+            }
+        } else{
+            if(millModel.getPlayer2() == GameState.SET) millModel.setPlayer(posClicked);
+            if(millModel.getPlayer2() == GameState.STEAL && posClicked == millModel.getPLAYER_1()){
+                millModel.steal(posClicked);
+                view.removeStone();
+            }
+        }
     }
 
 

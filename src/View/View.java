@@ -1,3 +1,9 @@
+/**
+ *  @author Robin Hahn
+ *  @version 1.0
+ *  @since 2023-12-12
+ */
+
 package View;
 
 import processing.core.PApplet;
@@ -177,12 +183,16 @@ public class View extends PApplet implements IView {
     public void mousePressed() {
         this.x = mouseX;
         this.y = mouseY;
+        // thats why white is placed above steal stone
         if (controller.playerTurn().equals("WHITE")) loadImgPlayer1();
         else loadImgPlayer2();
         controller.userInput(this.getX(),this.getY());
         redraw();
     }
 
+    public void removeStone(){
+
+    }
 
 
     @Override

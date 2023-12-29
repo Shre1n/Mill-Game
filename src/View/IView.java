@@ -24,6 +24,7 @@ public interface IView {
     public void loadImgPlayer2();
 
     public void writeTurn();
+    public void removeStone();
 
     public int getX();
 
