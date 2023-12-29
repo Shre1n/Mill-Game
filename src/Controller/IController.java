@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.GameState;
 import Model.PlayerTurn;
 
 /**
@@ -25,4 +26,6 @@ public interface IController{
     void userInput(int x, int y);
 
     String playerTurn();
+
+    GameState getPlayer1();
 }

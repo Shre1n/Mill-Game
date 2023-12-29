@@ -13,16 +13,21 @@ public interface IView {
      */
     void drawGG(String color);
 
-
-    void writeTurn();
-
-
-
     /**
      * Draw game field with lines
      */
 
     void drawField();
+
+    public void loadImgPlayer1();
+
+    public void loadImgPlayer2();
+
+    public void writeTurn();
+
+    public int getX();
+
+    public int getY();
 
 
 

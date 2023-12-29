@@ -18,8 +18,6 @@ public class Model {
     private char[] board;
 
     private PlayerTurn turn;
-
-    private GameState statePlayer;
     private GameState player1;
     private GameState player2;
 
@@ -227,12 +225,9 @@ public class Model {
         return boardBlack;
     }
 
+
     public String getTurn() {
         return turn.toString();
-    }
-
-    public GameState getStatePlayer() {
-        return statePlayer;
     }
 
     public GameState getPlayer1() {
@@ -256,7 +251,7 @@ public class Model {
             s += "      " + board[14] + "            " + board[13] + "            " + board[12] + "\n";
             s += board[6] + "                  " + board[5] + "                   " + board[4];
             s += "\n Next Players Turn: " + turn;
-            statePlayer = (turn == PlayerTurn.WHITE ? player1 : player2);
+            GameState statePlayer = (turn == PlayerTurn.WHITE ? player1 : player2);
             s += "\n State of Player: " + statePlayer;
             s += "\n Available Stones Player 1: " + SETWhiteStones;
             s += "\n Available Stones Player 2: " + SETBlackStones;

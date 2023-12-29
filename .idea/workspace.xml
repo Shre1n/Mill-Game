@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Player images Added">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="calculate Position player input i hope">
+      <change afterPath="$PROJECT_DIR$/img/BlackStone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/WhiteStone.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/BlackStoneTransparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/BlackStoneTransparent.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/BlackStoneTransparent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/WhiteStoneTransparent.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/IView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703773342247</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="calculate Position player input i hope">
+      <option name="closed" value="true" />
+      <created>1703788075251</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1703788075251</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +320,33 @@
     <MESSAGE value="added Black &amp; White Stone images" />
     <MESSAGE value="Turn displays in App Center" />
     <MESSAGE value="Player images Added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Player images Added" />
+    <MESSAGE value="calculate Position player input i hope" />
+    <option name="LAST_COMMIT_MESSAGE" value="calculate Position player input i hope" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Controller/Controller.java</url>
+          <line>89</line>
+          <properties class="Controller.Controller" method="calculatePosClicked">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/Controller.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Controller/Controller.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

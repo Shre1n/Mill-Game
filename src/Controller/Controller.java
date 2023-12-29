@@ -58,13 +58,17 @@ public class Controller implements IController {
         }
 
         if (!gameBoardDrawn) {
+            millModel.newGame();
             view.drawField();
+            view.writeTurn();
             gameBoardDrawn = true;
         }
 
-        if (millModel.getTurn().equals("White")) view.writeTurn();
-        else view.writeTurn();
 
+    }
+
+    public GameState getPlayer1(){
+        return millModel.getPlayer1();
     }
 
 
@@ -77,36 +81,26 @@ public class Controller implements IController {
      */
     @Override
     public void userInput(int x, int y) {
-//        int pos = calculatePosClicked(x, y);
-//
-//        System.out.println(calculatePosClicked(x, y));
-//        if (pos != -1 && millModel.isEmptyField(pos) && millModel.getStatePlayer() == GameState.SET) {
-//            millModel.setPlayer(pos); // set players png to pos
-//        }
-//
-//        if (millModel.getStatePlayer() != GameState.SET) {
-//            millModel.move(); // drag png to new pos
-//        }
-//
-//        if (moveBlack == 2) view.drawGG("White");
-//        if (moveWhite == 2) view.drawGG("Black");
-
-
+        int posClicked = calculatePosClicked(x,y);
+        millModel.setPlayer(posClicked);
     }
 
 
     private int calculatePosClicked(int x, int y) {
 
+        x = view.getX();
+        y = view.getY();
+
         // Calculate square parameters
         float start = (float) this.getSIZE() / 10;
         //Gap is 10 by default -- currently depends on size
-        float gap = (float) this.getSIZE() / 100;
+        float gap = 10;
 
-        if ((x >= start - gap || x <= start + gap) && (y >= start - gap || y <= start + gap))
+        if ((x >= start - gap && x <= start + gap) && (y >= start - gap && y <= start + gap))
             return 0;
-        if ((x >= ((start / 2) + ((float) this.getSIZE() - start) / 2) - gap || x <= ((start / 2) + ((float) this.getSIZE() - start) / 2) + gap) && (y >= start - gap || y <= start + gap))
+        if ((x >= ((start / 2) + ((float) this.getSIZE() - start) / 2) - gap && x <= ((start / 2) + ((float) this.getSIZE() - start) / 2) + gap) && (y >= start - gap && y <= start + gap))
             return 1;
-        if ((x >= (this.getSIZE() - start) - gap || x <= (this.getSIZE() - start) + gap) && (y >= start - gap || y <= start + gap))
+        if ((x >= (this.getSIZE() - start) - gap && x <= (this.getSIZE() - start) + gap) && (y >= start - gap && y <= start + gap))
             return 2;
         if ((x >= ((start / 2) + (this.getSIZE() - start) / 2) - gap || x <= ((start / 2 + this.getSIZE() - start) / 2) + gap) && (y >= (this.getSIZE() / 2) - gap || y <= (this.getSIZE() / 2) + gap))
             return 3;
@@ -182,12 +176,4 @@ public class Controller implements IController {
         return size;
     }
 
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
 }

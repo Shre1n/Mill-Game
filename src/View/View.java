@@ -1,8 +1,8 @@
 package View;
 
-import Model.PlayerTurn;
 import processing.core.PApplet;
 import Controller.Controller;
+import processing.core.PImage;
 
 /**
  * Visualize the Application and draw game
@@ -21,6 +21,13 @@ public class View extends PApplet implements IView {
      *
      * @param controller sets Controller of Application
      */
+
+
+    private int x;
+    private int y;
+
+    private PImage player1;
+    private PImage player2;
     public void setController(Controller controller) {
         this.controller = controller;
     }
@@ -41,8 +48,8 @@ public class View extends PApplet implements IView {
      */
     @Override
     public void setup() {
-        if (controller.playerTurn().equals("White")) loadImgPlayer1();
-        else loadImgPlayer2();
+        player1 = loadImage("WhiteStone.png");
+        player2 = loadImage("BlackStone.png");
     }
 
     /**
@@ -59,14 +66,17 @@ public class View extends PApplet implements IView {
         textSize((float) controller.getSIZE() / 20);
         textAlign(CENTER,CENTER);
         text("Turn: " + controller.playerTurn(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+        textSize((float) controller.getSIZE() /20);
+        textAlign(CENTER,TOP);
+        text("Current player state: " + controller.getPlayer1(), (float) controller.getSIZE() /2,20);
     }
 
-    private void loadImgPlayer1() {
-        loadImage("WhiteStoneTransparent.png");
+    public void loadImgPlayer1() {
+        image(player1,this.getX()-50,this.getY()-50,100,100);
     }
 
-    private void loadImgPlayer2() {
-        loadImage("BlackStoneTransparent.png");
+    public void loadImgPlayer2() {
+       image(player2,this.getX()-50,this.getY()-50,100,100);
     }
 
     /**
@@ -108,7 +118,6 @@ public class View extends PApplet implements IView {
         line((float) controller.getSIZE() / 2, start, (float) controller.getSIZE() / 2, start + shrinkSqaure); //upper line
         line((float) controller.getSIZE() / 2, controller.getSIZE() - start, (float) controller.getSIZE() / 2, start + (shrinkSqaure * 3));
 
-
     }
 
 
@@ -117,8 +126,27 @@ public class View extends PApplet implements IView {
      */
     @Override
     public void mousePressed() {
-        int x = mouseX;
-        int y = mouseY;
-        controller.userInput(x,y);
+        this.x = mouseX;
+        this.y = mouseY;
+        if (controller.playerTurn().equals("WHITE")) loadImgPlayer1();
+        else loadImgPlayer2();
+        System.out.println("X: " + this.getX() + " Y: " + this.getY());
+        controller.userInput(this.getX(),this.getY());
+
+    }
+
+
+
+    @Override
+    public void keyPressed() {
+        if (key == ' ')controller.nextFrame();
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 }
