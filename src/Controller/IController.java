@@ -28,4 +28,7 @@ public interface IController{
     String playerTurn();
 
     GameState getPlayer1();
+    GameState getPlayer2();
+
+    void getBoardEntry();
 }

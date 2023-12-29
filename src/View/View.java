@@ -16,18 +16,33 @@ public class View extends PApplet implements IView {
      */
     private Controller controller;
 
+
+    /**
+     * Declare x-axis of input via mousePressed
+     */
+    private int x;
+
+    /**
+     * Declare y-axis of input via mousePressed
+     */
+    private int y;
+
+    /**
+     * Image storage of player White
+     */
+    private PImage player1;
+
+    /**
+     * Image storage of player Black
+     */
+    private PImage player2;
+
+
     /**
      * Setting the Controller of View
      *
      * @param controller sets Controller of Application
      */
-
-
-    private int x;
-    private int y;
-
-    private PImage player1;
-    private PImage player2;
     public void setController(Controller controller) {
         this.controller = controller;
     }
@@ -61,19 +76,50 @@ public class View extends PApplet implements IView {
         controller.nextFrame();
     }
 
+    /**
+     * User information about current player and their state
+     */
+
     public void writeTurn() {
-        fill(0);
-        textSize((float) controller.getSIZE() / 20);
-        textAlign(CENTER,CENTER);
-        text("Turn: " + controller.playerTurn(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
-        textSize((float) controller.getSIZE() /20);
-        textAlign(CENTER,TOP);
-        text("Current player state: " + controller.getPlayer1(), (float) controller.getSIZE() /2,20);
+        //to fix with calculation
+        update(350, 350, 300, 300);
     }
+
+    /**
+     * update information with rectangle draw
+     * @param x1 start x-axis of rectangle
+     * @param y1 start y-axis of rectangle
+     * @param x2 end x-axis of rectangle
+     * @param y2 end y-axis of rectangle
+     */
+
+    private void update(int x1, int y1, int x2,int y2){
+        fill(255);
+        noStroke();
+        rect(x1,y1,x2,y2);
+
+        fill(0);
+        textAlign(CENTER,CENTER);
+        textSize((float) controller.getSIZE() /20);
+        if (controller.playerTurn().equals("WHITE")) {
+            text(controller.playerTurn() + " : " + controller.getPlayer1(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+        } else {
+            text(controller.playerTurn() + " : " + controller.getPlayer2(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+        }
+
+    }
+
+    /**
+     * load white player image at pressed x and y value
+     */
 
     public void loadImgPlayer1() {
         image(player1,this.getX()-50,this.getY()-50,100,100);
     }
+
+    /**
+     * load black player image at pressed x and y value
+     */
 
     public void loadImgPlayer2() {
        image(player2,this.getX()-50,this.getY()-50,100,100);
@@ -82,7 +128,7 @@ public class View extends PApplet implements IView {
     /**
      * {@inheritDoc}
      *
-     * @param color
+     * @param color to identify the winner
      */
     @Override
     public void drawGG(String color) {
@@ -97,8 +143,11 @@ public class View extends PApplet implements IView {
      */
     @Override
     public void drawField() {
+        background(255);
+        noFill();
         // Thickness of Squares
         strokeWeight((float) controller.getSIZE() / 100);
+
 
         // Calculate square parameters
         float start = (float) controller.getSIZE() / 10;
@@ -130,9 +179,8 @@ public class View extends PApplet implements IView {
         this.y = mouseY;
         if (controller.playerTurn().equals("WHITE")) loadImgPlayer1();
         else loadImgPlayer2();
-        System.out.println("X: " + this.getX() + " Y: " + this.getY());
         controller.userInput(this.getX(),this.getY());
-
+        redraw();
     }
 
 
@@ -142,9 +190,19 @@ public class View extends PApplet implements IView {
         if (key == ' ')controller.nextFrame();
     }
 
+
+    /**
+     * Handle given x-axis position given from input
+     * @return pressed X
+     */
     public int getX() {
         return x;
     }
+
+    /**
+     * Handle given y-axis position given from input
+     * @return pressed Y
+     */
 
     public int getY() {
         return y;

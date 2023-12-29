@@ -22,6 +22,8 @@ public class Controller implements IController {
      */
     private int size;
 
+    private GameState status;
+
     private boolean gameBoardDrawn = false;
 
 
@@ -63,12 +65,38 @@ public class Controller implements IController {
             view.writeTurn();
             gameBoardDrawn = true;
         }
+        else{
+            view.writeTurn();
+        }
 
 
     }
 
-    public GameState getPlayer1(){
+    public GameState getPlayer1() {
         return millModel.getPlayer1();
+    }
+
+    public GameState getPlayer2(){
+        return millModel.getPlayer2();
+    }
+
+    public void getBoardEntry(){
+        char[] a = millModel.getBoard();
+
+        for (int i = 0; i < a.length; i++) {
+            if (millModel.getBoard()[i] == millModel.getPLAYER_1()){
+                view.writeTurn();
+                view.loadImgPlayer1();
+            }
+            else if (millModel.getBoard()[i] == millModel.getPLAYER_2()) {
+                view.loadImgPlayer2();
+            }
+            else if (millModel.getBoard()[i] == millModel.getEMPTY()){
+                view.drawField();
+                view.writeTurn();
+            }
+        }
+
     }
 
 
@@ -81,7 +109,7 @@ public class Controller implements IController {
      */
     @Override
     public void userInput(int x, int y) {
-        int posClicked = calculatePosClicked(x,y);
+        int posClicked = calculatePosClicked(x, y);
         millModel.setPlayer(posClicked);
     }
 
@@ -94,7 +122,7 @@ public class Controller implements IController {
         // Calculate square parameters
         float start = (float) this.getSIZE() / 10;
         //Gap is 10 by default -- currently depends on size / start value
-        float gap = start/10;
+        float gap = start / 10;
 
 
         //first square
@@ -104,7 +132,7 @@ public class Controller implements IController {
             return 1;
         if ((x >= (this.getSIZE() - start) - gap && x <= (this.getSIZE() - start) + gap) && (y >= start - gap && y <= start + gap))
             return 2;
-        if ((x >= (this.getSIZE() - start) - gap && x <= (this.getSIZE() - start) + gap) && (y >= (((start / 2) + (this.getSIZE() - start)/2)) - gap && y <= (((start / 2) + (this.getSIZE() - start)/2)) + gap))
+        if ((x >= (this.getSIZE() - start) - gap && x <= (this.getSIZE() - start) + gap) && (y >= (((start / 2) + (this.getSIZE() - start) / 2)) - gap && y <= (((start / 2) + (this.getSIZE() - start) / 2)) + gap))
             return 3;
         if ((x >= (this.getSIZE() - start) - gap && x <= (this.getSIZE() - start) + gap) && (y >= (this.getSIZE() - start) - gap && y <= (this.getSIZE() - start) + gap))
             return 4;
@@ -112,7 +140,7 @@ public class Controller implements IController {
             return 5;
         if ((x >= start - gap && x <= start + gap) && (y >= (this.getSIZE() - start) - gap && y <= (this.getSIZE() - start) + gap))
             return 6;
-        if ((x >= start - gap && x <= start + gap) && (            y >= (this.getSIZE()/2) - gap                    && y <= (this.getSIZE()/2) + gap))
+        if ((x >= start - gap && x <= start + gap) && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap))
             return 7;
 
         //second square
@@ -126,7 +154,7 @@ public class Controller implements IController {
             return 11;
         if ((x >= (this.getSIZE() - (start * 2)) - gap && x <= (this.getSIZE() - (start * 2)) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
             return 12;
-        if ((x >= (this.getSIZE()/2) - gap && x <= (this.getSIZE()/2) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
+        if ((x >= (this.getSIZE() / 2) - gap && x <= (this.getSIZE() / 2) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
             return 13;
         if ((x >= (start * 2) - gap && x <= (start * 2) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
             return 14;
@@ -144,13 +172,13 @@ public class Controller implements IController {
             return 19;
         if ((x >= (this.getSIZE() - (start * 3)) - gap && x <= (this.getSIZE() - (start * 3)) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
             return 20;
-        if ((x >= (this.getSIZE()/2) - gap && x <= (this.getSIZE()/2) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
+        if ((x >= (this.getSIZE() / 2) - gap && x <= (this.getSIZE() / 2) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
             return 21;
         if ((x >= (start * 3) - gap && x <= (start * 3) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
             return 22;
 
         //fehler
-        if ((x >= (start*3) - gap && x <= (start*3) + gap && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap)))
+        if ((x >= (start * 3) - gap && x <= (start * 3) + gap && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap)))
             return 23;
 
 

@@ -55,7 +55,7 @@ public class Model {
         } else throw new IndexOutOfBoundsException("Valid Positions are [0 , 23]");
     }
 
-    private void steal(int pos) {
+    public void steal(int pos) {
         if (board[pos] == EMPTY) {
             throw new RuntimeException("This field is Empty. This is not a Valid stone to steal. Try another one!");
         }
@@ -208,24 +208,6 @@ public class Model {
         //Check for valid Filed index
         return field >= 0 && field < board.length;
     }
-
-    public int getSETWhiteStones() {
-        return SETWhiteStones;
-    }
-
-    public int getSETBlackStones() {
-        return SETBlackStones;
-    }
-
-    public int getBoardWhite() {
-        return boardWhite;
-    }
-
-    public int getBoardBlack() {
-        return boardBlack;
-    }
-
-
     public String getTurn() {
         return turn.toString();
     }
@@ -238,7 +220,21 @@ public class Model {
         return player2;
     }
 
+    public char[] getBoard() {
+        return board;
+    }
 
+    public char getEMPTY() {
+        return EMPTY;
+    }
+
+    public char getPLAYER_1() {
+        return PLAYER_1;
+    }
+
+    public char getPLAYER_2() {
+        return PLAYER_2;
+    }
 
     @Override
     public String toString() {
