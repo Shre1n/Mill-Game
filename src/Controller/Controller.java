@@ -93,56 +93,64 @@ public class Controller implements IController {
 
         // Calculate square parameters
         float start = (float) this.getSIZE() / 10;
-        //Gap is 10 by default -- currently depends on size
-        float gap = 10;
+        //Gap is 10 by default -- currently depends on size / start value
+        float gap = start/10;
 
+
+        //first square
         if ((x >= start - gap && x <= start + gap) && (y >= start - gap && y <= start + gap))
             return 0;
         if ((x >= ((start / 2) + ((float) this.getSIZE() - start) / 2) - gap && x <= ((start / 2) + ((float) this.getSIZE() - start) / 2) + gap) && (y >= start - gap && y <= start + gap))
             return 1;
         if ((x >= (this.getSIZE() - start) - gap && x <= (this.getSIZE() - start) + gap) && (y >= start - gap && y <= start + gap))
             return 2;
-        if ((x >= ((start / 2) + (this.getSIZE() - start) / 2) - gap || x <= ((start / 2 + this.getSIZE() - start) / 2) + gap) && (y >= (this.getSIZE() / 2) - gap || y <= (this.getSIZE() / 2) + gap))
+        if ((x >= (this.getSIZE() - start) - gap && x <= (this.getSIZE() - start) + gap) && (y >= (((start / 2) + (this.getSIZE() - start)/2)) - gap && y <= (((start / 2) + (this.getSIZE() - start)/2)) + gap))
             return 3;
-        if ((x >= (this.getSIZE() - start) - gap || x <= (this.getSIZE() - start) + gap) && (y >= (this.getSIZE() - start) - gap || y <= (this.getSIZE() - start) + gap))
+        if ((x >= (this.getSIZE() - start) - gap && x <= (this.getSIZE() - start) + gap) && (y >= (this.getSIZE() - start) - gap && y <= (this.getSIZE() - start) + gap))
             return 4;
-        if ((x >= (((this.getSIZE() - start) / 2) + (start / 2)) - gap || x <= (((this.getSIZE() - start) / 2) + (start / 2)) + gap) && (y >= (this.getSIZE() - start) - gap || y <= (this.getSIZE() - start) + gap))
+        if ((x >= (((this.getSIZE() - start) / 2) + (start / 2)) - gap && x <= (((this.getSIZE() - start) / 2) + (start / 2)) + gap) && (y >= (this.getSIZE() - start) - gap && y <= (this.getSIZE() - start) + gap))
             return 5;
-        if ((x >= start - gap || x <= start + gap) && (y >= (this.getSIZE() - start) - gap || y <= (this.getSIZE() - start) + gap))
+        if ((x >= start - gap && x <= start + gap) && (y >= (this.getSIZE() - start) - gap && y <= (this.getSIZE() - start) + gap))
             return 6;
-        if ((x >= (((this.getSIZE() - start) / 2) + (start / 2)) - gap || x <= (((this.getSIZE() - start) / 2) + (start / 2)) + gap) && (y >= (this.getSIZE() / 2) - gap || y <= (this.getSIZE() / 2) + gap))
+        if ((x >= start - gap && x <= start + gap) && (            y >= (this.getSIZE()/2) - gap                    && y <= (this.getSIZE()/2) + gap))
             return 7;
-        if ((x >= (start * 2) - gap || x <= (start * 2) + gap) && (y >= (start * 2) - gap || y <= (start * 2) + gap))
+
+        //second square
+        if ((x >= (start * 2) - gap && x <= (start * 2) + gap) && (y >= (start * 2) - gap && y <= (start * 2) + gap))
             return 8;
-        if ((x >= start + ((this.getSIZE() - (start * 2)) / 2) - gap || x <= start + ((this.getSIZE() - (start * 2)) / 2) + gap) && (y >= (start * 2) - gap || y <= (start * 2) + gap))
+        if ((x >= start + ((this.getSIZE() - (start * 2)) / 2) - gap && x <= start + ((this.getSIZE() - (start * 2)) / 2) + gap) && (y >= (start * 2) - gap && y <= (start * 2) + gap))
             return 9;
-        if ((x >= (this.getSIZE() - (start * 2)) - gap || x <= (this.getSIZE() - (start * 2)) + gap) && (y >= (start * 2) - gap || y <= (start * 2) - gap))
+        if ((x >= (this.getSIZE() - (start * 2)) - gap && x <= (this.getSIZE() - (start * 2)) + gap) && (y >= (start * 2) - gap && y <= (start * 2) + gap))
             return 10;
-        if ((x >= start + ((this.getSIZE() - (start * 2) / 2)) - gap || x <= start + ((this.getSIZE() - (start * 2) / 2)) + gap) && (y >= (this.getSIZE() / 2) - gap || y <= (this.getSIZE() / 2) + gap))
+        if ((x >= (this.getSIZE() - (start * 2)) - gap && x <= (this.getSIZE() - (start * 2)) + gap) && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap))
             return 11;
-        if ((x >= (this.getSIZE() - (start * 2)) - gap || x <= (this.getSIZE() - (start * 2)) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap || y <= (this.getSIZE() - (start * 2)) + gap))
+        if ((x >= (this.getSIZE() - (start * 2)) - gap && x <= (this.getSIZE() - (start * 2)) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
             return 12;
-        if ((x >= (((this.getSIZE() - (start * 2)) / 2) + start) - gap || x <= (((this.getSIZE() - (start * 2)) / 2) + start) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap || y <= (this.getSIZE() - (start * 2)) + gap))
+        if ((x >= (this.getSIZE()/2) - gap && x <= (this.getSIZE()/2) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
             return 13;
-        if ((x >= (start * 2) - gap || x <= (start * 2) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap || y <= (this.getSIZE() - (start * 2)) - gap))
+        if ((x >= (start * 2) - gap && x <= (start * 2) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
             return 14;
-        if ((x >= (((this.getSIZE() - (start * 2)) / 2) + start) - gap || x <= (((this.getSIZE() - (start * 2)) / 2) + start) - gap) && (y >= (this.getSIZE() / 2) - gap || y <= (this.getSIZE() / 2) + gap))
+        if ((x >= (start * 2) - gap && x <= (start * 2) + gap) && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap))
             return 15;
-        if ((x >= (start * 3) - gap || x <= (start * 3) + gap) && (y >= (start * 3) - gap || y <= (start * 3) - gap))
+
+        //third square
+        if ((x >= (start * 3) - gap && x <= (start * 3) + gap) && (y >= (start * 3) - gap && y <= (start * 3) + gap))
             return 16;
-        if ((x >= (((start * 3) / 2) + ((this.getSIZE() - (start * 3)) / 2)) - gap || x <= (((start * 3) / 2) + ((this.getSIZE() - (start * 3)) / 2)) + gap) && (y >= (start * 3) - gap || y <= (start * 3) + gap))
+        if ((x >= (((start * 3) / 2) + ((this.getSIZE() - (start * 3)) / 2)) - gap && x <= (((start * 3) / 2) + ((this.getSIZE() - (start * 3)) / 2)) + gap) && (y >= (start * 3) - gap && y <= (start * 3) + gap))
             return 17;
-        if ((x >= (this.getSIZE() - (start * 3)) - gap || x <= (this.getSIZE() - (start * 3)) + gap) && (y >= (start * 3) - gap || y <= (start * 3) + gap))
+        if ((x >= (this.getSIZE() - (start * 3)) - gap && x <= (this.getSIZE() - (start * 3)) + gap) && (y >= (start * 3) - gap && y <= (start * 3) + gap))
             return 18;
-        if ((x >= (((start * 3) / 2) + (((this.getSIZE() - (start * 3)) / 2))) - gap || x <= (((start * 3) / 2) + (((this.getSIZE() - (start * 3)) / 2))) + gap) && (y >= (this.getSIZE() / 2) || y <= (this.getSIZE() / 2)))
+        if ((x >= (this.getSIZE() - (start * 3)) - gap && x <= (this.getSIZE() - (start * 3)) + gap) && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap))
             return 19;
-        if ((x >= (this.getSIZE() - (start * 3)) - gap || x <= (this.getSIZE() - (start * 3)) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap || y <= (this.getSIZE() - (start * 3)) + gap))
+        if ((x >= (this.getSIZE() - (start * 3)) - gap && x <= (this.getSIZE() - (start * 3)) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
             return 20;
-        if ((x >= (((this.getSIZE() - (start * 3)) / 2) + (start * 3)) - gap || x <= (((this.getSIZE() - (start * 3)) / 2) + (start * 3)) - gap) && (y >= (this.getSIZE() - (start * 3)) - gap || y <= (this.getSIZE() - (start * 3)) + gap))
+        if ((x >= (this.getSIZE()/2) - gap && x <= (this.getSIZE()/2) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
             return 21;
-        if ((x >= (start * 3) - gap || x <= (start * 3) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap || y <= (this.getSIZE() - (start * 3)) + gap))
+        if ((x >= (start * 3) - gap && x <= (start * 3) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
             return 22;
-        if ((x >= (((this.getSIZE() - (start * 3) / 2) + (start * 3) / 2)) - gap || x <= (((this.getSIZE() - (start * 3) / 2) + (start * 3) / 2)) + gap) && (y >= this.getSIZE() / 2 || y <= this.getSIZE() / 2))
+
+        //fehler
+        if ((x >= (start*3) - gap && x <= (start*3) + gap && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap)))
             return 23;
 
 

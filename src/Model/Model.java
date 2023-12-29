@@ -179,11 +179,11 @@ public class Model {
     }
 
     public boolean hasPlayer1Won() {
-        return boardBlack == 2;
+        return boardBlack == 2 && player1 == GameState.JUMP;
     }
 
     public boolean hasPlayer2Won() {
-        return boardWhite == 2;
+        return boardWhite == 2 && player2 == GameState.JUMP;
     }
 
     public boolean isGameOver() {
