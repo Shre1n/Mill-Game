@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Move and Jump works">
-      <change afterPath="$PROJECT_DIR$/img/background.jpg" afterDir="false" />
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="error handling and warning fixed. Added Title screen">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/IView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.java" afterDir="false" />
     </list>
@@ -340,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704308884386</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="error handling and warning fixed. Added Title screen">
+      <option name="closed" value="true" />
+      <created>1704316858267</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1704316858267</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +371,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="PlayerTurn implemented. Test not finished" />
     <MESSAGE value="Player State Move and Steel and Jump" />
     <MESSAGE value="Output of Board" />
     <MESSAGE value="StealMode works" />
@@ -388,7 +395,8 @@
     <MESSAGE value="Steal works in view" />
     <MESSAGE value="exception displays at set" />
     <MESSAGE value="Move and Jump works" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move and Jump works" />
+    <MESSAGE value="error handling and warning fixed. Added Title screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="error handling and warning fixed. Added Title screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

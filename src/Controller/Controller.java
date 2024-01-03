@@ -47,6 +47,10 @@ public class Controller implements IController {
      * Default draw game value
      */
     private boolean gameBoardDrawn = false;
+
+    /**
+     * default value of title screen
+     */
     private boolean titleScreen = true;
 
 
@@ -75,7 +79,7 @@ public class Controller implements IController {
 
 
     /**
-     * Draw Game with dependencies of given game state.
+     * {@inheritDoc}
      * Typically used to change the drawing state in view.
      */
     @Override
@@ -105,7 +109,7 @@ public class Controller implements IController {
 
 
     /**
-     * changes state of Game to restart.
+     * {@inheritDoc}
      * Typically used to restart the Game and to set the default value.
      */
     public void setRestartGame() {
@@ -116,7 +120,7 @@ public class Controller implements IController {
     }
 
     /**
-     * Gets game State of player 1.
+     * {@inheritDoc}
      * Typically used in View to compare gamestate with a specific value.
      *
      * @return state of player 1
@@ -126,7 +130,7 @@ public class Controller implements IController {
     }
 
     /**
-     * Gets game State of player 2.
+     * {@inheritDoc}
      * Typically used in View to compare gamestate with a specific value.
      *
      * @return state of player 2
@@ -137,7 +141,7 @@ public class Controller implements IController {
     }
 
     /**
-     * Gets the char of player 1.
+     * {@inheritDoc}
      * Typically used to check players character at position in View.
      *
      * @return char
@@ -147,7 +151,7 @@ public class Controller implements IController {
     }
 
     /**
-     * Gets the char of player 2.
+     * {@inheritDoc}
      * Typically used to check players character at position in View.
      *
      * @return char
@@ -158,8 +162,8 @@ public class Controller implements IController {
 
 
     /**
-     * Gets the board with all entries
-     * Typically used to check the current board setup
+     * {@inheritDoc}
+     * Typically used to check the current board setup.
      *
      * @return board
      */
@@ -168,11 +172,7 @@ public class Controller implements IController {
     }
 
     /**
-     * Sets the position of Players input with given parameters.
-     * Checks if Player has made a correct Move.
-     * Typically used in View to send the MouseX and MouseY into Controller.
-     *
-     * @param clicked checks the x and y for mouse clicked
+     * {@inheritDoc}
      */
     @Override
     public void userInput(boolean clicked) {
@@ -275,16 +275,6 @@ public class Controller implements IController {
         System.out.println(millModel.toString());
     }
 
-    /**
-     * Calculates the position clicked with a hit box.
-     * hit box is set with gap for x and y-axis.
-     * Dynamically settable with Size.
-     * Typically used in userInput to set the x and y-axis of input as a hit box.
-     *
-     * @param x input from user
-     * @param y input from user
-     * @return int for board index
-     */
     private int calculatePosClicked(int x, int y) {
 
         // Calculate square parameters
@@ -346,17 +336,11 @@ public class Controller implements IController {
             return 22;
         if ((x >= (start * 3) - gap && x <= (start * 3) + gap && (y >= ((float) this.getSIZE() / 2) - gap && y <= ((float) this.getSIZE() / 2) + gap)))
             return 23;
-
-
         return -1;
     }
 
     /**
-     * Gets the current player turn.
-     * Player 1 and Player 2 state of turn.
-     * Typically used to check the players turn in View.
-     *
-     * @return color of player
+     * {@inheritDoc}
      */
 
     public String playerTurn() {
@@ -364,10 +348,7 @@ public class Controller implements IController {
     }
 
     /**
-     * Sets the Size for Application.
-     * Typically used in Main to set the Size of Application.
-     *
-     * @param SIZE to change
+     * {@inheritDoc}
      */
 
     public void setSize(int SIZE) {
@@ -375,14 +356,7 @@ public class Controller implements IController {
     }
 
     /**
-     * @return the Size of Application
-     */
-
-    /**
-     * Get Size of Application.
-     * Typically used to get the current Size and calculate with this value
-     *
-     * @return size
+     * {@inheritDoc}
      */
     public int getSIZE() {
         return size;

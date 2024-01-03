@@ -7,7 +7,7 @@
 package View;
 
 import processing.core.PApplet;
-import Controller.Controller;
+import Controller.*;
 import processing.core.PImage;
 
 /**
@@ -20,7 +20,7 @@ public class View extends PApplet implements IView {
     /**
      * Declare Controller instance
      */
-    private Controller controller;
+    private IController controller;
 
 
     /**
@@ -32,7 +32,15 @@ public class View extends PApplet implements IView {
      * Declare y-axis of input via mousePressed
      */
     private int y;
+
+    /**
+     * Default value of new x value
+     */
     private int xnew;
+
+    /**
+     * Default value of new y value
+     */
     private int ynew;
 
     /**
@@ -49,15 +57,14 @@ public class View extends PApplet implements IView {
     /**
      * Setting the Controller of View
      *
-     * @param controller sets Controller of Application
+     * @param controller sets Controller for View
      */
-    public void setController(Controller controller) {
+    public void setController(IController controller) {
         this.controller = controller;
     }
 
 
     /**
-     * {@inheritDoc}
      * Set Size of Application given from Controller
      */
     @Override
@@ -66,7 +73,7 @@ public class View extends PApplet implements IView {
     }
 
     /**
-     * {@inheritDoc}
+     *
      * load Player images to Application
      */
     @Override
@@ -80,7 +87,6 @@ public class View extends PApplet implements IView {
     }
 
     /**
-     * {@inheritDoc}
      * draw the next frame given from Controller
      */
     @Override
@@ -88,20 +94,34 @@ public class View extends PApplet implements IView {
         controller.nextFrame();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+
     public void drawTitleScreen() {
         PImage bi = loadImage("background.jpg");
         bi.resize(controller.getSIZE(), controller.getSIZE());
         background(bi);
-        fill(31,21,1);
+
+        player1 = loadImage("WhiteStone.png");
+        player1.resize(100, 100);
+        player2 = loadImage("BlackStone.png");
+        player2.resize(100, 100);
+        image(player1, (float) controller.getSIZE() / 2 - 150, (float) controller.getSIZE() / 2 - 150);
+        image(player2, (float) controller.getSIZE() / 2 + 50, (float) controller.getSIZE() / 2 - 150);
+
+
+        fill(0);
         textAlign(CENTER, CENTER);
         textSize((float) controller.getSIZE() / 20);
         text("The Mill Game", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+        fill(255);
+        textAlign(CENTER,TOP);
+        text("Press 'R' to Start and Reset the Game", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2 + 400);
     }
 
     /**
      * {@inheritDoc}
-     *
-     * @param color to identify the winner
      */
     @Override
     public void drawGG(String color) {
@@ -115,7 +135,6 @@ public class View extends PApplet implements IView {
 
     /**
      * {@inheritDoc}
-     * Draws the game field with squares
      */
     @Override
     public void drawField() {
@@ -184,6 +203,10 @@ public class View extends PApplet implements IView {
         controller.userInput(true);
     }
 
+
+    /**
+     * Sends input as a drag and drop x and y-axis to controllers userinput
+     */
     @Override
     public void mouseReleased() {
         xnew = mouseX;
@@ -192,14 +215,25 @@ public class View extends PApplet implements IView {
         controller.userInput(false);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public int getXnew() {
         return xnew;
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public int getYnew() {
         return ynew;
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
     public void exceptionRunner(String message) {
         fill(0);
         textAlign(CENTER, BOTTOM);
@@ -207,6 +241,9 @@ public class View extends PApplet implements IView {
         text(message, (float) controller.getSIZE() / 2, 50);
     }
 
+    /**
+     * checks if user pressed the restart or start button
+     */
     @Override
     public void keyPressed() {
         if (key == 'r' || key == 'R') {
@@ -215,18 +252,14 @@ public class View extends PApplet implements IView {
     }
 
     /**
-     * Handle given x-axis position given from input
-     *
-     * @return pressed X
+     * {@inheritDoc}
      */
     public int getX() {
         return x;
     }
 
     /**
-     * Handle given y-axis position given from input
-     *
-     * @return pressed Y
+     * {@inheritDoc}
      */
 
     public int getY() {
