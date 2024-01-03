@@ -4,15 +4,12 @@
  * @since 2023-12-12
  * All necessary Classes and Interfaces of Controller usage.
  * This package is likely known as 'Middleware' between Model and View.
- *
  */
 
 package Controller;
 
 import Model.*;
 import View.IView;
-
-import java.sql.SQLOutput;
 
 /**
  * Controller has knowledge of Model and View.
@@ -31,6 +28,10 @@ public class Controller implements IController {
      * Default restart value
      */
     private boolean restartGame;
+    /**
+     * If in the last turn a stone was stolen
+     */
+    private boolean stolen = false;
 
     /**
      * Blueprint of view
@@ -46,10 +47,12 @@ public class Controller implements IController {
      * Default draw game value
      */
     private boolean gameBoardDrawn = false;
+    private boolean titleScreen = true;
 
 
     /**
-     * Refer model to Controller and set this model
+     * Refer model to Controller and set model.
+     * Typically used in Main to set the Model for Controller.
      *
      * @param model as Mill Model
      */
@@ -60,7 +63,8 @@ public class Controller implements IController {
 
 
     /**
-     * Refer view to Controller and set this view
+     * Refer view to Controller and set this view.
+     * Typically used in Main to set View for Controller.
      *
      * @param view as Mill Model
      */
@@ -71,7 +75,8 @@ public class Controller implements IController {
 
 
     /**
-     * Draw Game with dependencies of given game state
+     * Draw Game with dependencies of given game state.
+     * Typically used to change the drawing state in view.
      */
     @Override
     public void nextFrame() {
@@ -80,32 +85,40 @@ public class Controller implements IController {
             else view.drawGG("Black");
         }
 
-        if (!gameBoardDrawn) {
+        if (!gameBoardDrawn && !titleScreen) {
             millModel.newGame();
             view.drawField();
             gameBoardDrawn = true;
         }
 
-        if (restartGame){
+        if (titleScreen){
+            view.drawTitleScreen();
+        }
+
+        if (restartGame) {
             millModel.newGame();
             view.drawField();
             restartGame = false;
-
         }
 
     }
 
 
     /**
-     * changes state of Game to restart
-     * @param restartGame restarts game
+     * changes state of Game to restart.
+     * Typically used to restart the Game and to set the default value.
      */
-    public void setRestartGame(boolean restartGame) {
-        this.restartGame = restartGame;
+    public void setRestartGame() {
+        if(titleScreen){
+            titleScreen = false;
+        }
+        restartGame = true;
     }
 
     /**
-     * Gets game State of player 1
+     * Gets game State of player 1.
+     * Typically used in View to compare gamestate with a specific value.
+     *
      * @return state of player 1
      */
     public GameState getPlayer1() {
@@ -113,42 +126,52 @@ public class Controller implements IController {
     }
 
     /**
-     * Gets game State of player 2
+     * Gets game State of player 2.
+     * Typically used in View to compare gamestate with a specific value.
+     *
      * @return state of player 2
      */
 
-    public GameState getPlayer2(){
+    public GameState getPlayer2() {
         return millModel.getPlayer2();
     }
 
     /**
-     * Gets the char of player 1
+     * Gets the char of player 1.
+     * Typically used to check players character at position in View.
+     *
      * @return char
      */
-    public char getPlayer_1(){
+    public char getPlayer_1() {
         return millModel.getPLAYER_1();
     }
 
     /**
-     * Gets the char of player 2
+     * Gets the char of player 2.
+     * Typically used to check players character at position in View.
+     *
      * @return char
      */
-    public char getPlayer_2(){
+    public char getPlayer_2() {
         return millModel.getPLAYER_2();
     }
 
 
     /**
      * Gets the board with all entries
+     * Typically used to check the current board setup
+     *
      * @return board
      */
-    public char[] getBoard(){
+    public char[] getBoard() {
         return millModel.getBoard();
     }
 
     /**
      * Sets the position of Players input with given parameters.
      * Checks if Player has made a correct Move.
+     * Typically used in View to send the MouseX and MouseY into Controller.
+     *
      * @param clicked checks the x and y for mouse clicked
      */
     @Override
@@ -158,60 +181,95 @@ public class Controller implements IController {
         int xnew = view.getXnew();
         int ynew = view.getYnew();
         int posClicked = calculatePosClicked(x, y);
-        int posDragged = calculatePosClicked(xnew,ynew);
-        System.out.println(posClicked + "= " + x+ ", "+ y +"\n"+posDragged+"= "+xnew+", "+ynew);
-        if(millModel.getTurn().equals("WHITE")){
-            if(millModel.getPlayer1() == GameState.SET && clicked){
+        int posDragged = calculatePosClicked(xnew, ynew);
+        System.out.println(posClicked + "= " + x + ", " + y + "\n" + posDragged + "= " + xnew + ", " + ynew);
+        if (millModel.getTurn().equals("WHITE")) {
+            if (millModel.getPlayer1() == GameState.SET && clicked) {
                 try {
                     millModel.setPlayer(posClicked);
                     view.drawField();
-                } catch (RuntimeException e){
-                    view.exceptionRunner();
-                }
-            }
-            if(millModel.getPlayer1() == GameState.STEAL && millModel.getBoard()[posClicked]  == millModel.getPLAYER_2() && clicked){
-                try{
-                    millModel.steal(posClicked);
+                } catch (RuntimeException e) {
                     view.drawField();
-                } catch(RuntimeException e){
-                    System.out.println(e);
-                }
-
-            }
-            if ((millModel.getPlayer1() == GameState.MOVE || millModel.getPlayer1() == GameState.JUMP)&& millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked){
-                try {
-                    millModel.move(posClicked, posDragged);
-                    view.drawField();
-                } catch(RuntimeException e){
-                    System.out.println(e);
+                    view.exceptionRunner("No Valid Field. Choose another!");
                 }
             }
+            try {
+                if ((millModel.getPlayer1() == GameState.MOVE || millModel.getPlayer1() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
+                    if (!stolen) {
+                        try {
+                            millModel.move(posClicked, posDragged);
+                            view.drawField();
+                        } catch (RuntimeException e) {
+                            view.drawField();
+                            view.exceptionRunner("No valid move! Fields must be adjacent.");
+                        }
+                    } else stolen = false;
+                }
+            } catch (RuntimeException e) {
+                view.drawField();
+                view.exceptionRunner("No valid adjacent field. Choose another one!");
+            }
 
 
-        } else{
-            if(millModel.getPlayer2() == GameState.SET && clicked){
+            try {
+                if (millModel.getPlayer1() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_2() && clicked) {
+                    try {
+                        millModel.steal(posClicked);
+                        stolen = true;
+                        view.drawField();
+                    } catch (RuntimeException e) {
+                        view.drawField();
+                        view.exceptionRunner("This is not a valid Field to steal!");
+                    }
+
+                }
+            } catch (RuntimeException e) {
+                view.drawField();
+                view.exceptionRunner("This is not a valid field.");
+            }
+
+        } else {
+            if (millModel.getPlayer2() == GameState.SET && clicked) {
                 try {
                     millModel.setPlayer(posClicked);
                     view.drawField();
-                } catch (RuntimeException e){
-                    view.exceptionRunner();
+                } catch (RuntimeException e) {
+                    view.drawField();
+                    view.exceptionRunner("No Valid Field. Choose another!");
                 }
             }
-            if(millModel.getPlayer2() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_1() && clicked){
-                try {
-                    millModel.steal(posClicked);
-                    view.drawField();
-                }catch(RuntimeException e){
-                    System.out.println(e);
+            try {
+                if ((millModel.getPlayer2() == GameState.MOVE || millModel.getPlayer2() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
+                    if (!stolen) {
+                        try {
+                            millModel.move(posClicked, posDragged);
+                            view.drawField();
+                        } catch (RuntimeException e) {
+                            view.drawField();
+                            view.exceptionRunner("No valid move! Fields must be adjacent");
+                        }
+                    } else stolen = false;
                 }
+            } catch (RuntimeException e) {
+                view.drawField();
+                view.exceptionRunner("No valid adjacent field. Choose another one!");
             }
-            if ((millModel.getPlayer2() == GameState.MOVE || millModel.getPlayer2() == GameState.JUMP)&& millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked){
-                try {
-                    millModel.move(posClicked, posDragged);
-                    view.drawField();
-                } catch(RuntimeException e){
-                    System.out.println(e);
+
+
+            try {
+                if (millModel.getPlayer2() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_1() && clicked) {
+                    try {
+                        millModel.steal(posClicked);
+                        stolen = true;
+                        view.drawField();
+                    } catch (RuntimeException e) {
+                        view.drawField();
+                        view.exceptionRunner("This is not a valid Field to steal!");
+                    }
                 }
+            } catch (RuntimeException e) {
+                view.drawField();
+                view.exceptionRunner("This is not a valid Field to steal!");
             }
         }
         System.out.println(millModel.toString());
@@ -221,6 +279,8 @@ public class Controller implements IController {
      * Calculates the position clicked with a hit box.
      * hit box is set with gap for x and y-axis.
      * Dynamically settable with Size.
+     * Typically used in userInput to set the x and y-axis of input as a hit box.
+     *
      * @param x input from user
      * @param y input from user
      * @return int for board index
@@ -248,7 +308,7 @@ public class Controller implements IController {
             return 5;
         if ((x >= start - gap && x <= start + gap) && (y >= (this.getSIZE() - start) - gap && y <= (this.getSIZE() - start) + gap))
             return 6;
-        if ((x >= start - gap && x <= start + gap) && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap))
+        if ((x >= start - gap && x <= start + gap) && (y >= ((float) this.getSIZE() / 2) - gap && y <= ((float) this.getSIZE() / 2) + gap))
             return 7;
 
         //second square
@@ -258,15 +318,15 @@ public class Controller implements IController {
             return 9;
         if ((x >= (this.getSIZE() - (start * 2)) - gap && x <= (this.getSIZE() - (start * 2)) + gap) && (y >= (start * 2) - gap && y <= (start * 2) + gap))
             return 10;
-        if ((x >= (this.getSIZE() - (start * 2)) - gap && x <= (this.getSIZE() - (start * 2)) + gap) && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap))
+        if ((x >= (this.getSIZE() - (start * 2)) - gap && x <= (this.getSIZE() - (start * 2)) + gap) && (y >= ((float) this.getSIZE() / 2) - gap && y <= ((float) this.getSIZE() / 2) + gap))
             return 11;
         if ((x >= (this.getSIZE() - (start * 2)) - gap && x <= (this.getSIZE() - (start * 2)) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
             return 12;
-        if ((x >= (this.getSIZE() / 2) - gap && x <= (this.getSIZE() / 2) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
+        if ((x >= ((float) this.getSIZE() / 2) - gap && x <= ((float) this.getSIZE() / 2) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
             return 13;
         if ((x >= (start * 2) - gap && x <= (start * 2) + gap) && (y >= (this.getSIZE() - (start * 2)) - gap && y <= (this.getSIZE() - (start * 2)) + gap))
             return 14;
-        if ((x >= (start * 2) - gap && x <= (start * 2) + gap) && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap))
+        if ((x >= (start * 2) - gap && x <= (start * 2) + gap) && (y >= ((float) this.getSIZE() / 2) - gap && y <= ((float) this.getSIZE() / 2) + gap))
             return 15;
 
         //third square
@@ -276,17 +336,15 @@ public class Controller implements IController {
             return 17;
         if ((x >= (this.getSIZE() - (start * 3)) - gap && x <= (this.getSIZE() - (start * 3)) + gap) && (y >= (start * 3) - gap && y <= (start * 3) + gap))
             return 18;
-        if ((x >= (this.getSIZE() - (start * 3)) - gap && x <= (this.getSIZE() - (start * 3)) + gap) && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap))
+        if ((x >= (this.getSIZE() - (start * 3)) - gap && x <= (this.getSIZE() - (start * 3)) + gap) && (y >= ((float) this.getSIZE() / 2) - gap && y <= ((float) this.getSIZE() / 2) + gap))
             return 19;
         if ((x >= (this.getSIZE() - (start * 3)) - gap && x <= (this.getSIZE() - (start * 3)) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
             return 20;
-        if ((x >= (this.getSIZE() / 2) - gap && x <= (this.getSIZE() / 2) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
+        if ((x >= ((float) this.getSIZE() / 2) - gap && x <= ((float) this.getSIZE() / 2) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
             return 21;
         if ((x >= (start * 3) - gap && x <= (start * 3) + gap) && (y >= (this.getSIZE() - (start * 3)) - gap && y <= (this.getSIZE() - (start * 3)) + gap))
             return 22;
-
-        //fehler
-        if ((x >= (start * 3) - gap && x <= (start * 3) + gap && (y >= (this.getSIZE() / 2) - gap && y <= (this.getSIZE() / 2) + gap)))
+        if ((x >= (start * 3) - gap && x <= (start * 3) + gap && (y >= ((float) this.getSIZE() / 2) - gap && y <= ((float) this.getSIZE() / 2) + gap)))
             return 23;
 
 
@@ -294,6 +352,10 @@ public class Controller implements IController {
     }
 
     /**
+     * Gets the current player turn.
+     * Player 1 and Player 2 state of turn.
+     * Typically used to check the players turn in View.
+     *
      * @return color of player
      */
 
@@ -302,7 +364,8 @@ public class Controller implements IController {
     }
 
     /**
-     * Sets the Size for Application
+     * Sets the Size for Application.
+     * Typically used in Main to set the Size of Application.
      *
      * @param SIZE to change
      */
@@ -315,6 +378,12 @@ public class Controller implements IController {
      * @return the Size of Application
      */
 
+    /**
+     * Get Size of Application.
+     * Typically used to get the current Size and calculate with this value
+     *
+     * @return size
+     */
     public int getSIZE() {
         return size;
     }

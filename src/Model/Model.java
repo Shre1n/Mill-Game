@@ -279,7 +279,7 @@ public class Model {
      * @return player WHITE won.
      */
     public boolean hasPlayer1Won() {
-        return boardBlack == 2 && player1 == GameState.JUMP;
+        return boardBlack == 2 && player2 == GameState.JUMP;
     }
 
     /**
@@ -287,7 +287,7 @@ public class Model {
      * @return player BLACK won.
      */
     public boolean hasPlayer2Won() {
-        return boardWhite == 2 && player2 == GameState.JUMP;
+        return boardWhite == 2 && player1 == GameState.JUMP;
     }
 
     /**

@@ -20,7 +20,8 @@ public interface IView {
     void drawField();
 
 
-    void exceptionRunner();
+    void exceptionRunner(String message);
+    void drawTitleScreen();
 
     public int getX();
 

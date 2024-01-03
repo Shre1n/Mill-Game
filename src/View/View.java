@@ -7,7 +7,7 @@
 package View;
 
 import processing.core.PApplet;
-import Controller.*;
+import Controller.Controller;
 import processing.core.PImage;
 
 /**
@@ -73,6 +73,10 @@ public class View extends PApplet implements IView {
     public void setup() {
         player1 = loadImage("WhiteStone.png");
         player2 = loadImage("BlackStone.png");
+        frameRate(60);
+        surface.setTitle("The Mill Game");
+        surface.setResizable(false);
+
     }
 
     /**
@@ -84,20 +88,14 @@ public class View extends PApplet implements IView {
         controller.nextFrame();
     }
 
-    /**
-     * load white player image at pressed x and y value
-     */
-
-    public void loadImgPlayer1() {
-        image(player1, this.getX() - 50, this.getY() - 50, 100, 100);
-    }
-
-    /**
-     * load black player image at pressed x and y value
-     */
-
-    public void loadImgPlayer2() {
-        image(player2, this.getX() - 50, this.getY() - 50, 100, 100);
+    public void drawTitleScreen() {
+        PImage bi = loadImage("background.jpg");
+        bi.resize(controller.getSIZE(), controller.getSIZE());
+        background(bi);
+        fill(31,21,1);
+        textAlign(CENTER, CENTER);
+        textSize((float) controller.getSIZE() / 20);
+        text("The Mill Game", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
     }
 
     /**
@@ -109,7 +107,9 @@ public class View extends PApplet implements IView {
     public void drawGG(String color) {
         background(0);
         textSize((float) controller.getSIZE() / 15);
-        text("Game Over! " + color + " has won!", (float) controller.getSIZE() / 10, (float) controller.getSIZE() / 2);
+        textAlign(CENTER, CENTER);
+        fill(255);
+        text("Game Over! " + color + " has won!", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
     }
 
 
@@ -152,15 +152,6 @@ public class View extends PApplet implements IView {
             text(controller.playerTurn() + " : " + controller.getPlayer2(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
         }
 
-
-        int savedTime;
-        int totalTime = 4000;
-
-        savedTime = millis();
-        if (millis() - savedTime >= totalTime){
-            exceptionRunner();
-        }
-
         noFill();
         char[] board = controller.getBoard();
         float x = 0, y = 0;
@@ -195,7 +186,6 @@ public class View extends PApplet implements IView {
 
     @Override
     public void mouseReleased() {
-        float easing = 0.05F;
         xnew = mouseX;
         ynew = mouseY;
 
@@ -210,17 +200,17 @@ public class View extends PApplet implements IView {
         return ynew;
     }
 
-    public void exceptionRunner() {
+    public void exceptionRunner(String message) {
         fill(0);
         textAlign(CENTER, BOTTOM);
         textSize((float) controller.getSIZE() / 20);
-        text("No Valid Field. Choose another!", (float) controller.getSIZE() / 2, 50);
+        text(message, (float) controller.getSIZE() / 2, 50);
     }
 
     @Override
     public void keyPressed() {
         if (key == 'r' || key == 'R') {
-            controller.setRestartGame(true);
+            controller.setRestartGame();
         }
     }
 
