@@ -25,7 +25,7 @@ public class Controller implements IController {
      */
     private Model millModel;
 
-    private Player player;
+    private boolean restartGame;
 
     /**
      * Blueprint of view
@@ -77,16 +77,25 @@ public class Controller implements IController {
         if (!gameBoardDrawn) {
             millModel.newGame();
             view.drawField();
-            view.writeTurn();
+//            view.writeTurn();
             gameBoardDrawn = true;
-        }
-        else{
-            view.writeTurn();
+            restartGame = false;
         }
 
+        if (restartGame){
+            millModel.setSETBlackStones(9);
+            millModel.setSETWhiteStones(9);
+            millModel.setBoardBlack(0);
+            millModel.setBoardWhite(0);
+            millModel.setEMPTY();
+            view.drawField();
+            restartGame = false;
 
+        }
+    }
 
-
+    public void setRestartGame(boolean restartGame) {
+        this.restartGame = restartGame;
     }
 
     public GameState getPlayer1() {
@@ -116,13 +125,12 @@ public class Controller implements IController {
             if(millModel.getPlayer1() == GameState.STEAL && millModel.getBoard()[posClicked]  == millModel.getPLAYER_2()){
                 millModel.steal(posClicked);
                 System.out.println(millModel.toString());
-                view.removeStone();
+                view.drawField();
             }
         } else{
             if(millModel.getPlayer2() == GameState.SET) millModel.setPlayer(posClicked);
             if(millModel.getPlayer2() == GameState.STEAL && posClicked == millModel.getPLAYER_1()){
                 millModel.steal(posClicked);
-                view.removeStone();
             }
         }
     }

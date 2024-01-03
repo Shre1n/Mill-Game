@@ -1,7 +1,7 @@
 /**
- *  @author Robin Hahn
- *  @version 1.0
- *  @since 2023-12-12
+ * @author Robin Hahn
+ * @version 1.0
+ * @since 2023-12-12
  */
 
 package View;
@@ -86,10 +86,10 @@ public class View extends PApplet implements IView {
      * User information about current player and their state
      */
 
-    public void writeTurn() {
-        //to fix with calculation
-        update(350, 350, 300, 300);
-    }
+//    public void writeTurn() {
+//        //to fix with calculation
+//        update(350, 350, 300, 300);
+//    }
 
     /**
      * update information with rectangle draw
@@ -99,14 +99,14 @@ public class View extends PApplet implements IView {
      * @param y2 end y-axis of rectangle
      */
 
-    private void update(int x1, int y1, int x2,int y2){
+    private void update(int x1, int y1, int x2, int y2) {
         fill(255);
         noStroke();
-        rect(x1,y1,x2,y2);
+        rect(x1, y1, x2, y2);
 
         fill(0);
-        textAlign(CENTER,CENTER);
-        textSize((float) controller.getSIZE() /20);
+        textAlign(CENTER, CENTER);
+        textSize((float) controller.getSIZE() / 20);
         if (controller.playerTurn().equals("WHITE")) {
             text(controller.playerTurn() + " : " + controller.getPlayer1(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
         } else {
@@ -120,7 +120,7 @@ public class View extends PApplet implements IView {
      */
 
     public void loadImgPlayer1() {
-        image(player1,this.getX()-50,this.getY()-50,100,100);
+        image(player1, this.getX() - 50, this.getY() - 50, 100, 100);
     }
 
     /**
@@ -128,7 +128,7 @@ public class View extends PApplet implements IView {
      */
 
     public void loadImgPlayer2() {
-       image(player2,this.getX()-50,this.getY()-50,100,100);
+        image(player2, this.getX() - 50, this.getY() - 50, 100, 100);
     }
 
     /**
@@ -158,7 +158,7 @@ public class View extends PApplet implements IView {
         // Calculate square parameters
         float start = (float) controller.getSIZE() / 10;
         // shrink squares for squares in square
-        float shrinkSqaure = 200;
+        float shrinkSqaure = (float) controller.getSIZE() / 5;
 
         // Define Squares with params
         // for better understanding -- foreach square as inner square multiply shrink value by the number of this inner square
@@ -186,18 +186,16 @@ public class View extends PApplet implements IView {
         // thats why white is placed above steal stone
         if (controller.playerTurn().equals("WHITE")) loadImgPlayer1();
         else loadImgPlayer2();
-        controller.userInput(this.getX(),this.getY());
-        redraw();
-    }
-
-    public void removeStone(){
-
+        controller.userInput(this.getX(), this.getY());
     }
 
 
     @Override
     public void keyPressed() {
-        if (key == ' ')controller.nextFrame();
+        if (key == 'r' || key == 'R') {
+            controller.setRestartGame(true);
+            controller.nextFrame();
+        }
     }
 
 

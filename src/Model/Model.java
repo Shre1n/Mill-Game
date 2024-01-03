@@ -377,8 +377,12 @@ public class Model {
         return board;
     }
 
-    public char getEMPTY() {
-        return EMPTY;
+    /**
+     * restarts game with a clear board
+     */
+    public void setEMPTY(){
+        Arrays.fill(board, EMPTY);
+        turn = PlayerTurn.valueOf("WHITE");
     }
 
     public char getPLAYER_1() {
@@ -389,6 +393,21 @@ public class Model {
         return PLAYER_2;
     }
 
+    public void setSETWhiteStones(int SETWhiteStones) {
+        this.SETWhiteStones = SETWhiteStones;
+    }
+
+    public void setSETBlackStones(int SETBlackStones) {
+        this.SETBlackStones = SETBlackStones;
+    }
+
+    public void setBoardWhite(int boardWhite) {
+        this.boardWhite = boardWhite;
+    }
+
+    public void setBoardBlack(int boardBlack) {
+        this.boardBlack = boardBlack;
+    }
 
     /**
      * Visualization in Console with state and player turn.
