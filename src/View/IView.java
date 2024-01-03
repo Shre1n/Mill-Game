@@ -19,9 +19,6 @@ public interface IView {
 
     void drawField();
 
-    public void loadImgPlayer1();
-
-    public void loadImgPlayer2();
 
     void exceptionRunner();
 
@@ -29,6 +26,7 @@ public interface IView {
 
     public int getY();
 
-
+    int getXnew();
+    int getYnew();
 
 }

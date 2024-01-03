@@ -19,11 +19,9 @@ public interface IController{
     /**
      * Sets the position of Players input with given parameters.
      * Checks if Player has made a correct Move.
-     * @param x input of Player.
-     * @param y input of Player.
      */
 
-    void userInput(int x, int y);
+    void userInput(boolean clicked);
 
     String playerTurn();
 

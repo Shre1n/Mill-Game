@@ -32,6 +32,8 @@ public class View extends PApplet implements IView {
      * Declare y-axis of input via mousePressed
      */
     private int y;
+    private int xnew;
+    private int ynew;
 
     /**
      * Image storage of player White
@@ -188,16 +190,24 @@ public class View extends PApplet implements IView {
     public void mousePressed() {
         this.x = mouseX;
         this.y = mouseY;
-        controller.userInput(this.getX(), this.getY());
+        controller.userInput(true);
     }
 
     @Override
     public void mouseReleased() {
         float easing = 0.05F;
-        x += (int) ((mouseX - x) * easing);
-        y += (int) ((mouseY - y) * easing);
+        xnew = mouseX;
+        ynew = mouseY;
 
-        controller.userInput(x, y);
+        controller.userInput(false);
+    }
+
+    public int getXnew() {
+        return xnew;
+    }
+
+    public int getYnew() {
+        return ynew;
     }
 
     public void exceptionRunner() {
@@ -211,7 +221,6 @@ public class View extends PApplet implements IView {
     public void keyPressed() {
         if (key == 'r' || key == 'R') {
             controller.setRestartGame(true);
-            controller.nextFrame();
         }
     }
 

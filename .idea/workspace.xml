@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Steal works in view">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="exception displays at set">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/IView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.java" afterDir="false" />
@@ -322,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704292326751</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="exception displays at set">
+      <option name="closed" value="true" />
+      <created>1704304317592</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1704304317592</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +354,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="init" />
     <MESSAGE value="graph implemented with remove and add Edge" />
     <MESSAGE value="PlayerTurn implemented. Test not finished" />
     <MESSAGE value="Player State Move and Steel and Jump" />
@@ -370,7 +378,8 @@
     <MESSAGE value="steal works a little bit" />
     <MESSAGE value="restart game works" />
     <MESSAGE value="Steal works in view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Steal works in view" />
+    <MESSAGE value="exception displays at set" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception displays at set" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

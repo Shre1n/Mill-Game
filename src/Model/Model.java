@@ -42,23 +42,23 @@ public class Model {
     /**
      * The default Stone count for settable Stones as Player 1.
      */
-    private int SETWhiteStones = 9;
+    private int SETWhiteStones;
 
     /**
      * The default Stone count for settable Stones as Player 2.
      */
-    private int SETBlackStones = 9;
+    private int SETBlackStones;
 
     /**
      * The default count for Stones on board for Player 1,
      */
 
-    private int boardWhite = 0;
+    private int boardWhite;
 
     /**
      * The default count for Stones on board for Player 2.
      */
-    private int boardBlack = 0;
+    private int boardBlack;
 
     /**
      * The default field setup.
@@ -92,15 +92,6 @@ public class Model {
         System.out.println(game);
     }
 
-    /**
-     * Model Constructor to test the setup the Model to start as default.
-     */
-    public Model() {
-        board = new char[24];
-        Arrays.fill(board, EMPTY);
-        turn = PlayerTurn.WHITE;
-    }
-
 
     /**
      * Define a new Game with default EMPTY Layout of Board.
@@ -108,19 +99,17 @@ public class Model {
      */
 
     public void newGame() {
-        board = new char[]{
-                board[0], board[1], board[2],                                        //first row
-                board[8], board[9], board[10],                                                //second row
-                board[16], board[17], board[18],                                                          //third row
-                board[7], board[15], board[23], board[19], board[11], board[3],                                        //middle row
-                board[22], board[21], board[20],                                                          //third row
-                board[14], board[13], board[12],                                                //second row
-                board[6], board[5], board[4]                                         //first row
-        };
+        board = new char[24];
+        Arrays.fill(board, EMPTY);
         player1 = GameState.SET;
         player2 = GameState.SET;
+        turn = PlayerTurn.WHITE;
+        boardBlack = 0;
+        boardWhite = 0;
+        SETBlackStones = 9;
+        SETWhiteStones = 9;
 
-        //System.out.println("Game Start");
+        System.out.println("Game Start");
     }
 
 
@@ -398,22 +387,6 @@ public class Model {
 
     public char getPLAYER_2() {
         return PLAYER_2;
-    }
-
-    public void setSETWhiteStones(int SETWhiteStones) {
-        this.SETWhiteStones = SETWhiteStones;
-    }
-
-    public void setSETBlackStones(int SETBlackStones) {
-        this.SETBlackStones = SETBlackStones;
-    }
-
-    public void setBoardWhite(int boardWhite) {
-        this.boardWhite = boardWhite;
-    }
-
-    public void setBoardBlack(int boardBlack) {
-        this.boardBlack = boardBlack;
     }
 
     /**

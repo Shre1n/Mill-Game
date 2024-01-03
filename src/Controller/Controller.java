@@ -12,6 +12,8 @@ package Controller;
 import Model.*;
 import View.IView;
 
+import java.sql.SQLOutput;
+
 /**
  * Controller has knowledge of Model and View.
  * Methods and Variables should only be referenced by the Model.
@@ -25,6 +27,9 @@ public class Controller implements IController {
      */
     private Model millModel;
 
+    /**
+     * Default restart value
+     */
     private boolean restartGame;
 
     /**
@@ -37,9 +42,9 @@ public class Controller implements IController {
      */
     private int size;
 
-    private int posClicked;
-
-
+    /**
+     * Default draw game value
+     */
     private boolean gameBoardDrawn = false;
 
 
@@ -78,16 +83,11 @@ public class Controller implements IController {
         if (!gameBoardDrawn) {
             millModel.newGame();
             view.drawField();
-//            view.writeTurn();
             gameBoardDrawn = true;
         }
 
         if (restartGame){
-            millModel.setSETBlackStones(9);
-            millModel.setSETWhiteStones(9);
-            millModel.setBoardBlack(0);
-            millModel.setBoardWhite(0);
-            millModel.setEMPTY();
+            millModel.newGame();
             view.drawField();
             restartGame = false;
 
@@ -95,45 +95,73 @@ public class Controller implements IController {
 
     }
 
+
+    /**
+     * changes state of Game to restart
+     * @param restartGame restarts game
+     */
     public void setRestartGame(boolean restartGame) {
         this.restartGame = restartGame;
     }
 
+    /**
+     * Gets game State of player 1
+     * @return state of player 1
+     */
     public GameState getPlayer1() {
         return millModel.getPlayer1();
     }
+
+    /**
+     * Gets game State of player 2
+     * @return state of player 2
+     */
 
     public GameState getPlayer2(){
         return millModel.getPlayer2();
     }
 
+    /**
+     * Gets the char of player 1
+     * @return char
+     */
     public char getPlayer_1(){
         return millModel.getPLAYER_1();
     }
 
+    /**
+     * Gets the char of player 2
+     * @return char
+     */
     public char getPlayer_2(){
         return millModel.getPLAYER_2();
     }
 
+
+    /**
+     * Gets the board with all entries
+     * @return board
+     */
     public char[] getBoard(){
         return millModel.getBoard();
     }
 
-
-
     /**
      * Sets the position of Players input with given parameters.
      * Checks if Player has made a correct Move.
-     *
-     * @param x takes the x-axis of player input.
-     * @param y takes the y-axis of player input.
+     * @param clicked checks the x and y for mouse clicked
      */
     @Override
-    public void userInput(int x, int y) {
-        posClicked = calculatePosClicked(x, y);
-        int posDragged = calculatePosClicked(x,y);
+    public void userInput(boolean clicked) {
+        int x = view.getX();
+        int y = view.getY();
+        int xnew = view.getXnew();
+        int ynew = view.getYnew();
+        int posClicked = calculatePosClicked(x, y);
+        int posDragged = calculatePosClicked(xnew,ynew);
+        System.out.println(posClicked + "= " + x+ ", "+ y +"\n"+posDragged+"= "+xnew+", "+ynew);
         if(millModel.getTurn().equals("WHITE")){
-            if(millModel.getPlayer1() == GameState.SET){
+            if(millModel.getPlayer1() == GameState.SET && clicked){
                 try {
                     millModel.setPlayer(posClicked);
                     view.drawField();
@@ -141,34 +169,63 @@ public class Controller implements IController {
                     view.exceptionRunner();
                 }
             }
-            if(millModel.getPlayer1() == GameState.STEAL && millModel.getBoard()[posClicked]  == millModel.getPLAYER_2()){
-                millModel.steal(posClicked);
-                System.out.println(millModel.toString());
-                view.drawField();
+            if(millModel.getPlayer1() == GameState.STEAL && millModel.getBoard()[posClicked]  == millModel.getPLAYER_2() && clicked){
+                try{
+                    millModel.steal(posClicked);
+                    view.drawField();
+                } catch(RuntimeException e){
+                    System.out.println(e);
+                }
+
             }
-//            if (millModel.getPlayer1() == GameState.MOVE && millModel.getBoard()[posClicked] == millModel.getEMPTY()){
-//                millModel.move(this.getBoard()[posClicked],posDragged);
-//                System.out.println(millModel.toString());
-//                view.drawField();
-//            }
+            if ((millModel.getPlayer1() == GameState.MOVE || millModel.getPlayer1() == GameState.JUMP)&& millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked){
+                try {
+                    millModel.move(posClicked, posDragged);
+                    view.drawField();
+                } catch(RuntimeException e){
+                    System.out.println(e);
+                }
+            }
 
 
         } else{
-            if(millModel.getPlayer2() == GameState.SET) millModel.setPlayer(posClicked);
-            if(millModel.getPlayer2() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_1()){
-                millModel.steal(posClicked);
-                view.drawField();
+            if(millModel.getPlayer2() == GameState.SET && clicked){
+                try {
+                    millModel.setPlayer(posClicked);
+                    view.drawField();
+                } catch (RuntimeException e){
+                    view.exceptionRunner();
+                }
+            }
+            if(millModel.getPlayer2() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_1() && clicked){
+                try {
+                    millModel.steal(posClicked);
+                    view.drawField();
+                }catch(RuntimeException e){
+                    System.out.println(e);
+                }
+            }
+            if ((millModel.getPlayer2() == GameState.MOVE || millModel.getPlayer2() == GameState.JUMP)&& millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked){
+                try {
+                    millModel.move(posClicked, posDragged);
+                    view.drawField();
+                } catch(RuntimeException e){
+                    System.out.println(e);
+                }
             }
         }
         System.out.println(millModel.toString());
     }
 
-
-
+    /**
+     * Calculates the position clicked with a hit box.
+     * hit box is set with gap for x and y-axis.
+     * Dynamically settable with Size.
+     * @param x input from user
+     * @param y input from user
+     * @return int for board index
+     */
     private int calculatePosClicked(int x, int y) {
-
-        x = view.getX();
-        y = view.getY();
 
         // Calculate square parameters
         float start = (float) this.getSIZE() / 10;
@@ -236,7 +293,6 @@ public class Controller implements IController {
         return -1;
     }
 
-
     /**
      * @return color of player
      */
@@ -263,8 +319,4 @@ public class Controller implements IController {
         return size;
     }
 
-
-    public int getPosClicked() {
-        return posClicked;
-    }
 }
