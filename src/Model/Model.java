@@ -120,7 +120,7 @@ public class Model {
         player1 = GameState.SET;
         player2 = GameState.SET;
 
-        System.out.println("Game Start");
+        //System.out.println("Game Start");
     }
 
 

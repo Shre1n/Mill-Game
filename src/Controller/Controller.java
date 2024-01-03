@@ -12,6 +12,11 @@ package Controller;
 import Model.*;
 import View.IView;
 
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Controller has knowledge of Model and View.
  * Methods and Variables should only be referenced by the Model.
@@ -79,7 +84,6 @@ public class Controller implements IController {
             view.drawField();
 //            view.writeTurn();
             gameBoardDrawn = true;
-            restartGame = false;
         }
 
         if (restartGame){
@@ -92,6 +96,7 @@ public class Controller implements IController {
             restartGame = false;
 
         }
+        else view.drawField();
     }
 
     public void setRestartGame(boolean restartGame) {
@@ -106,7 +111,17 @@ public class Controller implements IController {
         return millModel.getPlayer2();
     }
 
-    public void getBoardEntry(){}
+    public char getPlayer_1(){
+        return millModel.getPLAYER_1();
+    }
+
+    public char getPlayer_2(){
+        return millModel.getPLAYER_2();
+    }
+
+    public char[] getBoard(){
+        return millModel.getBoard();
+    }
 
 
     /**
@@ -119,7 +134,6 @@ public class Controller implements IController {
     @Override
     public void userInput(int x, int y) {
         int posClicked = calculatePosClicked(x, y);
-        System.out.println(millModel.toString());
         if(millModel.getTurn().equals("WHITE")){
             if(millModel.getPlayer1() == GameState.SET) millModel.setPlayer(posClicked);
             if(millModel.getPlayer1() == GameState.STEAL && millModel.getBoard()[posClicked]  == millModel.getPLAYER_2()){
@@ -129,11 +143,13 @@ public class Controller implements IController {
             }
         } else{
             if(millModel.getPlayer2() == GameState.SET) millModel.setPlayer(posClicked);
-            if(millModel.getPlayer2() == GameState.STEAL && posClicked == millModel.getPLAYER_1()){
+            if(millModel.getPlayer2() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_1()){
                 millModel.steal(posClicked);
             }
         }
+        System.out.println(millModel.toString());
     }
+
 
 
     private int calculatePosClicked(int x, int y) {
@@ -233,5 +249,6 @@ public class Controller implements IController {
     public int getSIZE() {
         return size;
     }
+
 
 }

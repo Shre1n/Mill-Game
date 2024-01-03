@@ -30,5 +30,8 @@ public interface IController{
     GameState getPlayer1();
     GameState getPlayer2();
 
-    void getBoardEntry();
+    char getPlayer_1();
+    char getPlayer_2();
+
+    char[] getBoard();
 }
