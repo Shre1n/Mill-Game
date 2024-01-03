@@ -10,9 +10,6 @@ import processing.core.PApplet;
 import Controller.*;
 import processing.core.PImage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Visualize the Application and draw game
  */
@@ -86,39 +83,6 @@ public class View extends PApplet implements IView {
     }
 
     /**
-     * User information about current player and their state
-     */
-
-//    public void writeTurn() {
-//        //to fix with calculation
-//        update(350, 350, 300, 300);
-//    }
-
-    /**
-     * update information with rectangle draw
-     * @param x1 start x-axis of rectangle
-     * @param y1 start y-axis of rectangle
-     * @param x2 end x-axis of rectangle
-     * @param y2 end y-axis of rectangle
-     */
-
-    private void update(int x1, int y1, int x2, int y2) {
-        fill(255);
-        noStroke();
-        rect(x1, y1, x2, y2);
-
-        fill(0);
-        textAlign(CENTER, CENTER);
-        textSize((float) controller.getSIZE() / 20);
-        if (controller.playerTurn().equals("WHITE")) {
-            text(controller.playerTurn() + " : " + controller.getPlayer1(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
-        } else {
-            text(controller.playerTurn() + " : " + controller.getPlayer2(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
-        }
-
-    }
-
-    /**
      * load white player image at pressed x and y value
      */
 
@@ -146,8 +110,6 @@ public class View extends PApplet implements IView {
         text("Game Over! " + color + " has won!", (float) controller.getSIZE() / 10, (float) controller.getSIZE() / 2);
     }
 
-    //board index , x, y as Triplet
-    private List<Triplet<Integer, Integer, Integer>> arrOfInputs = new ArrayList<>();
 
     /**
      * {@inheritDoc}
@@ -179,43 +141,43 @@ public class View extends PApplet implements IView {
         line((float) controller.getSIZE() / 2, start, (float) controller.getSIZE() / 2, start + shrinkSqaure); //upper line
         line((float) controller.getSIZE() / 2, controller.getSIZE() - start, (float) controller.getSIZE() / 2, start + (shrinkSqaure * 3));
 
-//        char[] board = controller.getBoard();
-//
-//        for (int i = 0; i < board.length; i++) {
-//            if (board[i] == controller.getPlayer_1()) loadImage(player1,)
-//        }
+        fill(0);
+        textAlign(CENTER, CENTER);
+        textSize((float) controller.getSIZE() / 20);
+        if (controller.playerTurn().equals("WHITE")) {
+            text(controller.playerTurn() + " : " + controller.getPlayer1(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+        } else {
+            text(controller.playerTurn() + " : " + controller.getPlayer2(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+        }
 
 
+        int savedTime;
+        int totalTime = 4000;
 
-        /* Beispiel für Stein Load:
-        char[] board = controller.getBoard();
-        if(board[0] == controller.getPLAYER1()) loadImage(player1,start,start);
-        else if(board[0] == controller.getPLAYER2()) loadImage(player2,start,start);
-        usw. */
+        savedTime = millis();
+        if (millis() - savedTime >= totalTime){
+            exceptionRunner();
+        }
 
-        //Was auch geht:
+        noFill();
         char[] board = controller.getBoard();
         float x = 0, y = 0;
         float square = 0; // je nachdem, in welchem Square
-        float change = (float) controller.getSIZE()/2; // für die Abstände der Steine im Square
-        for(int i = 0; i <= 23; i++){
-            if(i%8 == 0){
+        float change = (float) controller.getSIZE() / 2; // für die Abstände der Steine im Square
+        for (int i = 0; i <= 23; i++) {
+            if (i % 8 == 0) {
                 square += start;
-                x =  0 + square;
+                x = 0 + square;
                 y = 0 + square;
                 change -= start;
             }
-            if(board[i] == controller.getPlayer_1()) image(player1, x - 50, y - 50, 100, 100);
-            else if(board[i] == controller.getPlayer_2()) image(player2, x - 50, y - 50, 100, 100);
-            if(i%8 <= 1) x += change;
-            else if(i%8 <= 3) y += change;
-            else if(i%8 <= 5) x -= change;
-            else if(i%8 == 6) y-= change;
+            if (board[i] == controller.getPlayer_1()) image(player1, x - 50, y - 50, 100, 100);
+            else if (board[i] == controller.getPlayer_2()) image(player2, x - 50, y - 50, 100, 100);
+            if (i % 8 <= 1) x += change;
+            else if (i % 8 <= 3) y += change;
+            else if (i % 8 <= 5) x -= change;
+            else if (i % 8 == 6) y -= change;
         }
-
-        //Stattdessen würde ich loadImagePlayer komplett rauslassen.
-
-
     }
 
 
@@ -226,16 +188,24 @@ public class View extends PApplet implements IView {
     public void mousePressed() {
         this.x = mouseX;
         this.y = mouseY;
-//        for (int i = 0; i < controller.getBoard().length; i++) {
-//            int value = i;
-//            Triplet<Integer,Integer,Integer> triplet = new Triplet<>(value,x,y);
-//            arrOfInputs.add(triplet);
-//            System.out.println(triplet.toString());
-//        }
-//        // thats why white is placed above steal stone
         controller.userInput(this.getX(), this.getY());
     }
 
+    @Override
+    public void mouseReleased() {
+        float easing = 0.05F;
+        x += (int) ((mouseX - x) * easing);
+        y += (int) ((mouseY - y) * easing);
+
+        controller.userInput(x, y);
+    }
+
+    public void exceptionRunner() {
+        fill(0);
+        textAlign(CENTER, BOTTOM);
+        textSize((float) controller.getSIZE() / 20);
+        text("No Valid Field. Choose another!", (float) controller.getSIZE() / 2, 50);
+    }
 
     @Override
     public void keyPressed() {
@@ -245,9 +215,9 @@ public class View extends PApplet implements IView {
         }
     }
 
-
     /**
      * Handle given x-axis position given from input
+     *
      * @return pressed X
      */
     public int getX() {
@@ -256,6 +226,7 @@ public class View extends PApplet implements IView {
 
     /**
      * Handle given y-axis position given from input
+     *
      * @return pressed Y
      */
 

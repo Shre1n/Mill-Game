@@ -127,6 +127,8 @@ public class Model {
     /**
      * Checks is Players input an Empty field.
      * @param pos of user input.
+     * @throws RuntimeException if field is taken.
+     * @throws IndexOutOfBoundsException if no field is selected.
      * @return wrong entry.
      */
     public boolean isEmptyField(int pos) {
@@ -194,6 +196,7 @@ public class Model {
     /**
      * Sets the Players settable Stones at Position.
      * @param pos given through user input.
+     * @throws RuntimeException unexpected use of method.
      */
     public void setPlayer(int pos) {
         if (player1 == GameState.SET && isEmptyField(pos) && turn == PlayerTurn.WHITE) {
@@ -383,6 +386,10 @@ public class Model {
     public void setEMPTY(){
         Arrays.fill(board, EMPTY);
         turn = PlayerTurn.valueOf("WHITE");
+    }
+
+    public char getEMPTY() {
+        return EMPTY;
     }
 
     public char getPLAYER_1() {

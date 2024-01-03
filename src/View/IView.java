@@ -23,7 +23,7 @@ public interface IView {
 
     public void loadImgPlayer2();
 
-//    public void writeTurn();
+    void exceptionRunner();
 
     public int getX();
 
