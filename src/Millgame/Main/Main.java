@@ -11,11 +11,11 @@
  */
 
 
-package Main;
+package Millgame.Main;
 
-import View.View;
-import Controller.Controller;
-import Model.Model;
+import Millgame.Controller.Controller;
+import Millgame.Model.Model;
+import Millgame.View.View;
 import processing.core.PApplet;
 
 

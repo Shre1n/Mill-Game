@@ -4,20 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="JDoc almost finished">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="JDoc and cursor in titlescreen fix">
+      <change afterPath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/PlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PlayerTurn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/IController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/PlayerTurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Model/Model.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,7 +63,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "C:/Users/robin/IdeaProjects/pis_muehle/img",
+    "last_opened_file_path": "C:/Users/robin/Downloads/VW05",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,30 +82,94 @@
       <recent name="C:\Users\robin\IdeaProjects\pis_muehle\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+  <component name="RunManager" selected="JUnit.ModelTest.CheckForValidMove">
+    <configuration name="ModelTest.CheckForValidMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Millgame.Model" />
+      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
+      <option name="METHOD_NAME" value="CheckForValidMove" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="View.View" />
+    <configuration name="ModelTest.CheckMain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pis_muehle" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="View.*" />
+          <option name="PATTERN" value="Millgame.Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Millgame.Model" />
+      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
+      <option name="METHOD_NAME" value="CheckMain" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModelTest.ShouldStartANewGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Millgame.Model" />
+      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
+      <option name="METHOD_NAME" value="ShouldStartANewGame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModelTest.ThrowRuntimeException_AtUnknownUseOfMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Millgame.Model" />
+      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
+      <option name="METHOD_NAME" value="ThrowRuntimeException_AtUnknownUseOfMethod" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModelTest.ThrowsIndexOutOfBoundsException_AtUnknownFieldEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Millgame.Model" />
+      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
+      <option name="METHOD_NAME" value="ThrowsIndexOutOfBoundsException_AtUnknownFieldEntry" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ModelTest.CheckForValidMove" />
+        <item itemvalue="JUnit.ModelTest.ThrowRuntimeException_AtUnknownUseOfMethod" />
+        <item itemvalue="JUnit.ModelTest.ThrowsIndexOutOfBoundsException_AtUnknownFieldEntry" />
+        <item itemvalue="JUnit.ModelTest.CheckMain" />
+        <item itemvalue="JUnit.ModelTest.ShouldStartANewGame" />
       </list>
     </recent_temporary>
   </component>
@@ -358,7 +428,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704323174388</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="JDoc and cursor in titlescreen fix">
+      <option name="closed" value="true" />
+      <created>1704374616660</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1704374616660</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +459,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Output of Board" />
     <MESSAGE value="StealMode works" />
     <MESSAGE value="fixed Move" />
     <MESSAGE value="Jump works" />
@@ -406,13 +483,14 @@
     <MESSAGE value="Move and Jump works" />
     <MESSAGE value="error handling and warning fixed. Added Title screen" />
     <MESSAGE value="JDoc almost finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="JDoc almost finished" />
+    <MESSAGE value="JDoc and cursor in titlescreen fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="JDoc and cursor in titlescreen fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Model/Model.java</url>
+          <url>file://$PROJECT_DIR$/src/Millgame/Model/Model.java</url>
           <line>138</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
@@ -422,5 +500,19 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ShouldStartANewGame.ic" NAME="ModelTest.ShouldStartANewGame Coverage Results" MODIFIED="1704380355304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Millgame.Model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowRuntimeException_AtUnknownUseOfMethod.ic" NAME="ModelTest.ThrowRuntimeException_AtUnknownUseOfMethod Coverage Results" MODIFIED="1704381087704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Millgame.Model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckMain.ic" NAME="ModelTest.CheckMain Coverage Results" MODIFIED="1704380497436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Millgame.Model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowsIndexOutOfBoundsException_AtUnknownFieldEntry.ic" NAME="ModelTest.ThrowsIndexOutOfBoundsException_AtUnknownFieldEntry Coverage Results" MODIFIED="1704380681806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Millgame.Model.*</FILTER>
+    </SUITE>
   </component>
 </project>

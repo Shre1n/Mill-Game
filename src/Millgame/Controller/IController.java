@@ -1,6 +1,6 @@
-package Controller;
+package Millgame.Controller;
 
-import Model.GameState;
+import Millgame.Model.GameState;
 
 /**
  * Blueprint for Controller with given methods

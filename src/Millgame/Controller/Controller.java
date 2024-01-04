@@ -3,16 +3,17 @@
  * @version 1.0
  * @since 2023-12-12
  * Provides all necessary classes and interfaces for controller.
- * The applet controller has only one reference to {@link Model.Model}
- * and one reference to {@link View.IView}.
+ * The applet controller has only one reference to {@link Millgame.Model.Model}
+ * and one reference to {@link Millgame.View.IView}.
  *
  *
  */
 
-package Controller;
+package Millgame.Controller;
 
-import Model.*;
-import View.IView;
+import Millgame.Model.GameState;
+import Millgame.Model.Model;
+import Millgame.View.IView;
 
 /**
  * Controller has knowledge of Model and View.

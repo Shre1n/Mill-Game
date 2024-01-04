@@ -10,10 +10,10 @@
  *
  */
 
-package View;
+package Millgame.View;
 
+import Millgame.Controller.IController;
 import processing.core.PApplet;
-import Controller.*;
 import processing.core.PImage;
 
 /**

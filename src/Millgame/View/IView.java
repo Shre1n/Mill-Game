@@ -1,4 +1,4 @@
-package View;
+package Millgame.View;
 
 /**
  * Blueprint for View with given methods

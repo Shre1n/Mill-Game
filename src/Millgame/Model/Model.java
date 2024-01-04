@@ -9,7 +9,7 @@
  *
  */
 
-package Model;
+package Millgame.Model;
 
 import java.util.Arrays;
 
@@ -83,6 +83,10 @@ public class Model {
      */
     private GameState player2;
 
+    public Model(){
+        newGame();
+    }
+
     /**
      * Main.Main method to test the Mill game and logic.
      * @param args args Command-line arguments (not used).
@@ -90,7 +94,12 @@ public class Model {
 
     public static void main(String[] args) {
         var game = new Model();
-        System.out.println(game);
+        game.setPlayer(0);//1
+        game.setPlayer(8);//2
+        game.setPlayer(12);//1
+        game.setPlayer(13);//2
+        game.setPlayer(3);//1
+        System.out.println("Field 3 is " + game.getPLAYER_1());
     }
 
 
@@ -287,7 +296,7 @@ public class Model {
      * Has Player BLACK won the Game.
      * @return player BLACK won.
      */
-    public boolean hasPlayer2Won() {
+    private boolean hasPlayer2Won() {
         return boardWhite == 2 && player1 == GameState.JUMP;
     }
 
