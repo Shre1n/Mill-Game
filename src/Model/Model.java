@@ -1,10 +1,11 @@
 /**
- *  @author Robin Hahn
- *  @version 1.0
- *  @since 2023-12-12
- *  Fundamentals and Logic for Application named 'The Mill game'.
- *  All Classes in this package should only be visible or referenced in Controller package.
+ * @author Robin Hahn
+ * @version 1.0
+ * @since 2023-12-12
+ * Provides all classes to set up the logic for the applet 'Mill Game'.
+ * The applets are set up with a Array as the board (see {@link java.util.Arrays}).
  *
+ * @see java.util
  *
  */
 
@@ -18,7 +19,7 @@ import java.util.Arrays;
  * BLACK is Player 2.
  * Checks the Players turn (Black or White) and start a new game.
  * Checks State of Player to circle through each state.
- * States can be 'SET','MOVE','JUMP'.
+ * States can be 'SET','MOVE','JUMP', 'STEAL'.
  * Move from player to another position.
  * Steal Stones from enemy with given position.
  */
@@ -83,7 +84,7 @@ public class Model {
     private GameState player2;
 
     /**
-     * Main method to test the Mill game and logic.
+     * Main.Main method to test the Mill game and logic.
      * @param args args Command-line arguments (not used).
      */
 
@@ -372,18 +373,23 @@ public class Model {
     /**
      * restarts game with a clear board
      */
-    public void setEMPTY(){
-        Arrays.fill(board, EMPTY);
-        turn = PlayerTurn.valueOf("WHITE");
-    }
 
     public char getEMPTY() {
         return EMPTY;
     }
 
+    /**
+     * gets the char of player 1
+     * @return char player 1
+     */
     public char getPLAYER_1() {
         return PLAYER_1;
     }
+
+    /**
+     * gets the char of player 2
+     * @return char player 2
+     */
 
     public char getPLAYER_2() {
         return PLAYER_2;

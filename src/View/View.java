@@ -2,6 +2,12 @@
  * @author Robin Hahn
  * @version 1.0
  * @since 2023-12-12
+ * Provides all necessary classes and interfaces to create and set a View instance.
+ * Classes extends from {@link processing.core.PApplet} for all drawings and to use their methods and functions.
+ * The applet loads an {@link processing.core.PImage} as a player image.
+ *
+ * @see processing.core
+ *
  */
 
 package View;
@@ -11,7 +17,8 @@ import Controller.*;
 import processing.core.PImage;
 
 /**
- * Visualize the Application and draw game
+ * Visualize the Application and draw game.
+ * Must contain all public classes from Controller interface to use them.
  */
 
 
@@ -99,6 +106,7 @@ public class View extends PApplet implements IView {
      */
 
     public void drawTitleScreen() {
+        noCursor();
         PImage bi = loadImage("background.jpg");
         bi.resize(controller.getSIZE(), controller.getSIZE());
         background(bi);
@@ -138,6 +146,7 @@ public class View extends PApplet implements IView {
      */
     @Override
     public void drawField() {
+        cursor();
         background(255);
         noFill();
         // Thickness of Squares

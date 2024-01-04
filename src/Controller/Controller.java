@@ -2,8 +2,11 @@
  * @author Robin Hahn
  * @version 1.0
  * @since 2023-12-12
- * All necessary Classes and Interfaces of Controller usage.
- * This package is likely known as 'Middleware' between Model and View.
+ * Provides all necessary classes and interfaces for controller.
+ * The applet controller has only one reference to {@link Model.Model}
+ * and one reference to {@link View.IView}.
+ *
+ *
  */
 
 package Controller;
@@ -56,7 +59,7 @@ public class Controller implements IController {
 
     /**
      * Refer model to Controller and set model.
-     * Typically used in Main to set the Model for Controller.
+     * Typically used in Main.Main to set the Model for Controller.
      *
      * @param model as Mill Model
      */
@@ -68,7 +71,7 @@ public class Controller implements IController {
 
     /**
      * Refer view to Controller and set this view.
-     * Typically used in Main to set View for Controller.
+     * Typically used in Main.Main to set View for Controller.
      *
      * @param view as Mill Model
      */
@@ -254,8 +257,6 @@ public class Controller implements IController {
                 view.drawField();
                 view.exceptionRunner("No valid adjacent field. Choose another one!");
             }
-
-
             try {
                 if (millModel.getPlayer2() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_1() && clicked) {
                     try {
@@ -339,7 +340,7 @@ public class Controller implements IController {
         return -1;
     }
 
-    /**
+     /**
      * {@inheritDoc}
      */
 

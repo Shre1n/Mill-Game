@@ -1,20 +1,13 @@
 package Model;
 
+
+/**
+ * This Enum sets the available Player movements as a state of Player.
+ */
 public enum GameState {
-
-    START,
-
-    PLAYING,
-
     STEAL,
-
     MOVE,
     JUMP,
-
-    SET,
-
-    GAMEO_OVER
-
-
+    SET
 
 }
