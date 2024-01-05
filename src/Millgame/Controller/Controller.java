@@ -96,6 +96,7 @@ public class Controller implements IController {
         if (!gameBoardDrawn && !titleScreen) {
             millModel.newGame();
             view.drawField();
+            view.activateThread();
             gameBoardDrawn = true;
         }
 
@@ -180,101 +181,103 @@ public class Controller implements IController {
      */
     @Override
     public void userInput(boolean clicked) {
-        int x = view.getX();
-        int y = view.getY();
-        int xnew = view.getXnew();
-        int ynew = view.getYnew();
-        int posClicked = calculatePosClicked(x, y);
-        int posDragged = calculatePosClicked(xnew, ynew);
-        System.out.println(posClicked + "= " + x + ", " + y + "\n" + posDragged + "= " + xnew + ", " + ynew);
-        if (millModel.getTurn().equals("WHITE")) {
-            if (millModel.getPlayer1() == GameState.SET && clicked) {
-                try {
-                    millModel.setPlayer(posClicked);
-                    view.drawField();
-                } catch (RuntimeException e) {
-                    view.drawField();
-                    view.exceptionRunner("No Valid Field. Choose another!");
-                }
-            }
-            try {
-                if ((millModel.getPlayer1() == GameState.MOVE || millModel.getPlayer1() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
-                    if (!stolen) {
-                        try {
-                            millModel.move(posClicked, posDragged);
-                            view.drawField();
-                        } catch (RuntimeException e) {
-                            view.drawField();
-                            view.exceptionRunner("No valid move! Fields must be adjacent.");
-                        }
-                    } else stolen = false;
-                }
-            } catch (RuntimeException e) {
-                view.drawField();
-                view.exceptionRunner("No valid adjacent field. Choose another one!");
-            }
-
-
-            try {
-                if (millModel.getPlayer1() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_2() && clicked) {
+        if(!titleScreen) {
+            int x = view.getX();
+            int y = view.getY();
+            int xnew = view.getXnew();
+            int ynew = view.getYnew();
+            int posClicked = calculatePosClicked(x, y);
+            int posDragged = calculatePosClicked(xnew, ynew);
+            System.out.println(posClicked + "= " + x + ", " + y + "\n" + posDragged + "= " + xnew + ", " + ynew);
+            if (millModel.getTurn().equals("WHITE")) {
+                if (millModel.getPlayer1() == GameState.SET && clicked) {
                     try {
-                        millModel.steal(posClicked);
-                        stolen = true;
+                        millModel.setPlayer(posClicked);
                         view.drawField();
                     } catch (RuntimeException e) {
                         view.drawField();
-                        view.exceptionRunner("This is not a valid Field to steal!");
+                        view.exceptionRunner("No Valid Field. Choose another!");
                     }
-
                 }
-            } catch (RuntimeException e) {
-                view.drawField();
-                view.exceptionRunner("This is not a valid field.");
-            }
-
-        } else {
-            if (millModel.getPlayer2() == GameState.SET && clicked) {
                 try {
-                    millModel.setPlayer(posClicked);
-                    view.drawField();
+                    if ((millModel.getPlayer1() == GameState.MOVE || millModel.getPlayer1() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
+                        if (!stolen) {
+                            try {
+                                millModel.move(posClicked, posDragged);
+                                view.drawField();
+                            } catch (RuntimeException e) {
+                                view.drawField();
+                                view.exceptionRunner("No valid move! Fields must be adjacent.");
+                            }
+                        } else stolen = false;
+                    }
                 } catch (RuntimeException e) {
                     view.drawField();
-                    view.exceptionRunner("No Valid Field. Choose another!");
+                    view.exceptionRunner("No valid adjacent field. Choose another one!");
                 }
-            }
-            try {
-                if ((millModel.getPlayer2() == GameState.MOVE || millModel.getPlayer2() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
-                    if (!stolen) {
+
+
+                try {
+                    if (millModel.getPlayer1() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_2() && clicked) {
                         try {
-                            millModel.move(posClicked, posDragged);
+                            millModel.steal(posClicked);
+                            stolen = true;
                             view.drawField();
                         } catch (RuntimeException e) {
                             view.drawField();
-                            view.exceptionRunner("No valid move! Fields must be adjacent");
+                            view.exceptionRunner("This is not a valid Field to steal!");
                         }
-                    } else stolen = false;
+
+                    }
+                } catch (RuntimeException e) {
+                    view.drawField();
+                    view.exceptionRunner("This is not a valid field.");
                 }
-            } catch (RuntimeException e) {
-                view.drawField();
-                view.exceptionRunner("No valid adjacent field. Choose another one!");
-            }
-            try {
-                if (millModel.getPlayer2() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_1() && clicked) {
+
+            } else {
+                if (millModel.getPlayer2() == GameState.SET && clicked) {
                     try {
-                        millModel.steal(posClicked);
-                        stolen = true;
+                        millModel.setPlayer(posClicked);
                         view.drawField();
                     } catch (RuntimeException e) {
                         view.drawField();
-                        view.exceptionRunner("This is not a valid Field to steal!");
+                        view.exceptionRunner("No Valid Field. Choose another!");
                     }
                 }
-            } catch (RuntimeException e) {
-                view.drawField();
-                view.exceptionRunner("This is not a valid Field to steal!");
+                try {
+                    if ((millModel.getPlayer2() == GameState.MOVE || millModel.getPlayer2() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
+                        if (!stolen) {
+                            try {
+                                millModel.move(posClicked, posDragged);
+                                view.drawField();
+                            } catch (RuntimeException e) {
+                                view.drawField();
+                                view.exceptionRunner("No valid move! Fields must be adjacent");
+                            }
+                        } else stolen = false;
+                    }
+                } catch (RuntimeException e) {
+                    view.drawField();
+                    view.exceptionRunner("No valid adjacent field. Choose another one!");
+                }
+                try {
+                    if (millModel.getPlayer2() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_1() && clicked) {
+                        try {
+                            millModel.steal(posClicked);
+                            stolen = true;
+                            view.drawField();
+                        } catch (RuntimeException e) {
+                            view.drawField();
+                            view.exceptionRunner("This is not a valid Field to steal!");
+                        }
+                    }
+                } catch (RuntimeException e) {
+                    view.drawField();
+                    view.exceptionRunner("This is not a valid Field to steal!");
+                }
             }
+            System.out.println(millModel.toString());
         }
-        System.out.println(millModel.toString());
     }
 
     private int calculatePosClicked(int x, int y) {

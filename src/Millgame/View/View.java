@@ -179,26 +179,6 @@ public class View extends PApplet implements IView {
         } else {
             text(controller.playerTurn() + " : " + controller.getPlayer2(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
         }
-
-        noFill();
-        char[] board = controller.getBoard();
-        float x = 0, y = 0;
-        float square = 0; // je nachdem, in welchem Square
-        float change = (float) controller.getSIZE() / 2; // für die Abstände der Steine im Square
-        for (int i = 0; i <= 23; i++) {
-            if (i % 8 == 0) {
-                square += start;
-                x = 0 + square;
-                y = 0 + square;
-                change -= start;
-            }
-            if (board[i] == controller.getPlayer_1()) image(player1, x - 50, y - 50, 100, 100);
-            else if (board[i] == controller.getPlayer_2()) image(player2, x - 50, y - 50, 100, 100);
-            if (i % 8 <= 1) x += change;
-            else if (i % 8 <= 3) y += change;
-            else if (i % 8 <= 5) x -= change;
-            else if (i % 8 == 6) y -= change;
-        }
     }
 
 
@@ -248,6 +228,36 @@ public class View extends PApplet implements IView {
         textAlign(CENTER, BOTTOM);
         textSize((float) controller.getSIZE() / 20);
         text(message, (float) controller.getSIZE() / 2, 50);
+    }
+
+    public void activateThread(){
+        Thread loadimages = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    char[] board = controller.getBoard();
+                    float start = (float) controller.getSIZE() / 10;
+                    float x = 0, y = 0;
+                    float square = 0; // je nachdem, in welchem Square
+                    float change = (float) controller.getSIZE() / 2; // für die Abstände der Steine im Square
+                    for (int i = 0; i <= 23; i++) {
+                        if (i % 8 == 0) {
+                            square += start;
+                            x = 0 + square;
+                            y = 0 + square;
+                            change -= start;
+                        }
+                        if (board[i] == controller.getPlayer_1()) image(player1, x - 50, y - 50, 100, 100);
+                        else if (board[i] == controller.getPlayer_2()) image(player2, x - 50, y - 50, 100, 100);
+                        if (i % 8 <= 1) x += change;
+                        else if (i % 8 <= 3) y += change;
+                        else if (i % 8 <= 5) x -= change;
+                        else if (i % 8 == 6) y -= change;
+                    }
+                }
+            }
+        });
+        loadimages.start();
     }
 
     /**

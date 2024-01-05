@@ -18,6 +18,7 @@ public interface IView {
      */
 
     void drawField();
+    void activateThread();
 
 
     /**

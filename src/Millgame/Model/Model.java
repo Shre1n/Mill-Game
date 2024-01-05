@@ -143,52 +143,33 @@ public class Model {
      * Is position valid and not Empty and opponents Stone than he can steal that Stone.
      * @param pos given position to steal from opponent.
      */
-
     public void steal(int pos) {
-        if (board[pos] == EMPTY) {
-            throw new RuntimeException("This field is Empty. This is not a Valid stone to steal. Try another one!");
-        }
+        if (board[pos] == EMPTY) throw new RuntimeException("This field is Empty. This is not a Valid stone to steal. Try another one!");
         if (player1 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.WHITE) {
             if (board[pos] == PLAYER_2 && !isMill(pos, PLAYER_2)) {
                 board[pos] = EMPTY;
                 boardBlack--;
                 turn = PlayerTurn.BLACK;
-                if (SETWhiteStones > 0) {
-                    player1 = GameState.SET;
-                } else if (boardWhite > 3) {
-                    player1 = GameState.MOVE;
-                } else {
-                    player1 = GameState.JUMP;
-                }
-                if (SETBlackStones > 0) {
-                    player2 = GameState.SET;
-                } else if (boardBlack > 3) {
-                    player2 = GameState.MOVE;
-                } else {
-                    player2 = GameState.JUMP;
-                }
-            }
+                checkPlayerState();
+            } else if (board[pos] == PLAYER_2 && isMill(pos, PLAYER_2)) throw new RuntimeException("Stone is not possible to steal. Stone is in Opponents Mill.");
+            else throw new IllegalArgumentException("You cannot steal your own stones.");
         } else if (player2 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.BLACK) {
             if (board[pos] == PLAYER_1 && !isMill(pos, PLAYER_1)) {
                 board[pos] = EMPTY;
                 boardWhite--;
                 turn = PlayerTurn.WHITE;
-                if (SETBlackStones > 0) {
-                    player2 = GameState.SET;
-                } else if (boardBlack > 3) {
-                    player2 = GameState.MOVE;
-                } else {
-                    player2 = GameState.JUMP;
-                }
-                if (SETWhiteStones > 0) {
-                    player1 = GameState.SET;
-                } else if (boardWhite > 3) {
-                    player1 = GameState.MOVE;
-                } else {
-                    player1 = GameState.JUMP;
-                }
-            }
+                checkPlayerState();
+            } else if (board[pos] == PLAYER_1 && isMill(pos, PLAYER_1)) throw new RuntimeException("Stone is not possible to Steal. Stone is in Opponents Mill.");
+            else throw new IllegalArgumentException("You cannot steal your own stones.");
         }
+    }
+    private void checkPlayerState(){
+        if (SETBlackStones > 0) player2 = GameState.SET;
+        else if (boardBlack > 3) player2 = GameState.MOVE;
+        else player2 = GameState.JUMP;
+        if (SETWhiteStones > 0) player1 = GameState.SET;
+        else if (boardWhite > 3) player1 = GameState.MOVE;
+        else player1 = GameState.JUMP;
     }
 
 
@@ -206,9 +187,7 @@ public class Model {
             if (isMill(pos, PLAYER_1)) {
                 player1 = GameState.STEAL;
                 turn = PlayerTurn.WHITE;
-            } else if (SETWhiteStones == 0) {
-                player1 = GameState.MOVE;
-            }
+            } else if (SETWhiteStones == 0) player1 = GameState.MOVE;
         } else if (player2 == GameState.SET && isEmptyField(pos) && turn == PlayerTurn.BLACK) {
             board[pos] = PLAYER_2;
             --SETBlackStones;
@@ -217,12 +196,9 @@ public class Model {
             if (isMill(pos, PLAYER_2)) {
                 player2 = GameState.STEAL;
                 turn = PlayerTurn.BLACK;
-            } else if (SETBlackStones == 0) {
-                player2 = GameState.MOVE;
-            }
-        } else {
-            throw new RuntimeException("Gamestate of current Player is not SET. Please use the intended method!");
-        }
+            } else if (SETBlackStones == 0) player2 = GameState.MOVE;
+        } else throw new IllegalArgumentException("Gamestate of current Player is not SET. Please use the intended method!");
+
     }
 
     /**
@@ -233,15 +209,11 @@ public class Model {
      */
     private boolean isValidMove(int pos1, int pos2) {
         int temp = whichSquare(pos1);
-        if (pos1 % 2 == 0) {
-            return ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 7) % 8) + temp == pos2;
-        } else {
-            if (temp == 8)
-                return ((pos1 - 1) % 8) + temp == pos2 || ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 8) % 24) == pos2 || ((pos1 + 16)) % 24 == pos2;
-            else if (temp == 0)
-                return ((pos1 - 1) % 8) + temp == pos2 || ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 8) % 24) == pos2;
-            else
-                return ((pos1 - 1) % 8) + temp == pos2 || ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 16)) % 24 == pos2;
+        if (pos1 % 2 == 0) return ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 7) % 8) + temp == pos2;
+        else {
+            if (temp == 8) return ((pos1 - 1) % 8) + temp == pos2 || ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 8) % 24) == pos2 || ((pos1 + 16)) % 24 == pos2;
+            else if (temp == 0) return ((pos1 - 1) % 8) + temp == pos2 || ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 8) % 24) == pos2;
+            else return ((pos1 - 1) % 8) + temp == pos2 || ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 16)) % 24 == pos2;
         }
     }
 
@@ -254,11 +226,9 @@ public class Model {
         if (!isGameOver()) {
             if (isEmptyField(pos2) && player1 != GameState.SET && turn == PlayerTurn.WHITE) {
                 if (player1 == GameState.MOVE) {
-                    if (!isValidMove(pos1, pos2))
-                        throw new RuntimeException("Move is not possible! Positions must be adjacent.");
+                    if (!isValidMove(pos1, pos2)) throw new RuntimeException("Move is not possible! Positions must be adjacent.");
                 }
-                if (board[pos1] != PLAYER_1)
-                    throw new RuntimeException("The choosen stone to move does not equal the current Player.");
+                if (board[pos1] != PLAYER_1) throw new RuntimeException("The choosen stone to move does not equal the current Player.");
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.BLACK;
@@ -268,11 +238,9 @@ public class Model {
                 }
             } else if (isEmptyField(pos2) && player2 != GameState.SET && turn == PlayerTurn.BLACK) {
                 if (player2 == GameState.MOVE) {
-                    if (!isValidMove(pos1, pos2))
-                        throw new RuntimeException("Move is not possible! Positions must be adjacent.");
+                    if (!isValidMove(pos1, pos2)) throw new RuntimeException("Move is not possible! Positions must be adjacent.");
                 }
-                if (board[pos1] != PLAYER_2)
-                    throw new RuntimeException("The choosen stone to move does not equal the current Player.");
+                if (board[pos1] != PLAYER_2) throw new RuntimeException("The choosen stone to move does not equal the current Player.");
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.WHITE;
@@ -296,10 +264,9 @@ public class Model {
      * Has Player BLACK won the Game.
      * @return player BLACK won.
      */
-    private boolean hasPlayer2Won() {
+    public boolean hasPlayer2Won() {
         return boardWhite == 2 && player1 == GameState.JUMP;
     }
-
     /**
      * Checks if Player has already won the game.
      * @return winning player.
@@ -317,11 +284,9 @@ public class Model {
     private boolean isMill(int pos, char player) {
         // Check for mühle in row, column
         int temp = whichSquare(pos);
-        if (pos % 2 == 0) {
-            return board[((pos + 1) % 8) + temp] == player && board[((pos + 2) % 8) + temp] == player || board[((pos + 7) % 8) + temp] == player && board[((pos + 6) % 8) + temp] == player;
-        } else {
-            return board[(pos + 8) % 24] == player && board[(pos + 16) % 24] == player || board[((pos + 1) % 8) + temp] == player && board[((pos - 1) % 8) + temp] == player;
-        }
+        if (pos % 2 == 0) return board[((pos + 1) % 8) + temp] == player && board[((pos + 2) % 8) + temp] == player || board[((pos + 7) % 8) + temp] == player && board[((pos + 6) % 8) + temp] == player;
+         else return board[(pos + 8) % 24] == player && board[(pos + 16) % 24] == player || board[((pos + 1) % 8) + temp] == player && board[((pos - 1) % 8) + temp] == player;
+
     }
 
     /**
@@ -374,7 +339,6 @@ public class Model {
      * Gets the current board setup to access in Model.
      * @return board
      */
-
     public char[] getBoard() {
         return board;
     }
