@@ -9,16 +9,25 @@ public interface IView {
 
     /**
      * Draws the GameOver screen with the winning player
-     * @param color of player
+     * @param message to display
      */
-    void drawGG(String color);
+    void drawGG(String message);
 
     /**
      * Draw game field with squares and separates them by a value to draw inner squares
      */
 
     void drawField();
+
+    /**
+     * Activates the Thread for image loading.
+     */
     void activateThread();
+
+    /**
+     * Deactivates the Thread for the image loading
+     */
+    void deactivateThread();
 
 
     /**

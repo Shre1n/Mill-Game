@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Tests started">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Tests almost finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/View/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/IView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,19 +76,16 @@
       <recent name="C:\Users\robin\IdeaProjects\pis_muehle\src" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="ModelTest.CheckBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Millgame.Main.Main" />
       <module name="pis_muehle" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Millgame.Model.*" />
+          <option name="PATTERN" value="Millgame.Main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Millgame.Model" />
-      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="METHOD_NAME" value="CheckBoard" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ModelTest.CheckGameStates" />
         <item itemvalue="JUnit.ModelTest.CheckPlayersTurn" />
         <item itemvalue="JUnit.ModelTest.CheckForPlayerWonAndMoveIsEmpty" />
         <item itemvalue="JUnit.ModelTest.CheckIfPlayer1HasWon" />
-        <item itemvalue="JUnit.ModelTest.CheckBoard" />
       </list>
     </recent_temporary>
   </component>
@@ -439,7 +435,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704381991747</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Tests almost finished">
+      <option name="closed" value="true" />
+      <created>1704460314685</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1704460314685</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +466,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed Move" />
     <MESSAGE value="Jump works" />
     <MESSAGE value="JShell and Model done" />
     <MESSAGE value="init core" />
@@ -487,7 +490,8 @@
     <MESSAGE value="JDoc almost finished" />
     <MESSAGE value="JDoc and cursor in titlescreen fix" />
     <MESSAGE value="Tests started" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests started" />
+    <MESSAGE value="Tests almost finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests almost finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

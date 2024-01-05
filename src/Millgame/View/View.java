@@ -49,6 +49,7 @@ public class View extends PApplet implements IView {
      * Default value of new y value
      */
     private int ynew;
+    private boolean active = false;
 
     /**
      * Image storage of player White
@@ -132,12 +133,14 @@ public class View extends PApplet implements IView {
      * {@inheritDoc}
      */
     @Override
-    public void drawGG(String color) {
+    public void drawGG(String message) {
         background(0);
         textSize((float) controller.getSIZE() / 15);
         textAlign(CENTER, CENTER);
         fill(255);
-        text("Game Over! " + color + " has won!", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+        text(message, (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+        textSize((float) controller.getSIZE() /30);
+        text("Press 'r' to reset!",(float) controller.getSIZE() / 2, (float) controller.getSIZE() / 3*2);
     }
 
 
@@ -230,11 +233,15 @@ public class View extends PApplet implements IView {
         text(message, (float) controller.getSIZE() / 2, 50);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public void activateThread(){
+        active = true;
         Thread loadimages = new Thread(new Runnable() {
             @Override
             public void run() {
-                while (true) {
+                while (active) {
                     char[] board = controller.getBoard();
                     float start = (float) controller.getSIZE() / 10;
                     float x = 0, y = 0;
@@ -258,6 +265,12 @@ public class View extends PApplet implements IView {
             }
         });
         loadimages.start();
+    }
+    /**
+     * {@inheritDoc}
+     */
+    public void deactivateThread(){
+        active = false;
     }
 
     /**

@@ -89,8 +89,14 @@ public class Controller implements IController {
     @Override
     public void nextFrame() {
         if (millModel.isGameOver()) {
-            if (millModel.hasPlayer1Won()) view.drawGG("White");
-            else view.drawGG("Black");
+            view.deactivateThread();
+            if (millModel.hasPlayer1Won()) view.drawGG("Game Over! White has won!");
+            else view.drawGG("Game Over! Black has won!");
+        }
+
+        if (millModel.isDraw()){
+            view.deactivateThread();
+            view.drawGG("Game is a draw! Sadge ☹\uFE0F");
         }
 
         if (!gameBoardDrawn && !titleScreen) {
