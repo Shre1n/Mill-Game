@@ -4,11 +4,95 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="changed draw screen">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="exception handling frontend">
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/Controller.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/IController.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/class-use/Controller.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/class-use/IController.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Main/Main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Main/class-use/Main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Main/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Main/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Main/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/GameState.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/Model.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/ModelTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/PlayerTurn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/class-use/GameState.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/class-use/Model.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/class-use/ModelTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/class-use/PlayerTurn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/IView.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/View.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/class-use/IView.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/class-use/View.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/package-use.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/allpackages-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/copy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/element-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-14.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-15.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-16.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-17.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/ADDITIONAL_LICENSE_INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/ASSEMBLY_EXCEPTION" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/jquery.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/jqueryUI.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/member-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/module-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/package-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/resources/glass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/resources/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-3.6.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/search-page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/tag-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaDoc/type-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Screenshots/HomeScreen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/backgroundGame.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/PlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/PlayerTurn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +173,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ModelTest.CheckForDrawGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Millgame.Model" />
+      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
+      <option name="METHOD_NAME" value="CheckForDrawGame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ModelTest.CheckForPlayerWonAndMoveIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pis_muehle" />
       <extension name="coverage">
@@ -121,22 +221,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModelTest.CheckIfPlayer1HasWon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pis_muehle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Millgame.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Millgame.Model" />
-      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="METHOD_NAME" value="CheckIfPlayer1HasWon" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ModelTest.CheckPlayersTurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pis_muehle" />
       <extension name="coverage">
@@ -156,10 +240,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ModelTest.CheckForDrawGame" />
+        <item itemvalue="JUnit.ModelTest.CheckForPlayerWonAndMoveIsEmpty" />
         <item itemvalue="JUnit.ModelTest.CheckGameStates" />
         <item itemvalue="JUnit.ModelTest.CheckPlayersTurn" />
-        <item itemvalue="JUnit.ModelTest.CheckForPlayerWonAndMoveIsEmpty" />
-        <item itemvalue="JUnit.ModelTest.CheckIfPlayer1HasWon" />
       </list>
     </recent_temporary>
   </component>
@@ -458,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704462919167</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="exception handling frontend">
+      <option name="closed" value="true" />
+      <created>1704466352657</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1704466352657</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="init core" />
     <MESSAGE value="Setup Main View Controller" />
     <MESSAGE value="changed Readme" />
     <MESSAGE value="Setup field in view" />
@@ -506,19 +597,20 @@
     <MESSAGE value="Tests almost finished" />
     <MESSAGE value="Draw Game init" />
     <MESSAGE value="changed draw screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed draw screen" />
+    <MESSAGE value="exception handling frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception handling frontend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/Millgame/Model/ModelTest.java</url>
-          <line>25</line>
+          <line>37</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/Millgame/Model/ModelTest.java</url>
-          <line>398</line>
+          <line>410</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
@@ -547,6 +639,9 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowsRuntimeException_AtStealStoneInMillForPlayer.ic" NAME="ModelTest.ThrowsRuntimeException_AtStealStoneInMillForPlayer Coverage Results" MODIFIED="1704457411836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckForDrawGame.ic" NAME="ModelTest.CheckForDrawGame Coverage Results" MODIFIED="1704468203662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Millgame.Model.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckBoard.ic" NAME="ModelTest.CheckBoard Coverage Results" MODIFIED="1704458474247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
@@ -559,7 +654,7 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckIfPlayer1HasWon.ic" NAME="ModelTest.CheckIfPlayer1HasWon Coverage Results" MODIFIED="1704458129396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckForPlayerWonAndMoveIsEmpty.ic" NAME="ModelTest.CheckForPlayerWonAndMoveIsEmpty Coverage Results" MODIFIED="1704459676085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckForPlayerWonAndMoveIsEmpty.ic" NAME="ModelTest.CheckForPlayerWonAndMoveIsEmpty Coverage Results" MODIFIED="1704467863750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowsRuntimeException_AtStealStoneInMillForPlayer1.ic" NAME="ModelTest.ThrowsRuntimeException_AtStealStoneInMillForPlayer1 Coverage Results" MODIFIED="1704449118594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

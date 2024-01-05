@@ -6,7 +6,14 @@ package Millgame.Model;
  */
 public enum PlayerTurn {
 
+    /**
+     * Color of Player 1
+     */
     WHITE,
+
+    /**
+     * Color of Player 2
+     */
     BLACK
 
 

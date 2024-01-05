@@ -113,7 +113,6 @@ public class Controller implements IController {
             view.drawField();
             restartGame = false;
         }
-
     }
 
 
@@ -225,7 +224,7 @@ public class Controller implements IController {
                     view.drawField();
                     view.exceptionRunner("You must choose a valid field to move to.");
                 }
-                if (millModel.getPlayer1() == GameState.SET && clicked) {
+                if (millModel.getPlayer1() == GameState.SET && clicked && !stolen) {
                     try {
                         millModel.setPlayer(posClicked);
                         view.drawField();
@@ -233,7 +232,7 @@ public class Controller implements IController {
                         view.drawField();
                         view.exceptionRunner("Please choose an empty field.");
                     }
-                }
+                } else stolen = false;
             } else {
                 try {
                     if (millModel.getPlayer2() == GameState.STEAL && clicked) {
@@ -354,7 +353,7 @@ public class Controller implements IController {
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the Size of Application
      */
 
     public void setSize(int SIZE) {

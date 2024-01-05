@@ -1,7 +1,69 @@
-https://hotpot.ai/art-generator
+# Mühle
+
+## Anleitung
+
+Mit dieser Anwendung können Sie gemeinsam mit einem Freund das Spiel "Mühle" spielen.
+
++ Spieler 1 hat die Farbe Weiß
++ Spieler 2 hat die Farbe Schwarz
 
 
-https://wallpaperaccess.com/mill
+Sie finden alle Instruktionen des Spiels auf der visuellen Oberfläche.
+
+Das Spiel kann jederzeit mit dem einem Tastendruck auf 'r' neugestartet werden.
 
 
-https://processing.org/
+## Jshell
+
+### Mit diesem Abschnitt der Anleitung, können Sie die anwendung auch in der JShell starten.
+
+```Konsole 
+    JShell.exe --class-path ./out/production/pis_muehle/Millgame  
+```
+
+
+
+
+
+
+
+
+## Starten des Spiels
+
+Um das Spiel auszuführen, muss die Main.java in dem dazugehörigen Package ausgeführt werden.
++ Main.Main
+lässt Sie das spiel mit zwei Spielern (Schwarz & Weiß) spielen.
+
+
+## Startbildschirm
+
+![HomeScreen](Screenshots/HomeScreen.png)
+
+## Spielscreen
+
+
+
+
+
+## Verwendete Bibliotheken
+
+[Processing PApplet](https://processing.github.io/processing-javadocs/core/processing/core/PApplet.html)
+
+[Processing PIamge](https://processing.github.io/processing-javadocs/core/processing/core/PImage.html)
+
+[JUnit](https://junit.org/junit5/)
+
+[Arrays](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html)
+
+
+## Quellen des Projekts
+
+[Spielsteine](https://hotpot.ai/art-generator)
+
+[Hintergrundbild](https://wallpaperaccess.com/mill)
+
+[Processing Referenz](https://processing.org/)
+
+[Error bearbeitung](https://rollbar.com/blog/java-exceptions-hierarchy-explained/)
+
+[Spielhintergrund](https://www.freepik.com/free-photo/natural-wooden-background_5505940.htm#query=board%20background%20wood&position=1&from_view=search&track=ais&uuid=ff5c71bf-5973-444f-b08a-d666bff239ac)

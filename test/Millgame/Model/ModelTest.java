@@ -1,9 +1,21 @@
+/**
+ * @author Robin Hahn
+ * @version 1.0
+ * @since 2023-12-12
+ * Provides all necessary classes to test the Model package
+ * Tests are written with JUnit
+ *
+ * @see org.junit
+ */
 package Millgame.Model;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test of Model and all included classes
+ */
 public class ModelTest {
     @Test
     void CheckMain(){
@@ -420,6 +432,25 @@ public class ModelTest {
         s += "\n Available Stones Player 1: 8";
         s += "\n Available Stones Player 2: 9";
         assertEquals(s,game.toString());
+    }
+
+    @Test
+    void CheckForDrawGame(){
+        var game = new Model();
+        game.setPlayer(0);
+        game.setPlayer(8);
+        game.setPlayer(1);
+        game.setPlayer(9);
+        game.setPlayer(2);
+        game.steal(8);
+        assertFalse(game.isDraw());
+        game.setPlayer(8);
+        game.setPlayer(3); //1
+        game.setPlayer(17);
+        game.setPlayer(4);
+        game.steal(17);
+        game.setPlayer(10);
+        assertTrue(game.isDraw());
     }
 
 }

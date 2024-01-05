@@ -81,6 +81,10 @@ public class Model {
      */
     private GameState player2;
 
+
+    /**
+     * Constructor of Model to start a new game
+     */
     public Model() {
         newGame();
     }
@@ -116,8 +120,6 @@ public class Model {
         boardWhite = 0;
         SETBlackStones = 9;
         SETWhiteStones = 9;
-
-        System.out.println("Game Start");
     }
 
 
@@ -230,7 +232,7 @@ public class Model {
      * @param pos2 players future position.
      */
     public void move(int pos1, int pos2) { // 16, 23
-        if (!isGameOver()) {
+        if (!isGameOver() && !isDraw()) {
             if (isEmptyField(pos2) && player1 != GameState.SET && turn == PlayerTurn.WHITE) {
                 if (player1 == GameState.MOVE) {
                     if (!isValidMove(pos1, pos2) && board[pos1] == PLAYER_1)
@@ -286,6 +288,12 @@ public class Model {
     public boolean isGameOver() {
         return hasPlayer1Won() || hasPlayer2Won();
     }
+
+    /**
+     * checks if the game is a draw
+     * If Players only have mills
+     * @return boolean draw game
+     */
 
     public boolean isDraw() {
         boolean isDraw = true;
@@ -373,6 +381,7 @@ public class Model {
 
     /**
      * restarts game with a clear board
+     * @return char
      */
 
     public char getEMPTY() {

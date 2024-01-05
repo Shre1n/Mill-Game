@@ -1,13 +1,11 @@
 /**
  * @author Robin Hahn
  * @version 1.0
+ * @see processing.core
  * @since 2023-12-12
  * Provides all necessary classes and interfaces to create and set a View instance.
  * Classes extends from {@link processing.core.PApplet} for all drawings and to use their methods and functions.
  * The applet loads an {@link processing.core.PImage} as a player image.
- *
- * @see processing.core
- *
  */
 
 package Millgame.View;
@@ -28,6 +26,8 @@ public class View extends PApplet implements IView {
      * Declare Controller instance
      */
     private IController controller;
+    private PImage bg;
+    private PImage ts;
 
 
     /**
@@ -91,7 +91,10 @@ public class View extends PApplet implements IView {
         frameRate(60);
         surface.setTitle("The Mill Game");
         surface.setResizable(false);
-
+        bg = loadImage("backgroundGame.jpg");
+        bg.resize(controller.getSIZE(), controller.getSIZE());
+        ts = loadImage("background.jpg");
+        ts.resize(controller.getSIZE(), controller.getSIZE());
     }
 
     /**
@@ -107,10 +110,7 @@ public class View extends PApplet implements IView {
      */
 
     public void drawTitleScreen() {
-        noCursor();
-        PImage bi = loadImage("background.jpg");
-        bi.resize(controller.getSIZE(), controller.getSIZE());
-        background(bi);
+        background(ts);
 
         player1 = loadImage("WhiteStone.png");
         player1.resize(100, 100);
@@ -125,7 +125,7 @@ public class View extends PApplet implements IView {
         textSize((float) controller.getSIZE() / 20);
         text("The Mill Game", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
         fill(255);
-        textAlign(CENTER,TOP);
+        textAlign(CENTER, TOP);
         text("Press 'R' to Start and Reset the Game", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2 + 400);
     }
 
@@ -139,8 +139,8 @@ public class View extends PApplet implements IView {
         textAlign(CENTER, CENTER);
         fill(255);
         text(message, (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
-        textSize((float) controller.getSIZE() /30);
-        text("Press 'r' to reset!",(float) controller.getSIZE() / 2, (float) controller.getSIZE() / 3*2);
+        textSize((float) controller.getSIZE() / 30);
+        text("Press 'r' to reset!", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 3 * 2);
     }
 
 
@@ -149,8 +149,8 @@ public class View extends PApplet implements IView {
      */
     @Override
     public void drawField() {
-        cursor();
-        background(255);
+        background(bg);
+
         noFill();
         // Thickness of Squares
         strokeWeight((float) controller.getSIZE() / 100);
@@ -236,7 +236,7 @@ public class View extends PApplet implements IView {
     /**
      * {@inheritDoc}
      */
-    public void activateThread(){
+    public void activateThread() {
         active = true;
         Thread loadimages = new Thread(new Runnable() {
             @Override
@@ -266,10 +266,11 @@ public class View extends PApplet implements IView {
         });
         loadimages.start();
     }
+
     /**
      * {@inheritDoc}
      */
-    public void deactivateThread(){
+    public void deactivateThread() {
         active = false;
     }
 
