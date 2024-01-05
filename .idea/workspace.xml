@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Tests almost finished">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Draw Game init">
+      <change afterPath="$PROJECT_DIR$/img/pudding.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/View/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -443,7 +441,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704460314685</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Draw Game init">
+      <option name="closed" value="true" />
+      <created>1704462466711</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1704462466711</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +472,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Jump works" />
     <MESSAGE value="JShell and Model done" />
     <MESSAGE value="init core" />
     <MESSAGE value="Setup Main View Controller" />
@@ -491,7 +496,8 @@
     <MESSAGE value="JDoc and cursor in titlescreen fix" />
     <MESSAGE value="Tests started" />
     <MESSAGE value="Tests almost finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests almost finished" />
+    <MESSAGE value="Draw Game init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Draw Game init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

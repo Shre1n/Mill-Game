@@ -96,7 +96,7 @@ public class Controller implements IController {
 
         if (millModel.isDraw()){
             view.deactivateThread();
-            view.drawGG("Game is a draw! Sadge ☹\uFE0F");
+            view.drawGG("Game is a draw! Sadge :( ");
         }
 
         if (!gameBoardDrawn && !titleScreen) {
@@ -372,5 +372,7 @@ public class Controller implements IController {
     public int getSIZE() {
         return size;
     }
+
+
 
 }
