@@ -5,8 +5,6 @@
  * Provides all necessary classes and interfaces for controller.
  * The applet controller has only one reference to {@link Millgame.Model.Model}
  * and one reference to {@link Millgame.View.IView}.
- *
- *
  */
 
 package Millgame.Controller;
@@ -94,7 +92,7 @@ public class Controller implements IController {
             else view.drawGG("Game Over! Black has won!");
         }
 
-        if (millModel.isDraw()){
+        if (millModel.isDraw()) {
             view.deactivateThread();
             view.drawGG("Game is a draw! Sadge :( ");
         }
@@ -106,7 +104,7 @@ public class Controller implements IController {
             gameBoardDrawn = true;
         }
 
-        if (titleScreen){
+        if (titleScreen) {
             view.drawTitleScreen();
         }
 
@@ -124,7 +122,7 @@ public class Controller implements IController {
      * Typically used to restart the Game and to set the default value.
      */
     public void setRestartGame() {
-        if(titleScreen){
+        if (titleScreen) {
             titleScreen = false;
         }
         restartGame = true;
@@ -187,23 +185,29 @@ public class Controller implements IController {
      */
     @Override
     public void userInput(boolean clicked) {
-        if(!titleScreen) {
+        if (!titleScreen) {
             int x = view.getX();
             int y = view.getY();
             int xnew = view.getXnew();
             int ynew = view.getYnew();
             int posClicked = calculatePosClicked(x, y);
             int posDragged = calculatePosClicked(xnew, ynew);
-            System.out.println(posClicked + "= " + x + ", " + y + "\n" + posDragged + "= " + xnew + ", " + ynew);
             if (millModel.getTurn().equals("WHITE")) {
-                if (millModel.getPlayer1() == GameState.SET && clicked) {
-                    try {
-                        millModel.setPlayer(posClicked);
-                        view.drawField();
-                    } catch (RuntimeException e) {
-                        view.drawField();
-                        view.exceptionRunner("No Valid Field. Choose another!");
+                try {
+                    if (millModel.getPlayer1() == GameState.STEAL && clicked) {
+                        try {
+                            millModel.steal(posClicked);
+                            stolen = true;
+                            view.drawField();
+                        } catch (RuntimeException e) {
+                            view.drawField();
+                            view.exceptionRunner(e.getMessage());
+                        }
+
                     }
+                } catch (RuntimeException e) {
+                    view.drawField();
+                    view.exceptionRunner(e.getMessage());
                 }
                 try {
                     if ((millModel.getPlayer1() == GameState.MOVE || millModel.getPlayer1() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
@@ -213,43 +217,40 @@ public class Controller implements IController {
                                 view.drawField();
                             } catch (RuntimeException e) {
                                 view.drawField();
-                                view.exceptionRunner("No valid move! Fields must be adjacent.");
+                                view.exceptionRunner(e.getMessage());
                             }
                         } else stolen = false;
                     }
                 } catch (RuntimeException e) {
                     view.drawField();
-                    view.exceptionRunner("No valid adjacent field. Choose another one!");
+                    view.exceptionRunner("You must choose a valid field to move to.");
                 }
-
-
+                if (millModel.getPlayer1() == GameState.SET && clicked) {
+                    try {
+                        millModel.setPlayer(posClicked);
+                        view.drawField();
+                    } catch (RuntimeException e) {
+                        view.drawField();
+                        view.exceptionRunner("Please choose an empty field.");
+                    }
+                }
+            } else {
                 try {
-                    if (millModel.getPlayer1() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_2() && clicked) {
+                    if (millModel.getPlayer2() == GameState.STEAL && clicked) {
                         try {
                             millModel.steal(posClicked);
                             stolen = true;
                             view.drawField();
                         } catch (RuntimeException e) {
                             view.drawField();
-                            view.exceptionRunner("This is not a valid Field to steal!");
+                            view.exceptionRunner(e.getMessage());
                         }
-
                     }
                 } catch (RuntimeException e) {
                     view.drawField();
-                    view.exceptionRunner("This is not a valid field.");
+                    view.exceptionRunner(e.getMessage());
                 }
 
-            } else {
-                if (millModel.getPlayer2() == GameState.SET && clicked) {
-                    try {
-                        millModel.setPlayer(posClicked);
-                        view.drawField();
-                    } catch (RuntimeException e) {
-                        view.drawField();
-                        view.exceptionRunner("No Valid Field. Choose another!");
-                    }
-                }
                 try {
                     if ((millModel.getPlayer2() == GameState.MOVE || millModel.getPlayer2() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
                         if (!stolen) {
@@ -258,28 +259,22 @@ public class Controller implements IController {
                                 view.drawField();
                             } catch (RuntimeException e) {
                                 view.drawField();
-                                view.exceptionRunner("No valid move! Fields must be adjacent");
+                                view.exceptionRunner(e.getMessage());
                             }
                         } else stolen = false;
                     }
                 } catch (RuntimeException e) {
                     view.drawField();
-                    view.exceptionRunner("No valid adjacent field. Choose another one!");
+                    view.exceptionRunner("You must choose a valid field to move to.");
                 }
-                try {
-                    if (millModel.getPlayer2() == GameState.STEAL && millModel.getBoard()[posClicked] == millModel.getPLAYER_1() && clicked) {
-                        try {
-                            millModel.steal(posClicked);
-                            stolen = true;
-                            view.drawField();
-                        } catch (RuntimeException e) {
-                            view.drawField();
-                            view.exceptionRunner("This is not a valid Field to steal!");
-                        }
+                if (millModel.getPlayer2() == GameState.SET && clicked) {
+                    try {
+                        millModel.setPlayer(posClicked);
+                        view.drawField();
+                    } catch (RuntimeException e) {
+                        view.drawField();
+                        view.exceptionRunner("Please choose an empty field.");
                     }
-                } catch (RuntimeException e) {
-                    view.drawField();
-                    view.exceptionRunner("This is not a valid Field to steal!");
                 }
             }
             System.out.println(millModel.toString());
@@ -350,7 +345,7 @@ public class Controller implements IController {
         return -1;
     }
 
-     /**
+    /**
      * {@inheritDoc}
      */
 
@@ -372,7 +367,6 @@ public class Controller implements IController {
     public int getSIZE() {
         return size;
     }
-
 
 
 }

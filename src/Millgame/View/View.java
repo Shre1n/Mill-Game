@@ -229,7 +229,7 @@ public class View extends PApplet implements IView {
     public void exceptionRunner(String message) {
         fill(0);
         textAlign(CENTER, BOTTOM);
-        textSize((float) controller.getSIZE() / 20);
+        textSize((float) controller.getSIZE() / 25);
         text(message, (float) controller.getSIZE() / 2, 50);
     }
 

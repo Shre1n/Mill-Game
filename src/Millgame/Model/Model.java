@@ -143,7 +143,7 @@ public class Model {
      */
     public void steal(int pos) {
         if (board[pos] == EMPTY)
-            throw new RuntimeException("This field is Empty. This is not a Valid stone to steal. Try another one!");
+            throw new RuntimeException("You cannot steal from an empty field.");
         if (player1 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.WHITE) {
             if (board[pos] == PLAYER_2 && !isMill(pos, PLAYER_2)) {
                 board[pos] = EMPTY;
@@ -151,8 +151,8 @@ public class Model {
                 turn = PlayerTurn.BLACK;
                 checkPlayerState();
             } else if (board[pos] == PLAYER_2 && isMill(pos, PLAYER_2))
-                throw new RuntimeException("Stone is not possible to steal. Stone is in Opponents Mill.");
-            else throw new IllegalArgumentException("You cannot steal your own stones.");
+                throw new RuntimeException("You cannot steal a stone in a mill.");
+            else throw new RuntimeException("You cannot steal your own stones.");
         } else if (player2 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.BLACK) {
             if (board[pos] == PLAYER_1 && !isMill(pos, PLAYER_1)) {
                 board[pos] = EMPTY;
@@ -160,8 +160,8 @@ public class Model {
                 turn = PlayerTurn.WHITE;
                 checkPlayerState();
             } else if (board[pos] == PLAYER_1 && isMill(pos, PLAYER_1))
-                throw new RuntimeException("Stone is not possible to Steal. Stone is in Opponents Mill.");
-            else throw new IllegalArgumentException("You cannot steal your own stones.");
+                throw new RuntimeException("You cannot steal a stone in a mill.");
+            else throw new RuntimeException("You cannot steal your own stones.");
         }
     }
 
@@ -212,6 +212,7 @@ public class Model {
      */
     private boolean isValidMove(int pos1, int pos2) {
         int temp = whichSquare(pos1);
+        if(pos1 < 0 || pos1 > 23 || pos2 < 0 || pos2 > 23) throw new IndexOutOfBoundsException("The choosen position is not valid!");
         if (pos1 % 2 == 0) return ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 7) % 8) + temp == pos2;
         else {
             if (temp == 8)
@@ -232,11 +233,11 @@ public class Model {
         if (!isGameOver()) {
             if (isEmptyField(pos2) && player1 != GameState.SET && turn == PlayerTurn.WHITE) {
                 if (player1 == GameState.MOVE) {
-                    if (!isValidMove(pos1, pos2))
+                    if (!isValidMove(pos1, pos2) && board[pos1] == PLAYER_1)
                         throw new RuntimeException("Move is not possible! Positions must be adjacent.");
                 }
                 if (board[pos1] != PLAYER_1)
-                    throw new RuntimeException("The choosen stone to move does not equal the current Player.");
+                    throw new RuntimeException("You can only move the stone of the current Player.");
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.BLACK;
@@ -246,11 +247,11 @@ public class Model {
                 }
             } else if (isEmptyField(pos2) && player2 != GameState.SET && turn == PlayerTurn.BLACK) {
                 if (player2 == GameState.MOVE) {
-                    if (!isValidMove(pos1, pos2))
+                    if (!isValidMove(pos1, pos2) && board[pos1] == PLAYER_1)
                         throw new RuntimeException("Move is not possible! Positions must be adjacent.");
                 }
                 if (board[pos1] != PLAYER_2)
-                    throw new RuntimeException("The choosen stone to move does not equal the current Player.");
+                    throw new RuntimeException("You can only move the stone of the current Player.");
                 board[pos2] = board[pos1];
                 board[pos1] = EMPTY;
                 turn = PlayerTurn.WHITE;
