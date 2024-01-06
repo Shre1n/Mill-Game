@@ -8,7 +8,35 @@ Mit dieser Anwendung können Sie gemeinsam mit einem Freund das Spiel "Mühle" s
 + Spieler 2 hat die Farbe Schwarz
 
 
-Sie finden alle Instruktionen des Spiels auf der visuellen Oberfläche.
+### Die Setz Phase
+Jeder Spieler ist am Anfang in der __SETZ__ Phase.
+Die Spieler verlassen die Phase erst, wenn von jedem Spieler __neun__ Spielsteine gesetzt wurden.
+
+### Die Stehl Phase
+Die Phase kann sich dennoch zwischendurch ändern, in dem ein Spieler bereits in der Setz,Zieh oder Spring Phase eine Mühle generiert hat.
+Wenn das der Fall ist, ist der Spieler mit der Mühle in einer __STEHL__ Phase.
+Dieser kann nun einen Stein des gegners stehlen.
+
+
+### Die Zieh Phase
+Wenn alle neun Steine beider Spieler gesetzt wurden, dann sind beide Spieler in einer __ZIEH__ Phase.
+Der Nutzer kann nun ein Stein seiner Farbe mit Drag and Drop auf ein anderes Feld verschieben.
+Dabei ist es wichtig, dass beide Felder immer benachbart sind.
+
+
+### Die Spring Phase
+Sollte einer der Spieler nur noch __DREI__ Steine auf dem Feld besitzen, so ist dieser in einer __SPRING__
+Phase.
+Der Spieler kann nun seine Steine bewegen, ohne darauf achten zu müssen, ob die Felder benachbart sind.
+Der Spieler hat freie Wahl an Feldern.
+
+
+
+### Nutzerinformationen
+
+Sie finden alle Fehler des Spiels auf der visuellen Oberfläche.
+
+Sollte beispielsweise in der __SETZ__ Phase kein Feld ausgewählt werden, bekommt der Nutzer eine entprechenden hinweis.
 
 Das Spiel kann jederzeit mit dem einem Tastendruck auf 'r' neugestartet werden.
 

@@ -39,6 +39,10 @@ public class ModelTest {
         game.setPlayer(0); // 1
         game.setPlayer(8); //2
         game.setPlayer(1); //1
+
+        assertThrows(IllegalArgumentException.class,()-> game.steal(0));
+        assertThrows(IllegalArgumentException.class,()->game.move(8,16));
+
         game.setPlayer(23); //2
         game.setPlayer(2); //1
         game.steal(23); //1
@@ -108,7 +112,12 @@ public class ModelTest {
         game.move(16,17); // 2
         game.move(15, 7);//1
         game.steal(4);//1
+
+        assertThrows(RuntimeException.class,()->game.move(17,20));
+        assertThrows(RuntimeException.class,()->game.move(20,21));
+
         game.move(17, 16);//2
+
         game.steal(5); //2
         game.move(20, 21);//1
         game.move(16, 17);//2
@@ -135,11 +144,6 @@ public class ModelTest {
         game.move(2,1);//1
         game.move(17,16);//2
         game.steal(18);//2
-//        game.move(1,2);//1
-//        game.move(16,17);//2
-//        game.move(2,1);//1
-//        game.move(17,16);//2
-//        game.steal(18);//2
         // Now white is in JUMP Phase
         game.move(1,2);//1
         game.move(16,17);//2
@@ -154,9 +158,40 @@ public class ModelTest {
         assertTrue(game.isGameOver());
         assertFalse(game.hasPlayer2Won());
 
+        assertThrows(RuntimeException.class,()->game.move(0,2));
+
         String s = "White has won";
         assertEquals(s, game.toString());
     }
+
+    @Test
+    void CheckPlayer2Move(){
+        var game = new Model();
+        game.setPlayer(0); //1
+        game.setPlayer(1); //2
+        game.setPlayer(2);//1
+        game.setPlayer(3);//2
+        game.setPlayer(4);//1
+        game.setPlayer(5);//2
+        game.setPlayer(6);//1
+        game.setPlayer(7);//2
+        game.setPlayer(8);//1
+        game.setPlayer(9);//2
+        game.setPlayer(10);//1
+        game.setPlayer(11);//2
+        game.setPlayer(12);//1
+        game.setPlayer(13);//2
+        game.setPlayer(14);//1
+        game.setPlayer(15);//2
+        game.setPlayer(16);//1
+        game.setPlayer(18);//2
+        assertThrows(RuntimeException.class,()->game.move(15,20));
+        game.move(16,23);//1
+        assertThrows(RuntimeException.class,()->game.move(8,16));
+
+
+    }
+
     @Test
     void ShouldStealOpponentPlayersStone() {
         var game = new Model();
@@ -250,13 +285,13 @@ public class ModelTest {
         game.setPlayer(9); //2
         game.setPlayer(16);//1
         game.setPlayer(10); //2
-        assertThrows(IllegalArgumentException.class,()->game.steal(8));
+        assertThrows(RuntimeException.class,()->game.steal(8));
         assertThrows(RuntimeException.class,()->game.steal(0));
         game.steal(16);//2
         game.setPlayer(3);
         game.setPlayer(11);
         game.setPlayer(4);
-        assertThrows(IllegalArgumentException.class,()->game.steal(0));
+        assertThrows(RuntimeException.class,()->game.steal(0));
         assertThrows(RuntimeException.class,()-> game.steal(8));
     }
     @Test
@@ -428,7 +463,6 @@ public class ModelTest {
         s += "\n Available Stones Player 2: 9";
         assertEquals(s,game.toString());
     }
-
     @Test
     void CheckForDrawGame(){
         var game = new Model();

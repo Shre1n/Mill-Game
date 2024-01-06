@@ -136,6 +136,8 @@ public class Model implements IModel {
             } else if (board[pos] == PLAYER_1 && isMill(pos, PLAYER_1))
                 throw new RuntimeException("You cannot steal a stone in a mill.");
             else throw new RuntimeException("You cannot steal your own stones.");
+        } else {
+            throw new IllegalArgumentException("GameState of current Player is not STEAL. Please use the intended method.");
         }
     }
 
@@ -233,7 +235,7 @@ public class Model implements IModel {
                     player2 = GameState.STEAL;
                     turn = PlayerTurn.BLACK;
                 }
-            }
+            } else throw new IllegalArgumentException("GameState of current Player is not MOVE. Please use the intended methode!");
         } else throw new RuntimeException("Game is already over! :( ");
     }
 
