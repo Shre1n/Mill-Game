@@ -18,11 +18,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class ModelTest {
     @Test
-    void CheckMain(){
-        var game = new Model();
-        game.main(new String[]{});
-    }
-    @Test
     void ShouldStartANewGame() {
         var game = new Model();
         assertEquals('⌗', game.getEMPTY());

@@ -15,7 +15,7 @@ Das Spiel kann jederzeit mit dem einem Tastendruck auf 'r' neugestartet werden.
 
 ## Jshell
 
-### Mit diesem Abschnitt der Anleitung, können Sie die anwendung auch in der JShell starten.
+### Mit diesem Abschnitt der Anleitung, können Sie die Anwendung auch in der JShell starten.
 
 ```Konsole 
     JShell.exe --class-path ./out/production/pis_muehle/Millgame  
@@ -33,13 +33,26 @@ Das Spiel kann jederzeit mit dem einem Tastendruck auf 'r' neugestartet werden.
 Um das Spiel auszuführen, muss die Main.java in dem dazugehörigen Package ausgeführt werden.
 + Main.Main
 lässt Sie das spiel mit zwei Spielern (Schwarz & Weiß) spielen.
+Mit den Instruktionen auf dem Startbildschirm lässt sich das Spiel ganz einfach starten.
 
 
 ## Startbildschirm
 
-![HomeScreen](Screenshots/HomeScreen.png)
+![HomeScreen](screenshots/HomeScreen.png)
 
 ## Spielscreen
+
+![Spielscreen](screenshots/Spielscreen.png)
+
+## Auskunft über mögliche Fehler
+
+![Nutzerauskunft](screenshots/Nutzerinformation.png)
+
+<p>hier wurde kein valides Feld für Schwarz ausgewählt.</p>
+
+
+
+
 
 
 
@@ -49,7 +62,7 @@ lässt Sie das spiel mit zwei Spielern (Schwarz & Weiß) spielen.
 
 [Processing PApplet](https://processing.github.io/processing-javadocs/core/processing/core/PApplet.html)
 
-[Processing PIamge](https://processing.github.io/processing-javadocs/core/processing/core/PImage.html)
+[Processing PImage](https://processing.github.io/processing-javadocs/core/processing/core/PImage.html)
 
 [JUnit](https://junit.org/junit5/)
 

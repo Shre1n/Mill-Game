@@ -82,24 +82,9 @@ public class Model implements IModel {
     }
 
     /**
-     * Main.Main method to test the Mill game and logic.
-     * @param args args Command-line arguments (not used).
-     */
-
-    public static void main(String[] args) {
-        var game = new Model();
-        game.setPlayer(0);//1
-        game.setPlayer(8);//2
-        game.setPlayer(12);//1
-        game.setPlayer(13);//2
-        game.setPlayer(3);//1
-        System.out.println("Field 3 is " + game.getPLAYER_1());
-    }
-
-
-    /**
      * Define a new Game with default EMPTY Layout of Board.
      * Setup GameState of each Player.
+     * Fills all available board positions with the Empty Character.
      */
 
     public void newGame() {
