@@ -22,7 +22,7 @@ import java.util.Arrays;
  * Steal Stones from enemy with given position.
  */
 
-public class Model {
+public class Model implements IModel {
 
     /**
      * The default field entry for empty fields.

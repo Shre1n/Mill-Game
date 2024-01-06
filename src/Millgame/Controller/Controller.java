@@ -10,7 +10,7 @@
 package Millgame.Controller;
 
 import Millgame.Model.GameState;
-import Millgame.Model.Model;
+import Millgame.Model.IModel;
 import Millgame.View.IView;
 
 /**
@@ -24,7 +24,7 @@ public class Controller implements IController {
     /**
      * Declare Model for knowledge of Controller
      */
-    private Model millModel;
+    private IModel millModel;
 
     /**
      * Default restart value
@@ -63,7 +63,7 @@ public class Controller implements IController {
      * @param model as Mill Model
      */
 
-    public void setModel(Model model) {
+    public void setModel(IModel model) {
         this.millModel = model;
     }
 

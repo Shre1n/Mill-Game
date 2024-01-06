@@ -4,95 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="exception handling frontend">
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/Controller.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/IController.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/class-use/Controller.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/class-use/IController.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Controller/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Main/Main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Main/class-use/Main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Main/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Main/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Main/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/GameState.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/Model.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/ModelTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/PlayerTurn.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/class-use/GameState.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/class-use/Model.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/class-use/ModelTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/class-use/PlayerTurn.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/Model/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/IView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/View.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/class-use/IView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/class-use/View.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/Millgame/View/package-use.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/allpackages-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/copy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/element-list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/help-doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-13.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-14.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-15.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-16.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-17.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-18.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/ADDITIONAL_LICENSE_INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/jquery.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/legal/jqueryUI.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/link.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/member-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/module-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/overview-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/overview-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/package-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/resources/glass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/resources/x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-3.6.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/script-dir/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/search-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/tag-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDoc/type-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Screenshots/HomeScreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/backgroundGame.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="JDoc fin and project fin">
+      <change afterPath="$PROJECT_DIR$/img/WhiteStoneTransparent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Millgame/Model/IModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/PlayerTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/PlayerTurn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -140,7 +57,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "C:/Users/robin/Downloads/VW05",
+    "last_opened_file_path": "C:/Users/robin/Downloads/sphinx4-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -261,6 +178,7 @@
       <workItem from="1703242301260" duration="19452000" />
       <workItem from="1703601119577" duration="11494000" />
       <workItem from="1703686042681" duration="9000" />
+      <workItem from="1704478227687" duration="3068000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -550,7 +468,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704466352657</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="JDoc fin and project fin">
+      <option name="closed" value="true" />
+      <created>1704477448834</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1704477448834</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +499,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Setup Main View Controller" />
     <MESSAGE value="changed Readme" />
     <MESSAGE value="Setup field in view" />
     <MESSAGE value="changed visibility from SIZE in controller. Now available with getter" />
@@ -598,7 +523,8 @@
     <MESSAGE value="Draw Game init" />
     <MESSAGE value="changed draw screen" />
     <MESSAGE value="exception handling frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="exception handling frontend" />
+    <MESSAGE value="JDoc fin and project fin" />
+    <option name="LAST_COMMIT_MESSAGE" value="JDoc fin and project fin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
