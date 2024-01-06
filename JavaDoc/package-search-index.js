@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"},{"l":"Millgame.Controller"},{"l":"Millgame.Main"},{"l":"Millgame.Model"},{"l":"Millgame.View"}];updateSearchResults();
