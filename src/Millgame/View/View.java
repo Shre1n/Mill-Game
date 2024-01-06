@@ -1,13 +1,3 @@
-/**
- * @author Robin Hahn
- * @version 1.0
- * @see processing.core
- * @since 2023-12-12
- * Provides all necessary classes and interfaces to create and set a View instance.
- * Classes extends from {@link processing.core.PApplet} for all drawings and to use their methods and functions.
- * The applet loads an {@link processing.core.PImage} as a player image.
- */
-
 package Millgame.View;
 
 import Millgame.Controller.IController;
@@ -16,7 +6,8 @@ import processing.core.PImage;
 
 /**
  * Visualize the Application and draw game.
- * Must contain all public classes from Controller interface to use them.
+ * Must contain all public classes from View interface to use them.
+ * This Class and its Methods are intended to draw the graphical interface and handle how are states are drawn.
  */
 
 
@@ -26,9 +17,16 @@ public class View extends PApplet implements IView {
      * Declare Controller instance
      */
     private IController controller;
-    private PImage bg;
-    private PImage ts;
 
+    /**
+     * Default background Image for game
+     */
+    private PImage bg;
+
+    /**
+     * Default title screen Image for start screen
+     */
+    private PImage ts;
 
     /**
      * Declare x-axis of input via mousePressed
@@ -49,6 +47,11 @@ public class View extends PApplet implements IView {
      * Default value of new y value
      */
     private int ynew;
+
+    /**
+     * Default value to handle the Thread for image loading.
+     * This value has been set to avoid the while true Thread runner.
+     */
     private boolean active = false;
 
     /**
@@ -61,19 +64,17 @@ public class View extends PApplet implements IView {
      */
     private PImage player2;
 
-
     /**
-     * Setting the Controller of View
+     * Setting the Controller of View.
      *
-     * @param controller sets Controller for View
+     * @param controller class instance for passing controller
      */
     public void setController(IController controller) {
         this.controller = controller;
     }
 
-
     /**
-     * Set Size of Application given from Controller
+     * Set Size of Application given from Controller.
      */
     @Override
     public void settings() {
@@ -81,13 +82,10 @@ public class View extends PApplet implements IView {
     }
 
     /**
-     *
-     * load Player images to Application
+     * Sets the default setup for Application.
      */
     @Override
     public void setup() {
-        player1 = loadImage("WhiteStone.png");
-        player2 = loadImage("BlackStone.png");
         frameRate(60);
         surface.setTitle("The Mill Game");
         surface.setResizable(false);
@@ -95,6 +93,10 @@ public class View extends PApplet implements IView {
         bg.resize(controller.getSIZE(), controller.getSIZE());
         ts = loadImage("background.jpg");
         ts.resize(controller.getSIZE(), controller.getSIZE());
+        player1 = loadImage("WhiteStone.png");
+        player1.resize(100, 100);
+        player2 = loadImage("BlackStone.png");
+        player2.resize(100, 100);
     }
 
     /**
@@ -112,10 +114,7 @@ public class View extends PApplet implements IView {
     public void drawTitleScreen() {
         background(ts);
 
-        player1 = loadImage("WhiteStone.png");
-        player1.resize(100, 100);
-        player2 = loadImage("BlackStone.png");
-        player2.resize(100, 100);
+
         image(player1, (float) controller.getSIZE() / 2 - 150, (float) controller.getSIZE() / 2 - 150);
         image(player2, (float) controller.getSIZE() / 2 + 50, (float) controller.getSIZE() / 2 - 150);
 
@@ -178,9 +177,9 @@ public class View extends PApplet implements IView {
         textAlign(CENTER, CENTER);
         textSize((float) controller.getSIZE() / 20);
         if (controller.playerTurn().equals("WHITE")) {
-            text(controller.playerTurn() + " : " + controller.getPlayer1(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+            text(controller.playerTurn() + " : " + controller.getPlayer1State(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
         } else {
-            text(controller.playerTurn() + " : " + controller.getPlayer2(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
+            text(controller.playerTurn() + " : " + controller.getPlayer2State(), (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
         }
     }
 

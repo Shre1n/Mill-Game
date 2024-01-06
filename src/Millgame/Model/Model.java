@@ -1,12 +1,3 @@
-/**
- * @author Robin Hahn
- * @version 1.0
- * @see java.util
- * @since 2023-12-12
- * Provides all classes to set up the logic for the applet 'Mill Game'.
- * The applets are set up with a Array as the board (see {@link java.util.Arrays}).
- */
-
 package Millgame.Model;
 
 import java.util.Arrays;
@@ -20,6 +11,7 @@ import java.util.Arrays;
  * States can be 'SET','MOVE','JUMP', 'STEAL'.
  * Move from player to another position.
  * Steal Stones from enemy with given position.
+ * This Class and its Methods are typically used in the Controller component and compare states of View with states of Model.
  */
 
 public class Model implements IModel {
@@ -124,11 +116,9 @@ public class Model implements IModel {
 
 
     /**
-     * Checks is Players input an Empty field.
-     * @param pos of user input.
+     * {@inheritDoc}
      * @throws RuntimeException if field is taken.
      * @throws IndexOutOfBoundsException if no field is selected.
-     * @return wrong entry.
      */
     public boolean isEmptyField(int pos) {
         if (isValidFieldIndex(pos)) {
@@ -138,10 +128,7 @@ public class Model implements IModel {
     }
 
     /**
-     * Player is in steal Mode if he has made a mill with own Stones.
-     * Checks if Player has made a Mill with own Stones. If Mill the switch player into steal Mode.
-     * Is position valid and not Empty and opponents Stone than he can steal that Stone.
-     * @param pos given position to steal from opponent.
+     * {@inheritDoc}
      */
     public void steal(int pos) {
         if (board[pos] == EMPTY)
@@ -178,8 +165,7 @@ public class Model implements IModel {
 
 
     /**
-     * Sets the Players settable Stones at Position.
-     * @param pos given through user input.
+     * {@inheritDoc}
      * @throws RuntimeException unexpected use of method.
      */
     public void setPlayer(int pos) {
@@ -227,9 +213,10 @@ public class Model implements IModel {
     }
 
     /**
-     * Move player
-     * @param pos1 players current position.
-     * @param pos2 players future position.
+     * {@inheritDoc}
+     * @throws RuntimeException if positions are not adjacent.
+     * Or Player tries to move an Opponent stone.
+     * Or if game is already over.
      */
     public void move(int pos1, int pos2) { // 16, 23
         if (!isGameOver() && !isDraw()) {
@@ -266,33 +253,28 @@ public class Model implements IModel {
     }
 
     /**
-     * Has Player WHITE won the Game.
-     * @return player WHITE won.
+     * {@inheritDoc}
      */
     public boolean hasPlayer1Won() {
         return boardBlack == 2 && player2 == GameState.JUMP;
     }
 
     /**
-     * Has Player BLACK won the Game.
-     * @return player BLACK won.
+     * {@inheritDoc}
      */
     public boolean hasPlayer2Won() {
         return boardWhite == 2 && player1 == GameState.JUMP;
     }
 
     /**
-     * Checks if Player has already won the game.
-     * @return winning player.
+     * {@inheritDoc}
      */
     public boolean isGameOver() {
         return hasPlayer1Won() || hasPlayer2Won();
     }
 
     /**
-     * checks if the game is a draw
-     * If Players only have mills
-     * @return boolean draw game
+     * {@inheritDoc}
      */
 
     public boolean isDraw() {
@@ -309,12 +291,6 @@ public class Model implements IModel {
         } return false;
     }
 
-    /**
-     * Calculate the Mill with adjacent index and ring placements of player Stone.
-     * @param pos of player stone.
-     * @param player to check the line.
-     * @return players Mill.
-     */
     private boolean isMill(int pos, char player) {
         // Check for mühle in row, column
         int temp = whichSquare(pos);
@@ -325,63 +301,47 @@ public class Model implements IModel {
 
     }
 
-    /**
-     * In which Square has the Player placed their stones.
-     * @param pos of stone
-     * @return ring
-     */
     private int whichSquare(int pos) {
         return (pos < 8) ? 0 : (pos < 16 ? 8 : 16);
     }
 
-
-    /**
-     * Valid field of Players input.
-     * @param field to check if the move is possible.
-     * @return possible move
-     */
     private boolean isValidFieldIndex(int field) {
         //Check for valid Filed index
         return field >= 0 && field < board.length;
     }
 
     /**
-     * Gets the current Turn from Player for access in Model.
-     * @return turn
+     * {@inheritDoc}
      */
     public String getTurn() {
         return turn.toString();
     }
 
     /**
-     * Gets the current state from Player 1 for access in Model.
-     * @return state
+     * {@inheritDoc}
      */
 
-    public GameState getPlayer1() {
+    public GameState getPlayer1State() {
         return player1;
     }
 
     /**
-     * Gets the current state from Player 2 for access in Model.
-     * @return state
+     * {@inheritDoc}
      */
 
-    public GameState getPlayer2() {
+    public GameState getPlayer2State() {
         return player2;
     }
 
     /**
-     * Gets the current board setup to access in Model.
-     * @return board
+     * {@inheritDoc}
      */
     public char[] getBoard() {
         return board;
     }
 
     /**
-     * restarts game with a clear board
-     * @return char
+     * {@inheritDoc}
      */
 
     public char getEMPTY() {
@@ -389,16 +349,14 @@ public class Model implements IModel {
     }
 
     /**
-     * gets the char of player 1
-     * @return char player 1
+     * {@inheritDoc}
      */
     public char getPLAYER_1() {
         return PLAYER_1;
     }
 
     /**
-     * gets the char of player 2
-     * @return char player 2
+     * {@inheritDoc}
      */
 
     public char getPLAYER_2() {
@@ -406,8 +364,7 @@ public class Model implements IModel {
     }
 
     /**
-     * Visualization in Console with state and player turn.
-     * @return console output.
+     * {@inheritDoc}
      */
     @Override
     public String toString() {

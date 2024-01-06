@@ -18,8 +18,7 @@ public interface IController{
     /**
      * Sets the position of Players input with given parameters.
      * Checks if Player has made a correct Move.
-     * Typically used in View to send the MouseX and MouseY into Controller.
-     *
+     * If a player has not made a correct Move then show the User what's wrong.
      * @param clicked checks the x and y for mouse clicked
      */
 
@@ -32,43 +31,51 @@ public interface IController{
     String playerTurn();
 
     /**
-     * changes gamestate to restart
+     * changes boolean of restart.
+     * This is to check if the restart Button has been pressed.
      */
     void setRestartGame();
 
     /**
-     * gets the current state of Player 1
-     * @return state player 1
+     * gets the current state of Player 1.
+     * This is to display the current game state of Player one in view.
+     * The User have the information of their current state.
+     * @return state
      */
 
-    GameState getPlayer1();
+    GameState getPlayer1State();
 
     /**
-     * gets the current state of Player 2
-     * @return state player 2
+     * gets the current state of Player 2.
+     * This is to display the current game state of Player one in view.
+     * The User have the information of their current state.
+     * @return state
      */
-    GameState getPlayer2();
+    GameState getPlayer2State();
 
     /**
-     * gets the default player 1 character
+     * gets the default player 1 character.
+     * This is to get the current Character of a position.
      * @return char player 1
      */
     char getPlayer_1();
 
     /**
-     * gets the default player 2 character
+     * gets the default player 2 character.
+     * This is to get the current Character of a position.
      * @return char player 2
      */
     char getPlayer_2();
 
     /**
-     * gets the Board and its layout
+     * gets the Board and its layout.
+     * This is to redraw the board after all inputs from User.
      * @return char[]
      */
     char[] getBoard();
 
     /**
-     * gets the Size of Application to Display
+     * gets the Size of Application to Display.
      * @return size
      */
     int getSIZE();

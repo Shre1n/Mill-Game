@@ -1,12 +1,3 @@
-/**
- * @author Robin Hahn
- * @version 1.0
- * @since 2023-12-12
- * Provides all necessary classes and interfaces for controller.
- * The applet controller has only one reference to {@link Millgame.Model.Model}
- * and one reference to {@link Millgame.View.IView}.
- */
-
 package Millgame.Controller;
 
 import Millgame.Model.GameState;
@@ -17,6 +8,7 @@ import Millgame.View.IView;
  * Controller has knowledge of Model and View.
  * Methods and Variables should only be referenced by the Model.
  * Accessibility is given by Mill Model. Variables and Methods should only be referenced or called by Value.
+ * This Class and its Methods are typically used in the View component to handle what should be drawn at a specific time.
  */
 
 public class Controller implements IController {
@@ -82,7 +74,12 @@ public class Controller implements IController {
 
     /**
      * {@inheritDoc}
-     * Typically used to change the drawing state in view.
+     * Specifies the order in which the Application should be updated.
+     * First of all display the title screen.
+     * If the Model is game over then display the Winning player.
+     * If the game is a draw then display the draw screen.
+     * Then Start a game by pressing 'r'.
+     *
      */
     @Override
     public void nextFrame() {
@@ -118,7 +115,6 @@ public class Controller implements IController {
 
     /**
      * {@inheritDoc}
-     * Typically used to restart the Game and to set the default value.
      */
     public void setRestartGame() {
         if (titleScreen) {
@@ -129,29 +125,24 @@ public class Controller implements IController {
 
     /**
      * {@inheritDoc}
-     * Typically used in View to compare gamestate with a specific value.
-     *
-     * @return state of player 1
+     * @return state
      */
-    public GameState getPlayer1() {
-        return millModel.getPlayer1();
+    public GameState getPlayer1State() {
+        return millModel.getPlayer1State();
     }
 
     /**
      * {@inheritDoc}
-     * Typically used in View to compare gamestate with a specific value.
      *
      * @return state of player 2
      */
 
-    public GameState getPlayer2() {
-        return millModel.getPlayer2();
+    public GameState getPlayer2State() {
+        return millModel.getPlayer2State();
     }
 
     /**
      * {@inheritDoc}
-     * Typically used to check players character at position in View.
-     *
      * @return char
      */
     public char getPlayer_1() {
@@ -160,8 +151,6 @@ public class Controller implements IController {
 
     /**
      * {@inheritDoc}
-     * Typically used to check players character at position in View.
-     *
      * @return char
      */
     public char getPlayer_2() {
@@ -171,8 +160,6 @@ public class Controller implements IController {
 
     /**
      * {@inheritDoc}
-     * Typically used to check the current board setup.
-     *
      * @return board
      */
     public char[] getBoard() {
@@ -193,7 +180,7 @@ public class Controller implements IController {
             int posDragged = calculatePosClicked(xnew, ynew);
             if (millModel.getTurn().equals("WHITE")) {
                 try {
-                    if (millModel.getPlayer1() == GameState.STEAL && clicked) {
+                    if (millModel.getPlayer1State() == GameState.STEAL && clicked) {
                         try {
                             millModel.steal(posClicked);
                             stolen = true;
@@ -209,7 +196,7 @@ public class Controller implements IController {
                     view.exceptionRunner(e.getMessage());
                 }
                 try {
-                    if ((millModel.getPlayer1() == GameState.MOVE || millModel.getPlayer1() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
+                    if ((millModel.getPlayer1State() == GameState.MOVE || millModel.getPlayer1State() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
                         if (!stolen) {
                             try {
                                 millModel.move(posClicked, posDragged);
@@ -224,7 +211,7 @@ public class Controller implements IController {
                     view.drawField();
                     view.exceptionRunner("You must choose a valid field to move to.");
                 }
-                if (millModel.getPlayer1() == GameState.SET && clicked && !stolen) {
+                if (millModel.getPlayer1State() == GameState.SET && clicked && !stolen) {
                     try {
                         millModel.setPlayer(posClicked);
                         view.drawField();
@@ -235,7 +222,7 @@ public class Controller implements IController {
                 } else stolen = false;
             } else {
                 try {
-                    if (millModel.getPlayer2() == GameState.STEAL && clicked) {
+                    if (millModel.getPlayer2State() == GameState.STEAL && clicked) {
                         try {
                             millModel.steal(posClicked);
                             stolen = true;
@@ -251,7 +238,7 @@ public class Controller implements IController {
                 }
 
                 try {
-                    if ((millModel.getPlayer2() == GameState.MOVE || millModel.getPlayer2() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
+                    if ((millModel.getPlayer2State() == GameState.MOVE || millModel.getPlayer2State() == GameState.JUMP) && millModel.getBoard()[posDragged] == millModel.getEMPTY() && !clicked) {
                         if (!stolen) {
                             try {
                                 millModel.move(posClicked, posDragged);
@@ -266,7 +253,7 @@ public class Controller implements IController {
                     view.drawField();
                     view.exceptionRunner("You must choose a valid field to move to.");
                 }
-                if (millModel.getPlayer2() == GameState.SET && clicked) {
+                if (millModel.getPlayer2State() == GameState.SET && clicked) {
                     try {
                         millModel.setPlayer(posClicked);
                         view.drawField();

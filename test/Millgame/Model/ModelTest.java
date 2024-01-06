@@ -402,8 +402,8 @@ public class ModelTest {
         game.setPlayer(1);
         game.setPlayer(2);
 
-        assertEquals(GameState.SET,game.getPlayer1());
-        assertEquals(GameState.SET,game.getPlayer2());
+        assertEquals(GameState.SET,game.getPlayer1State());
+        assertEquals(GameState.SET,game.getPlayer2State());
 
     }
     @Test
