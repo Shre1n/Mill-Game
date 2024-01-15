@@ -91,7 +91,7 @@ public class View extends PApplet implements IView {
         surface.setResizable(false);
         bg = loadImage("backgroundGame.jpg");
         bg.resize(controller.getSIZE(), controller.getSIZE());
-        ts = loadImage("background.jpg");
+        ts = loadImage("background.png");
         ts.resize(controller.getSIZE(), controller.getSIZE());
         player1 = loadImage("WhiteStone.png");
         player1.resize(100, 100);
@@ -115,13 +115,13 @@ public class View extends PApplet implements IView {
         background(ts);
 
 
-        image(player1, (float) controller.getSIZE() / 2 - 150, (float) controller.getSIZE() / 2 - 150);
-        image(player2, (float) controller.getSIZE() / 2 + 50, (float) controller.getSIZE() / 2 - 150);
+        image(player1, (float) controller.getSIZE() / 2 - 100, (float) controller.getSIZE() / 2 - 150);
+        image(player2, (float) controller.getSIZE() / 2 + 20, (float) controller.getSIZE() / 2 - 150);
 
 
         fill(0);
         textAlign(CENTER, CENTER);
-        textSize((float) controller.getSIZE() / 20);
+        textSize((float) controller.getSIZE() / 25);
         text("The Mill Game", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
         fill(255);
         textAlign(CENTER, TOP);

@@ -205,7 +205,7 @@ public class Model implements IModel {
      * Or Player tries to move an Opponent stone.
      * Or if game is already over.
      */
-    public void move(int pos1, int pos2) { // 16, 23
+    public void move(int pos1, int pos2) {
         if (!isGameOver() && !isDraw()) {
             if (isEmptyField(pos2) && player1 != GameState.SET && turn == PlayerTurn.WHITE) {
                 if (player1 == GameState.MOVE) {
@@ -223,7 +223,7 @@ public class Model implements IModel {
                 }
             } else if (isEmptyField(pos2) && player2 != GameState.SET && turn == PlayerTurn.BLACK) {
                 if (player2 == GameState.MOVE) {
-                    if (!isValidMove(pos1, pos2) && board[pos1] == PLAYER_1)
+                    if (!isValidMove(pos1, pos2) && board[pos1] == PLAYER_2)
                         throw new RuntimeException("Move is not possible! Positions must be adjacent.");
                 }
                 if (board[pos1] != PLAYER_2)
@@ -235,7 +235,7 @@ public class Model implements IModel {
                     player2 = GameState.STEAL;
                     turn = PlayerTurn.BLACK;
                 }
-            } else throw new IllegalArgumentException("GameState of current Player is not MOVE. Please use the intended methode!");
+            } else throw new IllegalArgumentException("GameState of current Player is not MOVE. Please use the intended method!");
         } else throw new RuntimeException("Game is already over! :( ");
     }
 
