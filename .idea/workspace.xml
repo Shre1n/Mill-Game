@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Tests complete with 100 LC">
-      <change afterPath="$PROJECT_DIR$/img/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
-    </list>
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="changed Background. Fixed steal at WHITE error message" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,7 +176,7 @@
       <workItem from="1704478227687" duration="5563000" />
       <workItem from="1704543508293" duration="15363000" />
       <workItem from="1704634067460" duration="11000" />
-      <workItem from="1705304871203" duration="4281000" />
+      <workItem from="1705304871203" duration="4827000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -545,7 +538,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704564268386</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="changed Background. Fixed steal at WHITE error message">
+      <option name="closed" value="true" />
+      <created>1705319165607</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1705319165607</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="calculate Position player input i hope" />
     <MESSAGE value="Player images loading in at mouse coords." />
     <MESSAGE value="position placement fixed" />
     <MESSAGE value="user interface information update" />
@@ -593,7 +593,8 @@
     <MESSAGE value="changed things" />
     <MESSAGE value="removed skizze" />
     <MESSAGE value="Tests complete with 100 LC" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests complete with 100 LC" />
+    <MESSAGE value="changed Background. Fixed steal at WHITE error message" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed Background. Fixed steal at WHITE error message" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
