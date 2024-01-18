@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="changed Background. Fixed steal at WHITE error message" />
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="removed skizze">
+      <change afterPath="$PROJECT_DIR$/Model_Jshell/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model_Jshell/IModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model_Jshell/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model_Jshell/PlayerTurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pis_muehle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pis_muehle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +42,7 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2ZR9DLSGUCD5clqVozFEZv6fYWB" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -75,16 +84,19 @@
       <recent name="C:\Users\robin\IdeaProjects\pis_muehle\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Millgame.Main.Main" />
+  <component name="RunManager" selected="JUnit.ModelTest.CheckPlayer2Move">
+    <configuration name="ModelTest.CheckBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pis_muehle" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Millgame.Main.*" />
+          <option name="PATTERN" value="Millgame.Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Millgame.Model" />
+      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
+      <option name="METHOD_NAME" value="CheckBoard" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,7 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ModelTest.CheckPlayer2Move" />
+        <item itemvalue="JUnit.ModelTest.CheckForPlayerWonAndMoveIsEmpty" />
+        <item itemvalue="JUnit.ModelTest.CheckForDrawGame" />
+        <item itemvalue="JUnit.ModelTest.CheckBoard" />
+        <item itemvalue="JUnit.ModelTest.CheckGameStates" />
       </list>
     </recent_temporary>
   </component>
@@ -174,9 +190,7 @@
       <workItem from="1703601119577" duration="11494000" />
       <workItem from="1703686042681" duration="9000" />
       <workItem from="1704478227687" duration="5563000" />
-      <workItem from="1704543508293" duration="15363000" />
-      <workItem from="1704634067460" duration="11000" />
-      <workItem from="1705304871203" duration="4827000" />
+      <workItem from="1704543508293" duration="14839000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -530,23 +544,7 @@
       <option name="project" value="LOCAL" />
       <updated>1704560598895</updated>
     </task>
-    <task id="LOCAL-00045" summary="Tests complete with 100 LC">
-      <option name="closed" value="true" />
-      <created>1704564268386</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1704564268386</updated>
-    </task>
-    <task id="LOCAL-00046" summary="changed Background. Fixed steal at WHITE error message">
-      <option name="closed" value="true" />
-      <created>1705319165607</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1705319165607</updated>
-    </task>
-    <option name="localTasksCounter" value="47" />
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,6 +567,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Player images Added" />
+    <MESSAGE value="calculate Position player input i hope" />
     <MESSAGE value="Player images loading in at mouse coords." />
     <MESSAGE value="position placement fixed" />
     <MESSAGE value="user interface information update" />
@@ -592,9 +592,18 @@
     <MESSAGE value="update gitignore" />
     <MESSAGE value="changed things" />
     <MESSAGE value="removed skizze" />
-    <MESSAGE value="Tests complete with 100 LC" />
-    <MESSAGE value="changed Background. Fixed steal at WHITE error message" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed Background. Fixed steal at WHITE error message" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed skizze" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/Millgame/Model/ModelTest.java</url>
+          <line>440</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -619,7 +628,7 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowsRuntimeException_AtStealStoneInMillForPlayer.ic" NAME="ModelTest.ThrowsRuntimeException_AtStealStoneInMillForPlayer Coverage Results" MODIFIED="1704457411836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckPlayer2Move.ic" NAME="ModelTest.CheckPlayer2Move Coverage Results" MODIFIED="1704564236055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckPlayer2Move.ic" NAME="ModelTest.CheckPlayer2Move Coverage Results" MODIFIED="1704564063448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowRuntimeException_AtNoStealableStoneAtPosition.ic" NAME="ModelTest.ThrowRuntimeException_AtNoStealableStoneAtPosition Coverage Results" MODIFIED="1704562789652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

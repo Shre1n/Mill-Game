@@ -45,21 +45,69 @@ Das Spiel kann jederzeit mit dem einem Tastendruck auf 'r' neugestartet werden.
 
 ### Mit diesem Abschnitt der Anleitung, können Sie die Anwendung auch in der JShell starten.
 
-```Konsole 
-    JShell.exe --class-path ./out/production/pis_muehle/Millgame  
-```
+Navigieren Sie in den Ordner:
 
+````shell
+cd Model_Jshell
+````
 
+Öffnen Sie die JShell Anwendung in diesem Ordner:
 
+````shell
+JShell
+````
 
+anschließend öffnen Sie alle Klassen in dem Ordner:
 
+````shell
+/o PlayerTurn.java
+````
+````shell
+/o GameState.java
+````
+````shell
+/o IModel.java
+````
+````shell
+/o Model.java
+````
 
+zunächst erstellen Sie ein neues Model in der JShell:
+
+````shell 
+var game = new Model()
+````
+
+erstellen Sie ein neues Spiel mit:
+
+````shell 
+game.newGame()
+````
+
+setzen Sie einen Spieler mit:
+
+````shell 
+game.setPlayer(0)
+```` 
+um Spieler 1 auf die Stelle (0) zu setzen.
+
+wenn Sie sich in einer Zieh Phase befinden, bewegen Sie sich mit:
+
+````shell 
+game.move(8,9)
+````
+
+befinden Sie sich in einer Spring Phase, Springen Sie auch mit:
+
+````shell 
+game.move(8,0)
+````
 
 
 ## Starten des Spiels
 
 Um das Spiel auszuführen, muss die Main.java in dem dazugehörigen Package ausgeführt werden.
-+ Main.Main
++ ``Main.Main``
 lässt Sie das spiel mit zwei Spielern (Schwarz & Weiß) spielen.
 Mit den Instruktionen auf dem Startbildschirm lässt sich das Spiel ganz einfach starten.
 
@@ -77,13 +125,6 @@ Mit den Instruktionen auf dem Startbildschirm lässt sich das Spiel ganz einfach
 ![Nutzerauskunft](screenshots/Nutzerinformation.png)
 
 <p>hier wurde kein valides Feld für Schwarz ausgewählt.</p>
-
-
-
-
-
-
-
 
 
 ## Verwendete Bibliotheken
