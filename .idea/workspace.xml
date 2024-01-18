@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="pis_muehle:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="fixed output of game in jshell" />
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="delete IModel">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +66,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -76,7 +83,7 @@
       <recent name="C:\Users\robin\IdeaProjects\pis_muehle\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ModelTest.CheckBoard">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Millgame.Main.Main" />
       <module name="pis_muehle" />
@@ -104,7 +111,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModelTest.CheckForPlayerWonAndMoveIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModelTest.CheckBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pis_muehle" />
       <extension name="coverage">
         <pattern>
@@ -114,7 +121,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Millgame.Model" />
       <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="METHOD_NAME" value="CheckForPlayerWonAndMoveIsEmpty" />
+      <option name="METHOD_NAME" value="CheckBoard" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ModelTest.CheckBoard" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Millgame.Model in pis_muehle" />
         <item itemvalue="JUnit.ModelTest.ThrowRuntimeException_AtMoveStoneMustBeAdjacentPositions" />
         <item itemvalue="JUnit.ModelTest.CheckPlayer2Move" />
-        <item itemvalue="JUnit.ModelTest.CheckForPlayerWonAndMoveIsEmpty" />
       </list>
     </recent_temporary>
   </component>
@@ -178,14 +185,6 @@
       <workItem from="1703686042681" duration="9000" />
       <workItem from="1704478227687" duration="5563000" />
       <workItem from="1704543508293" duration="14839000" />
-    </task>
-    <task id="LOCAL-00001" summary="init">
-      <option name="closed" value="true" />
-      <created>1702374838225</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1702374838225</updated>
     </task>
     <task id="LOCAL-00002" summary="graph implemented with remove and add Edge">
       <option name="closed" value="true" />
@@ -571,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705573768008</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="delete IModel">
+      <option name="closed" value="true" />
+      <created>1705574377125</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1705574377125</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +601,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="steal works a little bit" />
     <MESSAGE value="restart game works" />
     <MESSAGE value="Steal works in view" />
     <MESSAGE value="exception displays at set" />
@@ -619,7 +625,8 @@
     <MESSAGE value="steal fix in view" />
     <MESSAGE value="Error message fixed" />
     <MESSAGE value="fixed output of game in jshell" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed output of game in jshell" />
+    <MESSAGE value="delete IModel" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete IModel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
