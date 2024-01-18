@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="removed skizze">
-      <change afterPath="$PROJECT_DIR$/Model_Jshell/GameState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model_Jshell/IModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model_Jshell/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model_Jshell/PlayerTurn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pis_muehle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pis_muehle.iml" afterDir="false" />
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model_Jshell/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model_Jshell/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,8 +80,8 @@
       <recent name="C:\Users\robin\IdeaProjects\pis_muehle\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ModelTest.CheckPlayer2Move">
-    <configuration name="ModelTest.CheckBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ModelTest.ThrowRuntimeException_AtMoveStoneMustBeAdjacentPositions">
+    <configuration name="Millgame.Model in pis_muehle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pis_muehle" />
       <extension name="coverage">
         <pattern>
@@ -94,25 +90,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Millgame.Model" />
-      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="METHOD_NAME" value="CheckBoard" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ModelTest.CheckForDrawGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pis_muehle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Millgame.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Millgame.Model" />
-      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="METHOD_NAME" value="CheckForDrawGame" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,22 +106,6 @@
       <option name="PACKAGE_NAME" value="Millgame.Model" />
       <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
       <option name="METHOD_NAME" value="CheckForPlayerWonAndMoveIsEmpty" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ModelTest.CheckGameStates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pis_muehle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Millgame.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Millgame.Model" />
-      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="METHOD_NAME" value="CheckGameStates" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,13 +127,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ModelTest.ShouldStartANewGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Millgame.Model" />
+      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
+      <option name="METHOD_NAME" value="ShouldStartANewGame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModelTest.ThrowRuntimeException_AtMoveStoneMustBeAdjacentPositions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Millgame.Model" />
+      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
+      <option name="METHOD_NAME" value="ThrowRuntimeException_AtMoveStoneMustBeAdjacentPositions" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ModelTest.ThrowRuntimeException_AtMoveStoneMustBeAdjacentPositions" />
         <item itemvalue="JUnit.ModelTest.CheckPlayer2Move" />
         <item itemvalue="JUnit.ModelTest.CheckForPlayerWonAndMoveIsEmpty" />
-        <item itemvalue="JUnit.ModelTest.CheckForDrawGame" />
-        <item itemvalue="JUnit.ModelTest.CheckBoard" />
-        <item itemvalue="JUnit.ModelTest.CheckGameStates" />
+        <item itemvalue="JUnit.Millgame.Model in pis_muehle" />
+        <item itemvalue="JUnit.ModelTest.ShouldStartANewGame" />
       </list>
     </recent_temporary>
   </component>
@@ -544,7 +538,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704560598895</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="update">
+      <option name="closed" value="true" />
+      <created>1705567910591</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1705567910591</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Player images Added" />
     <MESSAGE value="calculate Position player input i hope" />
     <MESSAGE value="Player images loading in at mouse coords." />
     <MESSAGE value="position placement fixed" />
@@ -592,14 +593,15 @@
     <MESSAGE value="update gitignore" />
     <MESSAGE value="changed things" />
     <MESSAGE value="removed skizze" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed skizze" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/Millgame/Model/ModelTest.java</url>
-          <line>440</line>
+          <line>445</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
@@ -628,7 +630,7 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowsRuntimeException_AtStealStoneInMillForPlayer.ic" NAME="ModelTest.ThrowsRuntimeException_AtStealStoneInMillForPlayer Coverage Results" MODIFIED="1704457411836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckPlayer2Move.ic" NAME="ModelTest.CheckPlayer2Move Coverage Results" MODIFIED="1704564063448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckPlayer2Move.ic" NAME="ModelTest.CheckPlayer2Move Coverage Results" MODIFIED="1705568923091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowRuntimeException_AtNoStealableStoneAtPosition.ic" NAME="ModelTest.ThrowRuntimeException_AtNoStealableStoneAtPosition Coverage Results" MODIFIED="1704562789652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -661,7 +663,7 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowsRuntimeException_AtStealStoneInMill.ic" NAME="ModelTest.ThrowsRuntimeException_AtStealStoneInMill Coverage Results" MODIFIED="1704449098286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckForPlayerWonAndMoveIsEmpty.ic" NAME="ModelTest.CheckForPlayerWonAndMoveIsEmpty Coverage Results" MODIFIED="1704563502844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckForPlayerWonAndMoveIsEmpty.ic" NAME="ModelTest.CheckForPlayerWonAndMoveIsEmpty Coverage Results" MODIFIED="1705568757033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowRuntimeException_AtNoStealableStoneAtPosition.ic" NAME="ModelTest.ThrowRuntimeException_AtNoStealableStoneAtPosition Coverage Results" MODIFIED="1704450378955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -673,15 +675,13 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowRuntimeException_AtMoveStoneIsOpponentStone.ic" NAME="ModelTest.ThrowRuntimeException_AtMoveStoneIsOpponentStone Coverage Results" MODIFIED="1704452284803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowsRuntimeException_AtFieldAlreadyTaken.ic" NAME="ModelTest.ThrowsRuntimeException_AtFieldAlreadyTaken Coverage Results" MODIFIED="1704562693333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowsRuntimeException_AtFieldAlreadyTaken.ic" NAME="ModelTest.ThrowsRuntimeException_AtFieldAlreadyTaken Coverage Results" MODIFIED="1705568378965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_ShouldStartANewGame.ic" NAME="ModelTest.ShouldStartANewGame Coverage Results" MODIFIED="1704562742825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_ShouldStartANewGame.ic" NAME="ModelTest.ShouldStartANewGame Coverage Results" MODIFIED="1705568520155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$Model.ic" NAME="Model Coverage Results" MODIFIED="1704562645186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>Millgame.Model.*</FILTER>
-    </SUITE>
+    <SUITE FILE_PATH="coverage/README_md$Model.ic" NAME="Model Coverage Results" MODIFIED="1705568354545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckGameStates.ic" NAME="ModelTest.CheckGameStates Coverage Results" MODIFIED="1704459980999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
@@ -728,6 +728,9 @@
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/README_md$ModelTest_ShouldPlacePlayer1AtPositionOne.ic" NAME="ModelTest.ShouldPlacePlayer1AtPositionOne Coverage Results" MODIFIED="1704562772474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Millgame.Model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/README_md$Millgame_Model_in_pis_muehle.ic" NAME="Millgame.Model in pis_muehle Coverage Results" MODIFIED="1705568533466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckForValidMove.ic" NAME="ModelTest.CheckForValidMove Coverage Results" MODIFIED="1704381953653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

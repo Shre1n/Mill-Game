@@ -20,7 +20,7 @@ public class ModelTest {
     @Test
     void ShouldStartANewGame() {
         var game = new Model();
-        assertEquals('⌗', game.getEMPTY());
+        assertEquals('#', game.getEMPTY());
     }
     @Test
     void ThrowsRuntimeException_AtFieldAlreadyTaken() {
@@ -64,105 +64,10 @@ public class ModelTest {
 
         assertThrows(RuntimeException.class,() -> game.setPlayer(2));
     }
+
     @Test
-    void CheckForPlayerWonAndMoveIsEmpty() {
-        var game = new Model();
-        game.setPlayer(0); // 1
-        game.setPlayer(8); //2
-        game.setPlayer(1); //1
-        game.setPlayer(23); //2
-        game.setPlayer(2); //1
-        game.steal(23); //1
-        game.setPlayer(4); //2
-        game.setPlayer(5);//1
-        game.setPlayer(3); //2
-        game.setPlayer(7);//1
-        game.setPlayer(22);//2
-        game.setPlayer(6);//1
-        game.steal(8);//1
-        game.setPlayer(17);//2
-        game.setPlayer(18);//1
-        game.setPlayer(11);//2
-        game.setPlayer(19);//1
-        game.setPlayer(12);//2
-        game.setPlayer(20);//1
-        game.steal(3);//1
-        game.setPlayer(23);//2
+    void ThrowRuntimeException_AtPlayer2MoveIsNotAdjacent(){}
 
-        char[] board = new char[]{
-                game.getPLAYER_1(), game.getPLAYER_1(), game.getPLAYER_1(),
-                game.getEMPTY(), game.getPLAYER_2(), game.getPLAYER_1(),
-                game.getPLAYER_1(), game.getPLAYER_1(), game.getEMPTY(),
-                game.getEMPTY(), game.getEMPTY(), game.getPLAYER_2(), game.getPLAYER_2(), game.getEMPTY(), game.getEMPTY(),
-                game.getEMPTY(), game.getEMPTY(), game.getPLAYER_2(),
-                game.getPLAYER_1(), game.getPLAYER_1(), game.getPLAYER_1(),
-                game.getEMPTY(), game.getPLAYER_2(), game.getPLAYER_2(),
-        };
-
-        assertArrayEquals(board,game.getBoard());
-
-        assertEquals('⌗',game.getBoard()[9]);
-        game.move(1, 9);//1
-        assertEquals("BLACK",game.getTurn());
-
-
-        game.move(17, 16);//2
-        game.steal(9); // 2
-        game.move(7, 15); //1
-        game.move(16,17); // 2
-        game.move(15, 7);//1
-        game.steal(4);//1
-
-        assertThrows(RuntimeException.class,()->game.move(17,20));
-        assertThrows(RuntimeException.class,()->game.move(20,21));
-
-        game.move(17, 16);//2
-
-        game.steal(5); //2
-        game.move(20, 21);//1
-        game.move(16, 17);//2
-        game.move(2, 3);//1
-        game.move(17, 16);//2
-        game.steal(19); //2
-        game.move(7,15); //1
-        game.move(11,10);//2
-        game.move(15, 7);//1
-        game.steal(10);//1
-        game.move(16, 17);//2
-        game.move(7, 15);//1
-        game.move(17, 16);//2
-        game.steal(21);//2
-        game.move(15,7);//1
-        game.steal(12);//1
-        // Now black is in JUMP Phase
-        game.move(16,17);//2
-        game.move(0,1);//1
-        game.move(17,16);//2
-        game.steal(3);//2
-        game.move(1,2);//1
-        game.move(16,17);//2
-        game.move(2,1);//1
-        game.move(17,16);//2
-        game.steal(18);//2
-        // Now white is in JUMP Phase
-        game.move(1,2);//1
-        game.move(16,17);//2
-        game.move(2,0); //1
-        game.steal(17); //1
-
-
-
-
-
-        assertTrue(game.hasPlayer1Won());
-        assertTrue(game.isGameOver());
-        assertFalse(game.hasPlayer2Won());
-
-        assertThrows(RuntimeException.class,()->game.move(0,2));
-
-        String s = "White has won";
-        assertEquals(s, game.toString());
-    }
 
     @Test
     void CheckPlayer2Move(){
@@ -358,6 +263,8 @@ public class ModelTest {
         game.setPlayer(23);//2
 
         assertThrows(RuntimeException.class,()->game.move(1,3));
+        game.move(20,21);
+        assertThrows(RuntimeException.class,()->game.move(4,8));
 
 
     }

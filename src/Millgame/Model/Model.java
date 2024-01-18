@@ -19,7 +19,7 @@ public class Model implements IModel {
     /**
      * The default field entry for empty fields.
      */
-    private final char EMPTY = '⌗';
+    private final char EMPTY = '#';
 
     /**
      * The default field entry for Player 1 fields.
@@ -28,7 +28,7 @@ public class Model implements IModel {
     /**
      * The default field entry for Player 2 fields.
      */
-    private final char PLAYER_2 = '□';
+    private final char PLAYER_2 = '¤';
 
     /**
      * The default Stone count for settable Stones as Player 1.
