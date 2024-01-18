@@ -356,7 +356,7 @@ public class Model implements IModel {
     @Override
     public String toString() {
         if (!isGameOver()) {
-            String s = board[0] + "                  " + board[1] + "                   " + board[2] + "\n";
+            String s = "+\n"+board[0] + "                  " + board[1] + "                   " + board[2] + "\n";
             s += "      " + board[8] + "            " + board[9] + "            " + board[10] + "\n";
             s += "             " + board[16] + "     " + board[17] + "     " + board[18] + "\n";
             s += board[7] + "     " + board[15] + "      " + board[23] + "           " + board[19] + "     " + board[11] + "      " + board[3] + "\n";

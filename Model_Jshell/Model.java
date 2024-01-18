@@ -72,12 +72,6 @@ public class Model implements IModel {
     private GameState player2;
 
 
-    public static void main(String[] args) {
-        var game = new Model();
-    }
-
-
-
     /**
      * Constructor of Model to start a new game
      */
@@ -120,7 +114,6 @@ public class Model implements IModel {
      * {@inheritDoc}
      */
     public void steal(int pos) {
-        System.out.println("Hi");
         if (board[pos] == EMPTY)
             throw new RuntimeException("You cannot steal from an empty field.");
         if (player1 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.WHITE) {
@@ -210,7 +203,7 @@ public class Model implements IModel {
      * Or Player tries to move an Opponent stone.
      * Or if game is already over.
      */
-    public void move(int pos1, int pos2) { // 16, 23
+    public void move(int pos1, int pos2) {
         if (!isGameOver() && !isDraw()) {
             if (isEmptyField(pos2) && player1 != GameState.SET && turn == PlayerTurn.WHITE) {
                 if (player1 == GameState.MOVE) {
@@ -228,7 +221,7 @@ public class Model implements IModel {
                 }
             } else if (isEmptyField(pos2) && player2 != GameState.SET && turn == PlayerTurn.BLACK) {
                 if (player2 == GameState.MOVE) {
-                    if (!isValidMove(pos1, pos2) && board[pos1] == PLAYER_1)
+                    if (!isValidMove(pos1, pos2) && board[pos1] == PLAYER_2)
                         throw new RuntimeException("Move is not possible! Positions must be adjacent.");
                 }
                 if (board[pos1] != PLAYER_2)
@@ -240,7 +233,7 @@ public class Model implements IModel {
                     player2 = GameState.STEAL;
                     turn = PlayerTurn.BLACK;
                 }
-            } else throw new IllegalArgumentException("GameState of current Player is not MOVE. Please use the intended methode!");
+            } else throw new IllegalArgumentException("GameState of current Player is not MOVE. Please use the intended method!");
         } else throw new RuntimeException("Game is already over! :( ");
     }
 
@@ -361,7 +354,7 @@ public class Model implements IModel {
     @Override
     public String toString() {
         if (!isGameOver()) {
-            String s = "\n"+ board[0] + "                  " + board[1] + "                   " + board[2] + "\n";
+            String s = "\n"+board[0] + "                  " + board[1] + "                   " + board[2] + "\n";
             s += "      " + board[8] + "            " + board[9] + "            " + board[10] + "\n";
             s += "             " + board[16] + "     " + board[17] + "     " + board[18] + "\n";
             s += board[7] + "     " + board[15] + "      " + board[23] + "           " + board[19] + "     " + board[11] + "      " + board[3] + "\n";
