@@ -78,6 +78,7 @@ public class View extends PApplet implements IView {
      */
     @Override
     public void settings() {
+        pixelDensity(2);
         size(controller.getSIZE(), controller.getSIZE());
     }
 
