@@ -2,7 +2,7 @@
 
 ## Anleitung
 
-Mit dieser Anwendung können Sie gemeinsam mit einem Freund das Spiel "Mühle" spielen.
+Mit dieser Anwendung können Sie gemeinsam mit einem Freund das Spiel "Mühle" lokal spielen.
 
 + Spieler 1 hat die Farbe Weiß
 + Spieler 2 hat die Farbe Schwarz
@@ -48,58 +48,64 @@ Das Spiel kann jederzeit mit dem einem Tastendruck auf 'r' neugestartet werden.
 Navigieren Sie in den Ordner:
 
 ````shell
-cd Model_Jshell
+cd .\Model_Jshell
 ````
 
 Öffnen Sie die JShell Anwendung in diesem Ordner:
 
-````shell
+````bash
 JShell
 ````
 
 anschließend öffnen Sie alle Klassen in dem Ordner:
 
-````shell
+```console
 /o PlayerTurn.java
-````
-````shell
+```
+```console
 /o GameState.java
-````
-````shell
+```
+```console
 /o IModel.java
-````
-````shell
+```
+```console
 /o Model.java
-````
+```
 
 zunächst erstellen Sie ein neues Model in der JShell:
 
-````shell 
+```console
 var game = new Model()
-````
+```
 
 erstellen Sie ein neues Spiel mit:
 
-````shell 
+```console
 game.newGame()
-````
+```
+
+rufen Sie den aktuellen Stand des Spiels mit der variable auf:
+
+```console
+game
+```
 
 setzen Sie einen Spieler mit:
 
-````shell 
+```console
 game.setPlayer(0)
 ```` 
 um Spieler 1 auf die Stelle (0) zu setzen.
 
 wenn Sie sich in einer Zieh Phase befinden, bewegen Sie sich mit:
 
-````shell 
+```console
 game.move(8,9)
 ````
 
 befinden Sie sich in einer Spring Phase, Springen Sie auch mit:
 
-````shell 
+```console
 game.move(8,0)
 ````
 

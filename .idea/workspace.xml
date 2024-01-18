@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="test 100%">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="steal fix in view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model_Jshell/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model_Jshell/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,10 +157,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.Millgame.Model in pis_muehle" />
         <item itemvalue="JUnit.ModelTest.ThrowRuntimeException_AtMoveStoneMustBeAdjacentPositions" />
         <item itemvalue="JUnit.ModelTest.CheckPlayer2Move" />
         <item itemvalue="JUnit.ModelTest.CheckForPlayerWonAndMoveIsEmpty" />
-        <item itemvalue="JUnit.Millgame.Model in pis_muehle" />
       </list>
     </recent_temporary>
   </component>
@@ -550,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705569332940</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="steal fix in view">
+      <option name="closed" value="true" />
+      <created>1705571315142</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1705571315142</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +580,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Player images loading in at mouse coords." />
     <MESSAGE value="position placement fixed" />
     <MESSAGE value="user interface information update" />
     <MESSAGE value="steal works a little bit" />
@@ -598,7 +604,8 @@
     <MESSAGE value="removed skizze" />
     <MESSAGE value="update" />
     <MESSAGE value="test 100%" />
-    <option name="LAST_COMMIT_MESSAGE" value="test 100%" />
+    <MESSAGE value="steal fix in view" />
+    <option name="LAST_COMMIT_MESSAGE" value="steal fix in view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -607,6 +614,16 @@
           <url>file://$PROJECT_DIR$/test/Millgame/Model/ModelTest.java</url>
           <line>347</line>
           <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Millgame/Controller/Controller.java</url>
+          <line>192</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Millgame/Controller/Controller.java</url>
+          <line>198</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -734,7 +751,7 @@
     <SUITE FILE_PATH="coverage/README_md$ModelTest_ShouldPlacePlayer1AtPositionOne.ic" NAME="ModelTest.ShouldPlacePlayer1AtPositionOne Coverage Results" MODIFIED="1704562772474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$Millgame_Model_in_pis_muehle.ic" NAME="Millgame.Model in pis_muehle Coverage Results" MODIFIED="1705568533466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$Millgame_Model_in_pis_muehle.ic" NAME="Millgame.Model in pis_muehle Coverage Results" MODIFIED="1705571420756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckForValidMove.ic" NAME="ModelTest.CheckForValidMove Coverage Results" MODIFIED="1704381953653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

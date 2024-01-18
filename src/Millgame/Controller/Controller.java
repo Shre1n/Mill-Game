@@ -190,7 +190,7 @@ public class Controller implements IController {
                             view.drawField();
                         } catch (RuntimeException e) {
                             view.drawField();
-                            view.exceptionRunner(e.getMessage());
+                            view.exceptionRunner("This is not a valid field to steal from.");
                         }
 
                     }
@@ -236,7 +236,7 @@ public class Controller implements IController {
                             view.drawField();
                         } catch (RuntimeException e) {
                             view.drawField();
-                            view.exceptionRunner(e.getMessage());
+                            view.exceptionRunner("This is not a valid field to steal from.");
                         }
                     }
                 } catch (RuntimeException e) {
