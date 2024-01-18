@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="Error message fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model_Jshell/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model_Jshell/IModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model_Jshell/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model_Jshell/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
-    </list>
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="fixed output of game in jshell" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -568,7 +563,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705573342843</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="fixed output of game in jshell">
+      <option name="closed" value="true" />
+      <created>1705573768008</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1705573768008</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +594,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="user interface information update" />
     <MESSAGE value="steal works a little bit" />
     <MESSAGE value="restart game works" />
     <MESSAGE value="Steal works in view" />
@@ -616,7 +618,8 @@
     <MESSAGE value="test 100%" />
     <MESSAGE value="steal fix in view" />
     <MESSAGE value="Error message fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Error message fixed" />
+    <MESSAGE value="fixed output of game in jshell" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed output of game in jshell" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

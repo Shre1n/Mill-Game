@@ -12,7 +12,7 @@ import java.util.Arrays;
  * This Class and its Methods are typically used in the Controller component and compare states of View with states of Model.
  */
 
-public class Model implements IModel {
+public class Model {
 
     /**
      * The default field entry for empty fields.
