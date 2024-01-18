@@ -181,6 +181,7 @@ public class Controller implements IController {
             int posClicked = calculatePosClicked(x, y);
             int posDragged = calculatePosClicked(xnew, ynew);
             if (millModel.getTurn().equals("WHITE")) {
+
                 try {
                     if (millModel.getPlayer1State() == GameState.STEAL && clicked) {
                         try {
@@ -214,15 +215,19 @@ public class Controller implements IController {
                     view.exceptionRunner("You must choose a valid field to move to.");
                 }
                 if (millModel.getPlayer1State() == GameState.SET && clicked) {
-                    try {
-                        millModel.setPlayer(posClicked);
-                        view.drawField();
-                    } catch (RuntimeException e) {
-                        view.drawField();
-                        view.exceptionRunner("Please choose an empty field.");
-                    }
+                    if(!stolen){
+                        try {
+                            millModel.setPlayer(posClicked);
+                            view.drawField();
+                        } catch (RuntimeException e) {
+                            view.drawField();
+                            view.exceptionRunner("Please choose an empty field.");
+                        }} else stolen = false;
                 }
+
             } else {
+
+
                 try {
                     if (millModel.getPlayer2State() == GameState.STEAL && clicked) {
                         try {
@@ -255,16 +260,18 @@ public class Controller implements IController {
                     view.exceptionRunner("You must choose a valid field to move to.");
                 }
                 if (millModel.getPlayer2State() == GameState.SET && clicked) {
-                    try {
-                        millModel.setPlayer(posClicked);
-                        view.drawField();
-                    } catch (RuntimeException e) {
-                        view.drawField();
-                        view.exceptionRunner("Please choose an empty field.");
-                    }
+                    if(!stolen){
+                        try {
+                            millModel.setPlayer(posClicked);
+                            view.drawField();
+                        } catch (RuntimeException e) {
+                            view.drawField();
+                            view.exceptionRunner("Please choose an empty field.");
+                        }} else stolen =false;
                 }
+
             }
-            System.out.println(millModel.toString());
+            if(!clicked)System.out.println(millModel.toString());
         }
     }
 

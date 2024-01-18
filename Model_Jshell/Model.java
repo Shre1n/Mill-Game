@@ -120,6 +120,7 @@ public class Model implements IModel {
      * {@inheritDoc}
      */
     public void steal(int pos) {
+        System.out.println("Hi");
         if (board[pos] == EMPTY)
             throw new RuntimeException("You cannot steal from an empty field.");
         if (player1 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.WHITE) {
