@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="update readme">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="100% test frfr">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Millgame/Model/ModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,13 +78,26 @@
       <recent name="C:\Users\robin\IdeaProjects\pis_muehle\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Millgame.Model in pis_muehle">
+  <component name="RunManager" selected="Application.MainPokemon">
     <configuration name="MainPokemon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Millgame.Main.MainPokemon" />
       <module name="pis_muehle" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Millgame.Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="View" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Millgame.View.View" />
+      <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.View.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,29 +150,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModelTest.CheckPlayer2Move" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pis_muehle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Millgame.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Millgame.Model" />
-      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="METHOD_NAME" value="CheckPlayer2Move" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainPokemon" />
+        <item itemvalue="Application.View" />
         <item itemvalue="JUnit.Millgame.Model in pis_muehle" />
         <item itemvalue="JUnit.ModelTest.CheckForPlayerWonAndMoveIsEmpty" />
         <item itemvalue="JUnit.ModelTest" />
-        <item itemvalue="Application.MainPokemon" />
-        <item itemvalue="JUnit.ModelTest.CheckPlayer2Move" />
       </list>
     </recent_temporary>
   </component>
@@ -183,14 +178,6 @@
       <workItem from="1704543508293" duration="15363000" />
       <workItem from="1704634067460" duration="11000" />
       <workItem from="1705304871203" duration="4827000" />
-    </task>
-    <task id="LOCAL-00002" summary="graph implemented with remove and add Edge">
-      <option name="closed" value="true" />
-      <created>1702540847619</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1702540847619</updated>
     </task>
     <task id="LOCAL-00003" summary="graph implemented with remove and add Edge">
       <option name="closed" value="true" />
@@ -576,7 +563,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705659037808</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="100% test frfr">
+      <option name="closed" value="true" />
+      <created>1705660171167</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1705660171167</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,7 +594,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="restart game works" />
     <MESSAGE value="Steal works in view" />
     <MESSAGE value="exception displays at set" />
     <MESSAGE value="Move and Jump works" />
@@ -624,7 +618,8 @@
     <MESSAGE value="PokemonView &amp; Main" />
     <MESSAGE value="Quellen angepasst" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="100% test frfr" />
+    <option name="LAST_COMMIT_MESSAGE" value="100% test frfr" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -754,10 +749,10 @@
     <SUITE FILE_PATH="coverage/README_md$ModelTest_ShouldPlacePlayer1AtPositionOne.ic" NAME="ModelTest.ShouldPlacePlayer1AtPositionOne Coverage Results" MODIFIED="1704562772474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$Millgame_Model_in_pis_muehle.ic" NAME="Millgame.Model in pis_muehle Coverage Results" MODIFIED="1705659864988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest.ic" NAME="ModelTest Coverage Results" MODIFIED="1705659878158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest.ic" NAME="ModelTest Coverage Results" MODIFIED="1705659878158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$Millgame_Model_in_pis_muehle.ic" NAME="Millgame.Model in pis_muehle Coverage Results" MODIFIED="1705660137199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckForValidMove.ic" NAME="ModelTest.CheckForValidMove Coverage Results" MODIFIED="1704381953653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
