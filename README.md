@@ -51,26 +51,11 @@ Navigieren Sie in den Ordner:
 cd .\Model_Jshell
 ````
 
-Öffnen Sie die JShell Anwendung in diesem Ordner:
+Öffnen Sie die JShell Anwendung in diesem Ordner und öffnen Sie alle Model Dateien:
 
-````bash
-JShell
+````shell
+JShell  .\PlayerTurn.java .\GameState.java .\Model.java
 ````
-
-anschließend öffnen Sie alle Klassen in dem Ordner:
-
-```console
-/o PlayerTurn.java
-```
-```console
-/o GameState.java
-```
-```console
-/o IModel.java
-```
-```console
-/o Model.java
-```
 
 zunächst erstellen Sie ein neues Model in der JShell:
 
@@ -103,7 +88,7 @@ wenn Sie sich in einer Zieh Phase befinden, bewegen Sie sich mit:
 game.move(8,9)
 ````
 
-befinden Sie sich in einer Spring Phase, Springen Sie auch mit:
+befinden Sie sich in einer Spring Phase, Springen Sie mit:
 
 ```console
 game.move(8,0)
