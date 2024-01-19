@@ -119,7 +119,7 @@ public class Model implements IModel {
         if (board[pos] == EMPTY)
             throw new RuntimeException("You cannot steal from an empty field.");
         if (player1 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.WHITE) {
-            if (board[pos] == PLAYER_2 && !isMill(pos, PLAYER_2)) {
+            if (board[pos] == PLAYER_2 && !isMill(pos, PLAYER_2) || isDraw() && board[pos] == PLAYER_2) {
                 board[pos] = EMPTY;
                 boardBlack--;
                 turn = PlayerTurn.BLACK;
@@ -128,7 +128,7 @@ public class Model implements IModel {
                 throw new RuntimeException("You cannot steal a stone in a mill.");
             else throw new RuntimeException("You cannot steal your own stones.");
         } else if (player2 == GameState.STEAL && isValidFieldIndex(pos) && turn == PlayerTurn.BLACK) {
-            if (board[pos] == PLAYER_1 && !isMill(pos, PLAYER_1)) {
+            if (board[pos] == PLAYER_1 && !isMill(pos, PLAYER_1) || isDraw() && board[pos] == PLAYER_1) {
                 board[pos] = EMPTY;
                 boardWhite--;
                 turn = PlayerTurn.WHITE;

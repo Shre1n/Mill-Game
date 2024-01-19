@@ -91,11 +91,6 @@ public class Controller implements IController {
             else view.drawGG("Game Over! Black has won!");
         }
 
-        if (millModel.isDraw()) {
-            view.deactivateThread();
-            view.drawGG("Game is a draw! Sadge :( ");
-        }
-
         if (!gameBoardDrawn && !titleScreen) {
             millModel.newGame();
             view.drawField();
@@ -280,7 +275,7 @@ public class Controller implements IController {
         // Calculate square parameters
         float start = (float) this.getSIZE() / 10;
         //Gap is 10 by default -- currently depends on size / start value
-        float gap = start / 10;
+        float gap = start / 5;
 
 
         //first square
