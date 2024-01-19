@@ -99,17 +99,31 @@ game.move(8,0)
 
 Um das Spiel auszuführen, muss die Main.java in dem dazugehörigen Package ausgeführt werden.
 + ``Main.Main``
+Sie können das Spiel auch mit Pokemon Spielen indem Sie folgendes Starten.
++ `Main.MainPokemon`
 lässt Sie das spiel mit zwei Spielern (Schwarz & Weiß) spielen.
 Mit den Instruktionen auf dem Startbildschirm lässt sich das Spiel ganz einfach starten.
 
 
 ## Startbildschirm
 
+<h5> mit Spielsteinen </h5>
+
 ![HomeScreen](screenshots/HomeScreen.png)
+
+<h5> mit Pokemon </h5>
+
+![PokemonHome](screenshots/PokemonHome.png)
 
 ## Spielscreen
 
+<h5> mit Spielsteinen </h5>
+
 ![Spielscreen](screenshots/Spielscreen.png)
+
+<h5> mit Pokemon </h5>
+
+![PokemonScreen](screenshots/PokemonGame.png)
 
 ## Auskunft über mögliche Fehler
 
