@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="changed Background. Fixed steal at WHITE error message">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="update Readme">
+      <change afterPath="$PROJECT_DIR$/src/Millgame/Main/MainPokemon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "C:/Users/robin/IdeaProjects/pis_muehle",
+    "last_opened_file_path": "C:/Users/robin/IdeaProjects/pis_muehle/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,7 +79,7 @@
       <recent name="C:\Users\robin\IdeaProjects\pis_muehle\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.MainPokemon">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Millgame.Main.Main" />
       <module name="pis_muehle" />
@@ -93,18 +93,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModelTest.CheckForDrawGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainPokemon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Millgame.Main.MainPokemon" />
       <module name="pis_muehle" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Millgame.Model.*" />
+          <option name="PATTERN" value="Millgame.Main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Millgame.Model" />
-      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="METHOD_NAME" value="CheckForDrawGame" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -159,6 +156,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainPokemon" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -550,7 +548,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705319165607</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="update Readme">
+      <option name="closed" value="true" />
+      <created>1705654008593</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1705654008593</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +579,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Player images loading in at mouse coords." />
     <MESSAGE value="position placement fixed" />
     <MESSAGE value="user interface information update" />
     <MESSAGE value="steal works a little bit" />
@@ -598,7 +603,8 @@
     <MESSAGE value="removed skizze" />
     <MESSAGE value="Tests complete with 100 LC" />
     <MESSAGE value="changed Background. Fixed steal at WHITE error message" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed Background. Fixed steal at WHITE error message" />
+    <MESSAGE value="update Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Readme" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
