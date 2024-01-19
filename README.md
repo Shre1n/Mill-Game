@@ -133,6 +133,10 @@ Mit den Instruktionen auf dem Startbildschirm lässt sich das Spiel ganz einfach
 
 [Spielsteine](https://hotpot.ai/art-generator)
 
+[Pokemon Herdier](https://www.stickpng.com/de/img/tiere/die-unglaublichen/herdier-pokemon)
+
+[Pokemon Emolga](https://www.stickpng.com/de/img/comics-und-fantasy/verschiedene-comics/emolga-pokemon)
+
 [Hintergrundbild](https://wallpaperaccess.com/mill)
 
 [Processing Referenz](https://processing.org/)
