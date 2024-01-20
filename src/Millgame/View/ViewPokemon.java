@@ -5,8 +5,10 @@ import Millgame.Controller.IController;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+import java.io.IOException;
 
-public class ViewPokemon extends PApplet implements IView{
+
+public class ViewPokemon extends PApplet implements IView {
     /**
      * Declare Controller instance
      */
@@ -85,13 +87,21 @@ public class ViewPokemon extends PApplet implements IView{
         surface.setTitle("The Mill Game");
         surface.setResizable(false);
         bg = loadImage("backgroundGame.jpg");
-        bg.resize(controller.getSIZE(), controller.getSIZE());
         ts = loadImage("background.png");
-        ts.resize(controller.getSIZE(), controller.getSIZE());
         player1 = loadImage("emolgaWhite.png");
-        player1.resize(100, 100);
         player2 = loadImage("HerdierBlack.png");
+        nullableImage();
+        bg.resize(controller.getSIZE(), controller.getSIZE());
+        ts.resize(controller.getSIZE(), controller.getSIZE());
+        player1.resize(100, 100);
         player2.resize(100, 100);
+    }
+
+    private void nullableImage(){
+        if (bg == null || ts ==  null || player1 == null || player2 == null) {
+            System.out.println("Image has not been found.");
+            exitActual();
+        }
     }
 
     /**

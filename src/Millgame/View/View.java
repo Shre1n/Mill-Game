@@ -91,13 +91,22 @@ public class View extends PApplet implements IView {
         surface.setTitle("The Mill Game");
         surface.setResizable(false);
         bg = loadImage("backgroundGame.jpg");
-        bg.resize(controller.getSIZE(), controller.getSIZE());
         ts = loadImage("background.png");
-        ts.resize(controller.getSIZE(), controller.getSIZE());
         player1 = loadImage("WhiteStone.png");
-        player1.resize(100, 100);
+        nullableImage();
         player2 = loadImage("BlackStone.png");
+        bg.resize(controller.getSIZE(), controller.getSIZE());
+        ts.resize(controller.getSIZE(), controller.getSIZE());
+        player1.resize(100, 100);
         player2.resize(100, 100);
+
+    }
+
+    private void nullableImage(){
+        if (bg == null || ts ==  null || player1 == null || player2 == null) {
+            System.out.println("Image has not been found.");
+            exitActual();
+        }
     }
 
     /**
@@ -241,7 +250,7 @@ public class View extends PApplet implements IView {
         new Thread (()->runThread()).start(); //running lambda in as Thread
     }
 
-    public void runThread(){
+    private void runThread(){
         while (active) {
             char[] board = controller.getBoard();
             float start = (float) controller.getSIZE() / 10;
