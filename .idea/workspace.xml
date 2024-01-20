@@ -9,10 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="check if image is accessible">
-      <change afterPath="$PROJECT_DIR$/src/Millgame/View/BaseView.java" afterDir="false" />
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="views only extends baseview class with PApplet inherits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/View/BaseView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/BaseView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,14 +180,6 @@
       <workItem from="1703686042681" duration="9000" />
       <workItem from="1704478227687" duration="5563000" />
       <workItem from="1704543508293" duration="14839000" />
-    </task>
-    <task id="LOCAL-00004" summary="PlayerTurn implemented. Test not finished">
-      <option name="closed" value="true" />
-      <created>1703245967381</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1703245967381</updated>
     </task>
     <task id="LOCAL-00005" summary="Player State Move and Steel and Jump">
       <option name="closed" value="true" />
@@ -571,7 +565,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705754586009</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="views only extends baseview class with PApplet inherits">
+      <option name="closed" value="true" />
+      <created>1705762715427</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1705762715427</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +596,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="exception displays at set" />
     <MESSAGE value="Move and Jump works" />
     <MESSAGE value="error handling and warning fixed. Added Title screen" />
     <MESSAGE value="JDoc almost finished" />
@@ -619,7 +620,8 @@
     <MESSAGE value="delete IModel" />
     <MESSAGE value="fixed Typo" />
     <MESSAGE value="check if image is accessible" />
-    <option name="LAST_COMMIT_MESSAGE" value="check if image is accessible" />
+    <MESSAGE value="views only extends baseview class with PApplet inherits" />
+    <option name="LAST_COMMIT_MESSAGE" value="views only extends baseview class with PApplet inherits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -633,11 +635,6 @@
           <url>file://$PROJECT_DIR$/src/Millgame/Controller/Controller.java</url>
           <line>193</line>
           <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

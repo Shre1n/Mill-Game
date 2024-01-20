@@ -16,61 +16,26 @@ import java.util.Arrays;
 
 public class Model implements IModel {
 
-    /**
-     * The default field entry for empty fields.
-     */
     private final char EMPTY = '#';
 
-    /**
-     * The default field entry for Player 1 fields.
-     */
     private final char PLAYER_1 = '■';
-    /**
-     * The default field entry for Player 2 fields.
-     */
+
     private final char PLAYER_2 = '¤';
 
-    /**
-     * The default Stone count for settable Stones as Player 1.
-     */
     private int SETWhiteStones;
 
-    /**
-     * The default Stone count for settable Stones as Player 2.
-     */
     private int SETBlackStones;
-
-    /**
-     * The default count for Stones on board for Player 1,
-     */
 
     private int boardWhite;
 
-    /**
-     * The default count for Stones on board for Player 2.
-     */
     private int boardBlack;
-
-    /**
-     * The default field setup.
-     */
 
     private char[] board;
 
-    /**
-     * Declare Enum variable of PlayerTurn.
-     */
-
     private PlayerTurn turn;
 
-    /**
-     * Declare Enum variable of GameState for Player 1.
-     */
     private GameState player1;
 
-    /**
-     * Declare Enum variable of GameState for Player 2.
-     */
     private GameState player2;
 
 

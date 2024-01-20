@@ -1,41 +1,26 @@
 package Millgame.View;
 
-import Millgame.Controller.IController;
-import processing.core.PApplet;
-import processing.core.PImage;
-
 /**
- * Visualize the Application and draw game.
+ * Visualize the Application and draw game with common game stones.
  * Must contain all public classes from View interface to use them.
  * This Class and its Methods are intended to draw the graphical interface and handle how are states are drawn.
  */
 
 
 public class View extends BaseView implements IView {
-    /**
-     * Declare x-axis of input via mousePressed
-     */
+
     private int x;
 
-    /**
-     * Declare y-axis of input via mousePressed
-     */
+
     private int y;
 
-    /**
-     * Default value of new x value
-     */
+
     private int xnew;
 
-    /**
-     * Default value of new y value
-     */
+
     private int ynew;
 
-    /**
-     * Default value to handle the Thread for image loading.
-     * This value has been set to avoid the while true Thread runner.
-     */
+
     private boolean active = false;
 
 
