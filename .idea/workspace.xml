@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="fixed Typo">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="check if image is accessible">
+      <change afterPath="$PROJECT_DIR$/src/Millgame/View/BaseView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/background.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,7 @@
       <recent name="C:\Users\robin\IdeaProjects\pis_muehle\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.MainPokemon">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Millgame.Main.Main" />
       <module name="pis_muehle" />
@@ -126,6 +125,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ViewPokemon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Millgame.View.ViewPokemon" />
+      <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Millgame.Model in pis_muehle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pis_muehle" />
       <extension name="coverage">
@@ -140,29 +152,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModelTest.CheckBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pis_muehle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Millgame.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Millgame.Model" />
-      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="METHOD_NAME" value="CheckBoard" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainPokemon" />
+        <item itemvalue="Application.ViewPokemon" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.View" />
         <item itemvalue="JUnit.Millgame.Model in pis_muehle" />
-        <item itemvalue="JUnit.ModelTest.CheckBoard" />
       </list>
     </recent_temporary>
   </component>
@@ -182,14 +178,6 @@
       <workItem from="1703686042681" duration="9000" />
       <workItem from="1704478227687" duration="5563000" />
       <workItem from="1704543508293" duration="14839000" />
-    </task>
-    <task id="LOCAL-00003" summary="graph implemented with remove and add Edge">
-      <option name="closed" value="true" />
-      <created>1703007251673</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1703007251673</updated>
     </task>
     <task id="LOCAL-00004" summary="PlayerTurn implemented. Test not finished">
       <option name="closed" value="true" />
@@ -575,7 +563,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705579002521</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="check if image is accessible">
+      <option name="closed" value="true" />
+      <created>1705754586009</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1705754586009</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +594,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Steal works in view" />
     <MESSAGE value="exception displays at set" />
     <MESSAGE value="Move and Jump works" />
     <MESSAGE value="error handling and warning fixed. Added Title screen" />
@@ -623,7 +618,8 @@
     <MESSAGE value="fixed output of game in jshell" />
     <MESSAGE value="delete IModel" />
     <MESSAGE value="fixed Typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed Typo" />
+    <MESSAGE value="check if image is accessible" />
+    <option name="LAST_COMMIT_MESSAGE" value="check if image is accessible" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -640,7 +636,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java</url>
-          <line>96</line>
+          <line>92</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
