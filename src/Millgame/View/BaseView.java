@@ -4,23 +4,31 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import Millgame.Controller.IController;
 
-/**
- * An abstract class which is for the standard difference between a specific view Mode.
- * Provides all necessary methods to allow multiple views in the Project with different images.
- * All view classes must inherit this class in the purpose to load different images.
- */
 public abstract class BaseView extends PApplet {
 
-
+    /**
+     * Declare Controller instance
+     */
     protected IController controller;
 
+    /**
+     * Default background Image for game
+     */
     protected PImage bg;
 
+    /**
+     * Default title screen Image for start screen
+     */
     protected PImage ts;
 
-
+    /**
+     * Image storage of player White
+     */
     protected PImage player1;
 
+    /**
+     * Image storage of player Black
+     */
     protected PImage player2;
 
     /**
@@ -32,6 +40,8 @@ public abstract class BaseView extends PApplet {
     public void setController(IController controller) {
         this.controller = controller;
     }
+
+
 
     /**
      * Set Size of Application given from Controller.
@@ -94,5 +104,6 @@ public abstract class BaseView extends PApplet {
     abstract String getPlayer1Image();
 
     abstract String getPlayer2Image();
+
 
 }

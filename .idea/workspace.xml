@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="model formatted" />
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="fixed package info jdoc">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/View/BaseView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/BaseView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,14 +182,8 @@
       <workItem from="1704543508293" duration="14839000" />
       <workItem from="1705830086501" duration="5402000" />
       <workItem from="1705851263567" duration="704000" />
-    </task>
-    <task id="LOCAL-00011" summary="init core">
-      <option name="closed" value="true" />
-      <created>1703683139883</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1703683139883</updated>
+      <workItem from="1705866934591" duration="152000" />
+      <workItem from="1705869814038" duration="354000" />
     </task>
     <task id="LOCAL-00012" summary="Setup Main View Controller">
       <option name="closed" value="true" />
@@ -569,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705851946811</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="fixed package info jdoc">
+      <option name="closed" value="true" />
+      <created>1705867041632</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1705867041632</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +600,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Tests almost finished" />
     <MESSAGE value="Draw Game init" />
     <MESSAGE value="changed draw screen" />
     <MESSAGE value="exception handling frontend" />
@@ -617,7 +624,8 @@
     <MESSAGE value="added package jdoc for tests" />
     <MESSAGE value="gameover Screen in readme" />
     <MESSAGE value="model formatted" />
-    <option name="LAST_COMMIT_MESSAGE" value="model formatted" />
+    <MESSAGE value="fixed package info jdoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed package info jdoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

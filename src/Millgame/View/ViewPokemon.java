@@ -1,35 +1,54 @@
 package Millgame.View;
 
-/**
- * Visualize the Application and draw game with Pokémon.
- * Must contain all public classes from View interface to use them.
- * This Class and its Methods are intended to draw the graphical interface and handle how are states are drawn.
- */
+import Millgame.Controller.IController;
+import Millgame.Controller.IController;
+import processing.core.PApplet;
+import processing.core.PImage;
+
+import java.io.IOException;
+
+
 public class ViewPokemon extends BaseView implements IView {
 
+    /**
+     * Declare x-axis of input via mousePressed
+     */
     private int x;
 
+    /**
+     * Declare y-axis of input via mousePressed
+     */
     private int y;
 
+    /**
+     * Default value of new x value
+     */
     private int xnew;
 
+    /**
+     * Default value of new y value
+     */
     private int ynew;
 
+    /**
+     * Default value to handle the Thread for image loading.
+     * This value has been set to avoid the while true Thread runner.
+     */
     private boolean active = false;
 
-    String getBackgroundImage() {
+    protected String getBackgroundImage() {
         return "backgroundGame.jpg";
     }
 
-    String getTitleScreenImage() {
+    protected String getTitleScreenImage() {
         return "background.png";
     }
 
-    String getPlayer1Image() {
+    protected String getPlayer1Image() {
         return "emolgaWhite.png";
     }
 
-    String getPlayer2Image() {
+    protected String getPlayer2Image() {
         return "HerdierBlack.png";
     }
 
@@ -171,7 +190,7 @@ public class ViewPokemon extends BaseView implements IView {
      */
     public void activateThread() {
         active = true;
-        new Thread(this::runThread).start(); //running lambda in as Thread
+        new Thread(() -> runThread()).start(); //running lambda in as Thread
     }
 
     private void runThread() {
