@@ -178,7 +178,7 @@ public class View extends BaseView implements IView {
      */
     public void activateThread() {
         active = true;
-        new Thread (()->runThread()).start(); //running lambda in as Thread
+        new Thread (this::runThread).start(); //running lambda in as Thread
     }
 
     private void runThread(){
