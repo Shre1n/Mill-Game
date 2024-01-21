@@ -131,6 +131,8 @@ Mit den Instruktionen auf dem Startbildschirm lässt sich das Spiel ganz einfach
 
 <p>hier wurde kein valides Feld für Schwarz ausgewählt.</p>
 
+## Game Over Screen
+
 ![GameOver](screenshots/GameOver.png)
 
 
