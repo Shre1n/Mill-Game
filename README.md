@@ -99,6 +99,7 @@ game.move(8,0)
 
 Um das Spiel auszuführen, muss die Main.java in dem dazugehörigen Package ausgeführt werden.
 + ``Main.Main``
+
 Sie können das Spiel auch mit Pokemon Spielen indem Sie folgendes Starten.
 + `Main.MainPokemon`
 lässt Sie das spiel mit zwei Spielern (Schwarz & Weiß) spielen.
