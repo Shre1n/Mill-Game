@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="added package jdoc for tests">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="model formatted" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,31 +175,7 @@
       <workItem from="1704478227687" duration="5563000" />
       <workItem from="1704543508293" duration="14839000" />
       <workItem from="1705830086501" duration="5402000" />
-      <workItem from="1705851263567" duration="494000" />
-    </task>
-    <task id="LOCAL-00008" summary="fixed Move">
-      <option name="closed" value="true" />
-      <created>1703610252270</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1703610252270</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Jump works">
-      <option name="closed" value="true" />
-      <created>1703615940608</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1703615940608</updated>
-    </task>
-    <task id="LOCAL-00010" summary="JShell and Model done">
-      <option name="closed" value="true" />
-      <created>1703616553219</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1703616553219</updated>
+      <workItem from="1705851263567" duration="704000" />
     </task>
     <task id="LOCAL-00011" summary="init core">
       <option name="closed" value="true" />
@@ -571,7 +545,31 @@
       <option name="project" value="LOCAL" />
       <updated>1705835486135</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="gameover Screen in readme">
+      <option name="closed" value="true" />
+      <created>1705851831735</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1705851831735</updated>
+    </task>
+    <task id="LOCAL-00058" summary="gameover Screen in readme">
+      <option name="closed" value="true" />
+      <created>1705851841034</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1705851841034</updated>
+    </task>
+    <task id="LOCAL-00059" summary="model formatted">
+      <option name="closed" value="true" />
+      <created>1705851946811</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1705851946811</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,8 +592,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="JDoc and cursor in titlescreen fix" />
-    <MESSAGE value="Tests started" />
     <MESSAGE value="Tests almost finished" />
     <MESSAGE value="Draw Game init" />
     <MESSAGE value="changed draw screen" />
@@ -619,7 +615,9 @@
     <MESSAGE value="changed visibility options" />
     <MESSAGE value="reused lamda in thread expression" />
     <MESSAGE value="added package jdoc for tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added package jdoc for tests" />
+    <MESSAGE value="gameover Screen in readme" />
+    <MESSAGE value="model formatted" />
+    <option name="LAST_COMMIT_MESSAGE" value="model formatted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
