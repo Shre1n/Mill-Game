@@ -67,7 +67,8 @@ public class Model implements IModel {
 
     /**
      * {@inheritDoc}
-     * @throws RuntimeException if field is taken.
+     *
+     * @throws RuntimeException          if field is taken.
      * @throws IndexOutOfBoundsException if no field is selected.
      */
     public boolean isEmptyField(int pos) {
@@ -118,6 +119,7 @@ public class Model implements IModel {
 
     /**
      * {@inheritDoc}
+     *
      * @throws RuntimeException unexpected use of method.
      */
     public void setPlayer(int pos) {
@@ -146,13 +148,15 @@ public class Model implements IModel {
 
     /**
      * Calculate the current placed ring of player and neighbor of index.
+     *
      * @param pos1 players current position.
      * @param pos2 players future position.
      * @return adjacent indexes
      */
     private boolean isValidMove(int pos1, int pos2) {
         int temp = whichSquare(pos1);
-        if(pos1 < 0 || pos1 > 23 || pos2 < 0 || pos2 > 23) throw new IndexOutOfBoundsException("The choosen position is not valid!");
+        if (pos1 < 0 || pos1 > 23 || pos2 < 0 || pos2 > 23)
+            throw new IndexOutOfBoundsException("The choosen position is not valid!");
         if (pos1 % 2 == 0) return ((pos1 + 1) % 8) + temp == pos2 || ((pos1 + 7) % 8) + temp == pos2;
         else {
             if (temp == 8)
@@ -166,9 +170,10 @@ public class Model implements IModel {
 
     /**
      * {@inheritDoc}
+     *
      * @throws RuntimeException if positions are not adjacent.
-     * Or Player tries to move an Opponent stone.
-     * Or if game is already over.
+     *                          Or Player tries to move an Opponent stone.
+     *                          Or if game is already over.
      */
     public void move(int pos1, int pos2) {
         if (!isGameOver() && !isDraw()) {
@@ -200,7 +205,8 @@ public class Model implements IModel {
                     player2 = GameState.STEAL;
                     turn = PlayerTurn.BLACK;
                 }
-            } else throw new IllegalArgumentException("GameState of current Player is not MOVE. Please use the intended method!");
+            } else
+                throw new IllegalArgumentException("GameState of current Player is not MOVE. Please use the intended method!");
         } else throw new RuntimeException("Game is already over! :( ");
     }
 
@@ -240,7 +246,8 @@ public class Model implements IModel {
                 }
             }
             return isDraw;
-        } return false;
+        }
+        return false;
     }
 
     private boolean isMill(int pos, char player) {
@@ -321,7 +328,7 @@ public class Model implements IModel {
     @Override
     public String toString() {
         if (!isGameOver()) {
-            String s = "\n"+board[0] + "                  " + board[1] + "                   " + board[2] + "\n";
+            String s = "\n" + board[0] + "                  " + board[1] + "                   " + board[2] + "\n";
             s += "      " + board[8] + "            " + board[9] + "            " + board[10] + "\n";
             s += "             " + board[16] + "     " + board[17] + "     " + board[18] + "\n";
             s += board[7] + "     " + board[15] + "      " + board[23] + "           " + board[19] + "     " + board[11] + "      " + board[3] + "\n";
