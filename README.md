@@ -136,27 +136,27 @@ Mit den Instruktionen auf dem Startbildschirm lässt sich das Spiel ganz einfach
 
 ## Verwendete Bibliotheken
 
-[Processing PApplet](https://processing.github.io/processing-javadocs/core/processing/core/PApplet.html)
+- [Processing PApplet](https://processing.github.io/processing-javadocs/core/processing/core/PApplet.html)
 
-[Processing PImage](https://processing.github.io/processing-javadocs/core/processing/core/PImage.html)
+- [Processing PImage](https://processing.github.io/processing-javadocs/core/processing/core/PImage.html)
 
-[JUnit](https://junit.org/junit5/)
+- [JUnit](https://junit.org/junit5/)
 
-[Arrays](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html)
+- [Arrays](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html)
 
 
 ## Quellen des Projekts
 
-[Spielsteine](https://hotpot.ai/art-generator)
+- [Spielsteine](https://hotpot.ai/art-generator)
 
-[Pokemon Herdier](https://www.stickpng.com/de/img/tiere/die-unglaublichen/herdier-pokemon)
+- [Pokemon Herdier](https://www.stickpng.com/de/img/tiere/die-unglaublichen/herdier-pokemon)
 
-[Pokemon Emolga](https://www.stickpng.com/de/img/comics-und-fantasy/verschiedene-comics/emolga-pokemon)
+- [Pokemon Emolga](https://www.stickpng.com/de/img/comics-und-fantasy/verschiedene-comics/emolga-pokemon)
 
-[Hintergrundbild](https://wallpaperaccess.com/mill)
+- [Hintergrundbild](https://wallpaperaccess.com/mill)
 
-[Processing Referenz](https://processing.org/)
+- [Processing Referenz](https://processing.org/)
 
-[Error bearbeitung](https://rollbar.com/blog/java-exceptions-hierarchy-explained/)
+- [Error bearbeitung](https://rollbar.com/blog/java-exceptions-hierarchy-explained/)
 
-[Spielhintergrund](https://www.freepik.com/free-photo/natural-wooden-background_5505940.htm#query=board%20background%20wood&position=1&from_view=search&track=ais&uuid=ff5c71bf-5973-444f-b08a-d666bff239ac)
+- [Spielhintergrund](https://www.freepik.com/free-photo/natural-wooden-background_5505940.htm#query=board%20background%20wood&position=1&from_view=search&track=ais&uuid=ff5c71bf-5973-444f-b08a-d666bff239ac)
