@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="changed visibility options">
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="added package jdoc for tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +25,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="package-info" />
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -176,23 +176,8 @@
       <workItem from="1703686042681" duration="9000" />
       <workItem from="1704478227687" duration="5563000" />
       <workItem from="1704543508293" duration="14839000" />
-      <workItem from="1705830086501" duration="627000" />
-    </task>
-    <task id="LOCAL-00006" summary="Output of Board">
-      <option name="closed" value="true" />
-      <created>1703596728225</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1703596728225</updated>
-    </task>
-    <task id="LOCAL-00007" summary="StealMode works">
-      <option name="closed" value="true" />
-      <created>1703601173758</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1703601173758</updated>
+      <workItem from="1705830086501" duration="5402000" />
+      <workItem from="1705851263567" duration="494000" />
     </task>
     <task id="LOCAL-00008" summary="fixed Move">
       <option name="closed" value="true" />
@@ -570,7 +555,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705765628235</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="reused lamda in thread expression">
+      <option name="closed" value="true" />
+      <created>1705831112531</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1705831112532</updated>
+    </task>
+    <task id="LOCAL-00056" summary="added package jdoc for tests">
+      <option name="closed" value="true" />
+      <created>1705835486135</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1705835486135</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,8 +594,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="error handling and warning fixed. Added Title screen" />
-    <MESSAGE value="JDoc almost finished" />
     <MESSAGE value="JDoc and cursor in titlescreen fix" />
     <MESSAGE value="Tests started" />
     <MESSAGE value="Tests almost finished" />
@@ -618,7 +617,9 @@
     <MESSAGE value="check if image is accessible" />
     <MESSAGE value="views only extends baseview class with PApplet inherits" />
     <MESSAGE value="changed visibility options" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed visibility options" />
+    <MESSAGE value="reused lamda in thread expression" />
+    <MESSAGE value="added package jdoc for tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added package jdoc for tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
