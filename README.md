@@ -48,13 +48,13 @@ Das Spiel kann jederzeit mit dem einem Tastendruck auf 'r' neugestartet werden.
 Navigieren Sie in den Ordner:
 
 ````shell
-cd .\Model_Jshell
+jshell --class-path .\out\production\pis_muehle
 ````
 
-Öffnen Sie die JShell Anwendung in diesem Ordner und öffnen Sie alle Model Dateien:
+Importieren Sie alle Model Dateien
 
 ````shell
-JShell  .\PlayerTurn.java .\GameState.java .\Model.java
+import Millgame.Model.*
 ````
 
 zunächst erstellen Sie ein neues Model in der JShell:
