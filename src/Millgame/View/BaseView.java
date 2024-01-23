@@ -85,6 +85,7 @@ public abstract class BaseView extends PApplet {
     public void drawTitleScreen() {
         background(ts);
 
+
         image(player1, (float) controller.getSIZE() / 2 - 100, (float) controller.getSIZE() / 2 - 150);
         image(player2, (float) controller.getSIZE() / 2 + 20, (float) controller.getSIZE() / 2 - 150);
 

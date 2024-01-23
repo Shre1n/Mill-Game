@@ -1,9 +1,5 @@
 package Millgame.View;
 
-import Millgame.Controller.IController;
-import processing.core.PApplet;
-import processing.core.PImage;
-
 /**
  * Visualize the Application and draw game.
  * Must contain all public classes from View interface to use them.
@@ -55,6 +51,8 @@ public class View extends BaseView implements IView {
         return "BlackStone.png";
     }
 
+
+
     /**
      * draw the next frame given from Controller
      */
@@ -63,26 +61,7 @@ public class View extends BaseView implements IView {
         controller.nextFrame();
     }
 
-    /**
-     * {@inheritDoc}
-     */
 
-    public void drawTitleScreen() {
-        background(ts);
-
-
-        image(player1, (float) controller.getSIZE() / 2 - 100, (float) controller.getSIZE() / 2 - 150);
-        image(player2, (float) controller.getSIZE() / 2 + 20, (float) controller.getSIZE() / 2 - 150);
-
-
-        fill(0);
-        textAlign(CENTER, CENTER);
-        textSize((float) controller.getSIZE() / 25);
-        text("The Mill Game", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2);
-        fill(255);
-        textAlign(CENTER, TOP);
-        text("Press 'R' to Start and Reset the Game", (float) controller.getSIZE() / 2, (float) controller.getSIZE() / 2 + 400);
-    }
 
     /**
      * {@inheritDoc}
