@@ -1,7 +1,6 @@
 package Millgame.View;
 
 import Millgame.Controller.IController;
-import Millgame.Controller.IController;
 import processing.core.PApplet;
 import processing.core.PImage;
 
