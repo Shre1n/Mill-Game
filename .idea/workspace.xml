@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="pis_muehle:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="lambdas in Thread starting">
-      <change afterPath="$PROJECT_DIR$/Model_Jshell/package-info.java" afterDir="false" />
+    <list default="true" id="332420e2-b06a-46c1-9118-74418c80054f" name="Changes" comment="fixed package info jdoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/View/BaseView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/BaseView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Millgame/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Millgame/View/ViewPokemon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,41 +44,42 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2ZR9DLSGUCD5clqVozFEZv6fYWB" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "C:/Users/robin/Downloads/drmew",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.tools",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/robin/IdeaProjects/pis_muehle/Model_Jshell&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\robin\IdeaProjects\pis_muehle\Model_Jshell" />
       <recent name="C:\Users\robin\IdeaProjects\pis_muehle\img" />
       <recent name="C:\Users\robin\IdeaProjects\pis_muehle" />
     </key>
@@ -80,6 +88,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.MainPokemon">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Millgame.Main.Main" />
+      <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainPokemon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Millgame.Main.MainPokemon" />
       <module name="pis_muehle" />
@@ -106,6 +127,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ViewPokemon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Millgame.View.ViewPokemon" />
+      <module name="pis_muehle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Millgame.View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Millgame.Model in pis_muehle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pis_muehle" />
       <extension name="coverage">
@@ -120,44 +154,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pis_muehle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Millgame.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Millgame.Model" />
-      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ModelTest.CheckForPlayerWonAndMoveIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pis_muehle" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Millgame.Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Millgame.Model" />
-      <option name="MAIN_CLASS_NAME" value="Millgame.Model.ModelTest" />
-      <option name="METHOD_NAME" value="CheckForPlayerWonAndMoveIsEmpty" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainPokemon" />
+        <item itemvalue="Application.ViewPokemon" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.View" />
         <item itemvalue="JUnit.Millgame.Model in pis_muehle" />
-        <item itemvalue="JUnit.ModelTest.CheckForPlayerWonAndMoveIsEmpty" />
-        <item itemvalue="JUnit.ModelTest" />
       </list>
     </recent_temporary>
   </component>
@@ -176,73 +179,11 @@
       <workItem from="1703601119577" duration="11494000" />
       <workItem from="1703686042681" duration="9000" />
       <workItem from="1704478227687" duration="5563000" />
-      <workItem from="1704543508293" duration="15363000" />
-      <workItem from="1704634067460" duration="11000" />
-      <workItem from="1705304871203" duration="4827000" />
-    </task>
-    <task id="LOCAL-00004" summary="PlayerTurn implemented. Test not finished">
-      <option name="closed" value="true" />
-      <created>1703245967381</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1703245967381</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Player State Move and Steel and Jump">
-      <option name="closed" value="true" />
-      <created>1703593283873</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1703593283873</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Output of Board">
-      <option name="closed" value="true" />
-      <created>1703596728225</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1703596728225</updated>
-    </task>
-    <task id="LOCAL-00007" summary="StealMode works">
-      <option name="closed" value="true" />
-      <created>1703601173758</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1703601173758</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fixed Move">
-      <option name="closed" value="true" />
-      <created>1703610252270</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1703610252270</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Jump works">
-      <option name="closed" value="true" />
-      <created>1703615940608</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1703615940608</updated>
-    </task>
-    <task id="LOCAL-00010" summary="JShell and Model done">
-      <option name="closed" value="true" />
-      <created>1703616553219</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1703616553219</updated>
-    </task>
-    <task id="LOCAL-00011" summary="init core">
-      <option name="closed" value="true" />
-      <created>1703683139883</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1703683139883</updated>
+      <workItem from="1704543508293" duration="14839000" />
+      <workItem from="1705830086501" duration="5402000" />
+      <workItem from="1705851263567" duration="704000" />
+      <workItem from="1705866934591" duration="152000" />
+      <workItem from="1705869814038" duration="354000" />
     </task>
     <task id="LOCAL-00012" summary="Setup Main View Controller">
       <option name="closed" value="true" />
@@ -508,71 +449,135 @@
       <option name="project" value="LOCAL" />
       <updated>1704560598895</updated>
     </task>
-    <task id="LOCAL-00045" summary="Tests complete with 100 LC">
+    <task id="LOCAL-00045" summary="update">
       <option name="closed" value="true" />
-      <created>1704564268386</created>
+      <created>1705567910591</created>
       <option name="number" value="00045" />
       <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1704564268386</updated>
+      <updated>1705567910591</updated>
     </task>
-    <task id="LOCAL-00046" summary="changed Background. Fixed steal at WHITE error message">
+    <task id="LOCAL-00046" summary="test 100%">
       <option name="closed" value="true" />
-      <created>1705319165607</created>
+      <created>1705569332940</created>
       <option name="number" value="00046" />
       <option name="presentableId" value="LOCAL-00046" />
       <option name="project" value="LOCAL" />
-      <updated>1705319165607</updated>
+      <updated>1705569332940</updated>
     </task>
-    <task id="LOCAL-00047" summary="update Readme">
+    <task id="LOCAL-00047" summary="steal fix in view">
       <option name="closed" value="true" />
-      <created>1705654008593</created>
+      <created>1705571315142</created>
       <option name="number" value="00047" />
       <option name="presentableId" value="LOCAL-00047" />
       <option name="project" value="LOCAL" />
-      <updated>1705654008593</updated>
+      <updated>1705571315142</updated>
     </task>
-    <task id="LOCAL-00048" summary="PokemonView &amp; Main">
+    <task id="LOCAL-00048" summary="Error message fixed">
       <option name="closed" value="true" />
-      <created>1705654922184</created>
+      <created>1705573342843</created>
       <option name="number" value="00048" />
       <option name="presentableId" value="LOCAL-00048" />
       <option name="project" value="LOCAL" />
-      <updated>1705654922184</updated>
+      <updated>1705573342843</updated>
     </task>
-    <task id="LOCAL-00049" summary="Quellen angepasst">
+    <task id="LOCAL-00049" summary="fixed output of game in jshell">
       <option name="closed" value="true" />
-      <created>1705655007275</created>
+      <created>1705573768008</created>
       <option name="number" value="00049" />
       <option name="presentableId" value="LOCAL-00049" />
       <option name="project" value="LOCAL" />
-      <updated>1705655007275</updated>
+      <updated>1705573768008</updated>
     </task>
-    <task id="LOCAL-00050" summary="update readme">
+    <task id="LOCAL-00050" summary="delete IModel">
       <option name="closed" value="true" />
-      <created>1705659037808</created>
+      <created>1705574377125</created>
       <option name="number" value="00050" />
       <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1705659037808</updated>
+      <updated>1705574377125</updated>
     </task>
-    <task id="LOCAL-00051" summary="100% test frfr">
+    <task id="LOCAL-00051" summary="fixed Typo">
       <option name="closed" value="true" />
-      <created>1705660171167</created>
+      <created>1705579002521</created>
       <option name="number" value="00051" />
       <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1705660171167</updated>
+      <updated>1705579002521</updated>
     </task>
-    <task id="LOCAL-00052" summary="lambdas in Thread starting">
+    <task id="LOCAL-00052" summary="check if image is accessible">
       <option name="closed" value="true" />
-      <created>1705662501607</created>
+      <created>1705754586009</created>
       <option name="number" value="00052" />
       <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1705662501607</updated>
+      <updated>1705754586009</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="views only extends baseview class with PApplet inherits">
+      <option name="closed" value="true" />
+      <created>1705762715427</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1705762715427</updated>
+    </task>
+    <task id="LOCAL-00054" summary="changed visibility options">
+      <option name="closed" value="true" />
+      <created>1705765628235</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1705765628235</updated>
+    </task>
+    <task id="LOCAL-00055" summary="reused lamda in thread expression">
+      <option name="closed" value="true" />
+      <created>1705831112531</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1705831112532</updated>
+    </task>
+    <task id="LOCAL-00056" summary="added package jdoc for tests">
+      <option name="closed" value="true" />
+      <created>1705835486135</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1705835486135</updated>
+    </task>
+    <task id="LOCAL-00057" summary="gameover Screen in readme">
+      <option name="closed" value="true" />
+      <created>1705851831735</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1705851831735</updated>
+    </task>
+    <task id="LOCAL-00058" summary="gameover Screen in readme">
+      <option name="closed" value="true" />
+      <created>1705851841034</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1705851841034</updated>
+    </task>
+    <task id="LOCAL-00059" summary="model formatted">
+      <option name="closed" value="true" />
+      <created>1705851946811</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1705851946811</updated>
+    </task>
+    <task id="LOCAL-00060" summary="fixed package info jdoc">
+      <option name="closed" value="true" />
+      <created>1705867041632</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1705867041632</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,13 +600,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="exception displays at set" />
-    <MESSAGE value="Move and Jump works" />
-    <MESSAGE value="error handling and warning fixed. Added Title screen" />
-    <MESSAGE value="JDoc almost finished" />
-    <MESSAGE value="JDoc and cursor in titlescreen fix" />
-    <MESSAGE value="Tests started" />
-    <MESSAGE value="Tests almost finished" />
     <MESSAGE value="Draw Game init" />
     <MESSAGE value="changed draw screen" />
     <MESSAGE value="exception handling frontend" />
@@ -612,15 +610,38 @@
     <MESSAGE value="update gitignore" />
     <MESSAGE value="changed things" />
     <MESSAGE value="removed skizze" />
-    <MESSAGE value="Tests complete with 100 LC" />
-    <MESSAGE value="changed Background. Fixed steal at WHITE error message" />
-    <MESSAGE value="update Readme" />
-    <MESSAGE value="PokemonView &amp; Main" />
-    <MESSAGE value="Quellen angepasst" />
-    <MESSAGE value="update readme" />
-    <MESSAGE value="100% test frfr" />
-    <MESSAGE value="lambdas in Thread starting" />
-    <option name="LAST_COMMIT_MESSAGE" value="lambdas in Thread starting" />
+    <MESSAGE value="update" />
+    <MESSAGE value="test 100%" />
+    <MESSAGE value="steal fix in view" />
+    <MESSAGE value="Error message fixed" />
+    <MESSAGE value="fixed output of game in jshell" />
+    <MESSAGE value="delete IModel" />
+    <MESSAGE value="fixed Typo" />
+    <MESSAGE value="check if image is accessible" />
+    <MESSAGE value="views only extends baseview class with PApplet inherits" />
+    <MESSAGE value="changed visibility options" />
+    <MESSAGE value="reused lamda in thread expression" />
+    <MESSAGE value="added package jdoc for tests" />
+    <MESSAGE value="gameover Screen in readme" />
+    <MESSAGE value="model formatted" />
+    <MESSAGE value="fixed package info jdoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed package info jdoc" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Millgame/Controller/Controller.java</url>
+          <line>187</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Millgame/Controller/Controller.java</url>
+          <line>193</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -633,7 +654,7 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckPlayersTurn.ic" NAME="ModelTest.CheckPlayersTurn Coverage Results" MODIFIED="1704459879514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowsIndexOutOfBoundsException_AtUnknownFieldEntry.ic" NAME="ModelTest.ThrowsIndexOutOfBoundsException_AtUnknownFieldEntry Coverage Results" MODIFIED="1705655228424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowsIndexOutOfBoundsException_AtUnknownFieldEntry.ic" NAME="ModelTest.ThrowsIndexOutOfBoundsException_AtUnknownFieldEntry Coverage Results" MODIFIED="1704562717251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowIllegalArgumentException_AtSETButMove.ic" NAME="ModelTest.ThrowIllegalArgumentException_AtSETButMove Coverage Results" MODIFIED="1704451367729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -645,16 +666,13 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowsRuntimeException_AtStealStoneInMillForPlayer.ic" NAME="ModelTest.ThrowsRuntimeException_AtStealStoneInMillForPlayer Coverage Results" MODIFIED="1704457411836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckPlayer2Move.ic" NAME="ModelTest.CheckPlayer2Move Coverage Results" MODIFIED="1705655238838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckPlayer2Move.ic" NAME="ModelTest.CheckPlayer2Move Coverage Results" MODIFIED="1705568923091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowRuntimeException_AtNoStealableStoneAtPosition.ic" NAME="ModelTest.ThrowRuntimeException_AtNoStealableStoneAtPosition Coverage Results" MODIFIED="1704562789652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckBoard.ic" NAME="ModelTest.CheckBoard Coverage Results" MODIFIED="1704458474247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>Millgame.Model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowRuntimeException_AtPlayer2MoveIsNotAdjacent.ic" NAME="ModelTest.ThrowRuntimeException_AtPlayer2MoveIsNotAdjacent Coverage Results" MODIFIED="1705655235116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowIllegalArgumentException_AtSETButMove.ic" NAME="ModelTest.ThrowIllegalArgumentException_AtSETButMove Coverage Results" MODIFIED="1704562796235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -666,13 +684,13 @@
     <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowsMultipleExceptions_AtStealStone.ic" NAME="ModelTest.ThrowsMultipleExceptions_AtStealStone Coverage Results" MODIFIED="1704562783373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckPlayersTurn.ic" NAME="ModelTest.CheckPlayersTurn Coverage Results" MODIFIED="1705655200098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckPlayersTurn.ic" NAME="ModelTest.CheckPlayersTurn Coverage Results" MODIFIED="1704562820858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$Model.ic" NAME="Model Coverage Results" MODIFIED="1704458834563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckForGameStatePlayer1.ic" NAME="ModelTest.CheckForGameStatePlayer1 Coverage Results" MODIFIED="1705655190492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckForGameStatePlayer1.ic" NAME="ModelTest.CheckForGameStatePlayer1 Coverage Results" MODIFIED="1704562814430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowRuntimeException_AtUnknownUseOfMethod.ic" NAME="ModelTest.ThrowRuntimeException_AtUnknownUseOfMethod Coverage Results" MODIFIED="1704381087704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -681,7 +699,7 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowsRuntimeException_AtStealStoneInMill.ic" NAME="ModelTest.ThrowsRuntimeException_AtStealStoneInMill Coverage Results" MODIFIED="1704449098286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckForPlayerWonAndMoveIsEmpty.ic" NAME="ModelTest.CheckForPlayerWonAndMoveIsEmpty Coverage Results" MODIFIED="1704563502844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckForPlayerWonAndMoveIsEmpty.ic" NAME="ModelTest.CheckForPlayerWonAndMoveIsEmpty Coverage Results" MODIFIED="1705568757033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowRuntimeException_AtNoStealableStoneAtPosition.ic" NAME="ModelTest.ThrowRuntimeException_AtNoStealableStoneAtPosition Coverage Results" MODIFIED="1704450378955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -693,15 +711,13 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowRuntimeException_AtMoveStoneIsOpponentStone.ic" NAME="ModelTest.ThrowRuntimeException_AtMoveStoneIsOpponentStone Coverage Results" MODIFIED="1704452284803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_ShouldStartANewGame.ic" NAME="ModelTest.ShouldStartANewGame Coverage Results" MODIFIED="1705655222290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowsRuntimeException_AtFieldAlreadyTaken.ic" NAME="ModelTest.ThrowsRuntimeException_AtFieldAlreadyTaken Coverage Results" MODIFIED="1705568378965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowsRuntimeException_AtFieldAlreadyTaken.ic" NAME="ModelTest.ThrowsRuntimeException_AtFieldAlreadyTaken Coverage Results" MODIFIED="1705655225633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_ShouldStartANewGame.ic" NAME="ModelTest.ShouldStartANewGame Coverage Results" MODIFIED="1705568520155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$Model.ic" NAME="Model Coverage Results" MODIFIED="1704562645186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>Millgame.Model.*</FILTER>
-    </SUITE>
+    <SUITE FILE_PATH="coverage/README_md$Model.ic" NAME="Model Coverage Results" MODIFIED="1705568354545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckGameStates.ic" NAME="ModelTest.CheckGameStates Coverage Results" MODIFIED="1704459980999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
@@ -711,7 +727,7 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ShouldStartANewGame.ic" NAME="ModelTest.ShouldStartANewGame Coverage Results" MODIFIED="1704380355304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckBoard.ic" NAME="ModelTest.CheckBoard Coverage Results" MODIFIED="1705655210328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckBoard.ic" NAME="ModelTest.CheckBoard Coverage Results" MODIFIED="1704562830553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowRuntimeException_AtMoveStoneIsOpponentStone.ic" NAME="ModelTest.ThrowRuntimeException_AtMoveStoneIsOpponentStone Coverage Results" MODIFIED="1704562809582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -720,13 +736,13 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckForDrawGame.ic" NAME="ModelTest.CheckForDrawGame Coverage Results" MODIFIED="1704468203662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckForDrawGame.ic" NAME="ModelTest.CheckForDrawGame Coverage Results" MODIFIED="1705655215036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckForDrawGame.ic" NAME="ModelTest.CheckForDrawGame Coverage Results" MODIFIED="1704562836016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckMain.ic" NAME="ModelTest.CheckMain Coverage Results" MODIFIED="1704380497436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowRuntimeException_AtUnknownUseOfMethod.ic" NAME="ModelTest.ThrowRuntimeException_AtUnknownUseOfMethod Coverage Results" MODIFIED="1705655231585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowRuntimeException_AtUnknownUseOfMethod.ic" NAME="ModelTest.ThrowRuntimeException_AtUnknownUseOfMethod Coverage Results" MODIFIED="1704562751705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckForGameStatePlayer1.ic" NAME="ModelTest.CheckForGameStatePlayer1 Coverage Results" MODIFIED="1704451936134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -735,13 +751,13 @@
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckIfPlayer1HasWon.ic" NAME="ModelTest.CheckIfPlayer1HasWon Coverage Results" MODIFIED="1704458129396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckGameStates.ic" NAME="ModelTest.CheckGameStates Coverage Results" MODIFIED="1705655206019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckGameStates.ic" NAME="ModelTest.CheckGameStates Coverage Results" MODIFIED="1704562825704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_ThrowsRuntimeException_AtStealStoneInMillForPlayer1.ic" NAME="ModelTest.ThrowsRuntimeException_AtStealStoneInMillForPlayer1 Coverage Results" MODIFIED="1704449118594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckForValidMove.ic" NAME="ModelTest.CheckForValidMove Coverage Results" MODIFIED="1705655176019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_CheckForValidMove.ic" NAME="ModelTest.CheckForValidMove Coverage Results" MODIFIED="1704562779306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest.ic" NAME="ModelTest Coverage Results" MODIFIED="1704460044201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -750,16 +766,13 @@
     <SUITE FILE_PATH="coverage/README_md$ModelTest_ShouldPlacePlayer1AtPositionOne.ic" NAME="ModelTest.ShouldPlacePlayer1AtPositionOne Coverage Results" MODIFIED="1704562772474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest.ic" NAME="ModelTest Coverage Results" MODIFIED="1705659878158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>Millgame.Model.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$Millgame_Model_in_pis_muehle.ic" NAME="Millgame.Model in pis_muehle Coverage Results" MODIFIED="1705660137199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$Millgame_Model_in_pis_muehle.ic" NAME="Millgame.Model in pis_muehle Coverage Results" MODIFIED="1705751681670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/pis_muehle$ModelTest_CheckForValidMove.ic" NAME="ModelTest.CheckForValidMove Coverage Results" MODIFIED="1704381953653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowRuntimeException_AtMoveStoneMustBeAdjacentPositions.ic" NAME="ModelTest.ThrowRuntimeException_AtMoveStoneMustBeAdjacentPositions Coverage Results" MODIFIED="1704562803325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/README_md$ModelTest_ThrowRuntimeException_AtMoveStoneMustBeAdjacentPositions.ic" NAME="ModelTest.ThrowRuntimeException_AtMoveStoneMustBeAdjacentPositions Coverage Results" MODIFIED="1705569301503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Millgame.Model.*</FILTER>
     </SUITE>
   </component>

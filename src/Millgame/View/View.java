@@ -11,23 +11,7 @@ import processing.core.PImage;
  */
 
 
-public class View extends PApplet implements IView {
-
-    /**
-     * Declare Controller instance
-     */
-    private IController controller;
-
-    /**
-     * Default background Image for game
-     */
-    private PImage bg;
-
-    /**
-     * Default title screen Image for start screen
-     */
-    private PImage ts;
-
+public class View extends BaseView implements IView {
     /**
      * Declare x-axis of input via mousePressed
      */
@@ -54,50 +38,21 @@ public class View extends PApplet implements IView {
      */
     private boolean active = false;
 
-    /**
-     * Image storage of player White
-     */
-    private PImage player1;
 
-    /**
-     * Image storage of player Black
-     */
-    private PImage player2;
-
-    /**
-     * Setting the Controller of View.
-     *
-     * @param controller class instance for passing controller
-     */
-    public void setController(IController controller) {
-        this.controller = controller;
+    protected String getBackgroundImage() {
+        return "backgroundGame.jpg";
     }
 
-    /**
-     * Set Size of Application given from Controller.
-     */
-    @Override
-    public void settings() {
-        pixelDensity(2);
-        size(controller.getSIZE(), controller.getSIZE());
+    protected String getTitleScreenImage() {
+        return "background.png";
     }
 
-    /**
-     * Sets the default setup for Application.
-     */
-    @Override
-    public void setup() {
-        frameRate(60);
-        surface.setTitle("The Mill Game");
-        surface.setResizable(false);
-        bg = loadImage("backgroundGame.jpg");
-        bg.resize(controller.getSIZE(), controller.getSIZE());
-        ts = loadImage("background.png");
-        ts.resize(controller.getSIZE(), controller.getSIZE());
-        player1 = loadImage("WhiteStone.png");
-        player1.resize(100, 100);
-        player2 = loadImage("BlackStone.png");
-        player2.resize(100, 100);
+    protected String getPlayer1Image() {
+        return "WhiteStone.png";
+    }
+
+    protected String getPlayer2Image() {
+        return "BlackStone.png";
     }
 
     /**
@@ -241,7 +196,7 @@ public class View extends PApplet implements IView {
         new Thread (()->runThread()).start(); //running lambda in as Thread
     }
 
-    public void runThread(){
+    private void runThread(){
         while (active) {
             char[] board = controller.getBoard();
             float start = (float) controller.getSIZE() / 10;
